@@ -596,7 +596,7 @@ export const asyncRoutes = [
     ]
   },
   {
-    path: 'https://github.com/Armour/vue-typescript-admin-template',
+    path: 'https://github.com/zhengfeiwen/hs-elementui-docs',
     meta: {
       title: 'externalLink',
       icon: 'link'

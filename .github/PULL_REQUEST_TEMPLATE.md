@@ -1,8 +1,3 @@
-<!--
-Please make sure to read the Pull Request Guidelines:
-https://github.com/Armour/vue-typescript-admin-template/blob/master/.github/CONTRIBUTING.md#submitting-a-pull-request
--->
-
 <!-- PULL REQUEST TEMPLATE -->
 
 **Make sure the PR fulfills these requirements:**

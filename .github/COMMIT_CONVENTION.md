@@ -29,7 +29,7 @@ to read on GitHub as well as in various git tools.
 
 The footer should contain a [closing reference to an issue](https://help.github.com/articles/closing-issues-via-commit-messages/) if any.
 
-Samples: (even more [samples](https://github.com/Armour/vue-typescript-admin-template/commits/master))
+Samples: (even more [samples](https://github.com/zhengfeiwen/hs-elementui-docs/commits/master))
 
 ```text
 Docs(changelog): update changelog to beta.5

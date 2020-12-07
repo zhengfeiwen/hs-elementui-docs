@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div v-for="(item, i) in btns" :key="i" class="link_area">
-      <a target="_blank" href={item.href}>{{ item.title }}</a>
+      <a target="_blank" :href="item.href">{{ item.title }}</a>
     </div>
   </div>
 </template>
@@ -32,8 +32,8 @@ export default {
           href: 'https://element.eleme.cn/#/zh-CN/component/card'
         },
         {
-          title: 'iview-admin',
-          href: 'https://panjiachen.gitee.io/vue-element-admin/#/dashboard'
+          title: 'vue-elemrnt-admin',
+          href: 'https://panjiachen.gitee.io/vue-element-admin-site/zh/guide/'
         }
       ]
     }

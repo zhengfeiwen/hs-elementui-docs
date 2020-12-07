@@ -156,7 +156,7 @@ export default class extends Vue {
   private otherQuery: Dictionary<string> = {}
 
   @Watch('$route', { immediate: true })
-  private onRouteChange(route: Route) {
+  private onRouteChange (route: Route) {
     // TODO: remove the "as Dictionary<string>" hack after v4 release for vue-router
     // See https://github.com/vuejs/vue-router/pull/2050 for details
     const query = route.query as Dictionary<string>
@@ -166,7 +166,7 @@ export default class extends Vue {
     }
   }
 
-  mounted() {
+  mounted () {
     if (this.loginForm.username === '') {
       (this.$refs.username as Input).focus()
     } else if (this.loginForm.password === '') {
@@ -174,12 +174,12 @@ export default class extends Vue {
     }
   }
 
-  private checkCapslock(e: KeyboardEvent) {
+  private checkCapslock (e: KeyboardEvent) {
     const { key } = e
     this.capsTooltip = key !== null && key.length === 1 && (key >= 'A' && key <= 'Z')
   }
 
-  private showPwd() {
+  private showPwd () {
     if (this.passwordType === 'password') {
       this.passwordType = ''
     } else {
@@ -190,8 +190,8 @@ export default class extends Vue {
     })
   }
 
-  private handleLogin() {
-    (this.$refs.loginForm as ElForm).validate(async(valid: boolean) => {
+  private handleLogin () {
+    (this.$refs.loginForm as ElForm).validate(async (valid: boolean) => {
       if (valid) {
         this.loading = true
         await UserModule.Login(this.loginForm)
@@ -211,7 +211,7 @@ export default class extends Vue {
     })
   }
 
-  private getOtherQuery(query: Dictionary<string>) {
+  private getOtherQuery (query: Dictionary<string>) {
     return Object.keys(query).reduce((acc, cur) => {
       if (cur !== 'redirect') {
         acc[cur] = query[cur]

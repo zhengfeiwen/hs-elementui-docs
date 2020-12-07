@@ -15,7 +15,9 @@ export default {
     navigation: '导航栏',
     errorPages: '错误页面',
     democode: '模板页面',
-    profile: '个人中心'
+    profile: '个人中心',
+    progress: '进度条',
+    upload: '上传'
   },
   navbar: {
     logOut: '退出登录',

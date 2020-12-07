@@ -1,13 +1,10 @@
 openapi: 3.0.0
 info:
-  description: Mock API for vue-typescript-admin-template.
+  description: Mock API for hs-elementui-docs.
   version: 1.0.0
   title: Mock API
   contact:
-    email: armourcy@email.com
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
+    email: 1041618236@qq.com
 servers:
   - url: /mock-api/v1
 tags:

@@ -74,14 +74,14 @@ export default class extends Vue {
   @Prop({ default: true }) private isFirstLevel!: boolean
   @Prop({ default: '' }) private basePath!: string
 
-  get alwaysShowRootMenu() {
+  get alwaysShowRootMenu () {
     if (this.item.meta && this.item.meta.alwaysShow) {
       return true
     }
     return false
   }
 
-  get showingChildNumber() {
+  get showingChildNumber () {
     if (this.item.children) {
       const showingChildren = this.item.children.filter((item) => {
         if (item.meta && item.meta.hidden) {
@@ -95,7 +95,7 @@ export default class extends Vue {
     return 0
   }
 
-  get theOnlyOneChild() {
+  get theOnlyOneChild () {
     if (this.showingChildNumber > 1) {
       return null
     }
@@ -111,7 +111,7 @@ export default class extends Vue {
     return { ...this.item, path: '' }
   }
 
-  private resolvePath(routePath: string) {
+  private resolvePath (routePath: string) {
     if (isExternal(routePath)) {
       return routePath
     }

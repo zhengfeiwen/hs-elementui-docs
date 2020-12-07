@@ -3,8 +3,10 @@ import { RouteConfig } from 'vue-router'
 import Layout from '@/layout/index.vue'
 import Datepicker from './datepicker'
 import Navigation from './navigation'
+import Progress from './progress'
+import Upload from './upload'
 
-const BusiDemo: RouteConfig = {
+const Components: RouteConfig = {
   path: '/components',
   component: Layout,
   redirect: 'noredirect',
@@ -14,8 +16,10 @@ const BusiDemo: RouteConfig = {
   },
   children: [
     Datepicker,
-    Navigation
+    Navigation,
+    Progress,
+    Upload
   ]
 }
 
-export default BusiDemo
+export default Components

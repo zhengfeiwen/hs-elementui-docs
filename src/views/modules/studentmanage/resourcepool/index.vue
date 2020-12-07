@@ -40,7 +40,7 @@ export default {
     }
   },
   methods: {
-    tabChange: function (id) {
+    tabChange: function () {
       // this.curTab = id
     }
   }

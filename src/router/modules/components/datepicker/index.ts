@@ -1,8 +1,8 @@
 import { RouteConfig } from 'vue-router'
 
-const BusiDemo: RouteConfig = {
-  path: 'datepicker/index',
-  component: () => import('@/views/datepicker/index.vue'),
+const Route: RouteConfig = {
+  path: '/datepicker/index',
+  component: () => import('@/views/components/datepicker/index.vue'),
   name: 'datepicker',
   meta: {
     title: 'datepicker',
@@ -11,4 +11,4 @@ const BusiDemo: RouteConfig = {
   }
 }
 
-export default BusiDemo
+export default Route
