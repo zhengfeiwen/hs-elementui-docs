@@ -92,7 +92,7 @@
 
 ## 前序准备
 
-`你需要在本地安装 [hs-elementui](npm install hs-elementui --save --registry http://192.168.0.177:4873)`
+`你需要在本地安装 [hs-elementui](npm install hs-elementui --save --registry=http://192.168.0.177:4873)`
 
 ## 目录结构
 
