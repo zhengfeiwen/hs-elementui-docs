@@ -2,7 +2,7 @@ import { DirectiveOptions } from 'vue'
 import { UserModule } from '@/store/modules/user'
 
 export const permission: DirectiveOptions = {
-  inserted (el, binding) {
+  inserted(el, binding) {
     const { value } = binding
     const roles = UserModule.roles
     if (value && value instanceof Array && value.length > 0) {

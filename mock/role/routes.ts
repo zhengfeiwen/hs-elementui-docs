@@ -596,7 +596,7 @@ export const asyncRoutes = [
     ]
   },
   {
-    path: 'https://github.com/zhengfeiwen/hs-do-you-know',
+    path: 'https://github.com/zhengfeiwen/hs-elementui-docs',
     meta: {
       title: 'externalLink',
       icon: 'link'

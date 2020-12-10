@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  description: Mock API for hs-do-you-know.
+  description: Mock API for hs-elementui-docs.
   version: 1.0.0
   title: Mock API
   contact:

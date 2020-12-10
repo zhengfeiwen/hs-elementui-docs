@@ -1,5 +1,5 @@
 {
-  "name": "hs-do-you-know",
+  "name": "hs-elementui-docs",
   "version": "1.0.0",
   "private": true,
   "author": "Feiwen Zheng <1041618236@qq.com>",
@@ -85,8 +85,8 @@
     "@types/sortablejs": "^1.10.6",
     "@types/tinymce": "^4.6.0",
     "@types/vue-splitpane": "^1.0.1",
-    "@types/webpack-env": "^1.15.3",
     "@types/vuedraggable": "^2.23.2",
+    "@types/webpack-env": "^1.15.3",
     "@types/yamljs": "^0.2.31",
     "@typescript-eslint/eslint-plugin": "^4.6.1",
     "@typescript-eslint/parser": "^4.6.1",
@@ -108,6 +108,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.2",
+    "eslint-plugin-typescript": "^0.14.0",
     "eslint-plugin-vue": "^7.1.0",
     "fibers": "^5.0.0",
     "lint-staged": "^10.5.1",
@@ -117,14 +118,15 @@
     "swagger-routes-express": "^3.2.1",
     "ts-jest": "^26.4.3",
     "ts-node-dev": "^1.0.0",
-    "typescript": "3.8.3",
+    "typescript": "^3.8.3",
+    "typescript-eslint-parser": "^22.0.0",
     "vue-cli-plugin-element": "^1.0.1",
     "vue-cli-plugin-style-resources-loader": "^0.1.4",
     "vue-template-compiler": "^2.6.12",
     "webpack": "^4.4.2"
   },
   "bugs": {
-    "url": "https://github.com/zhengfeiwen/hs-do-you-know/issues"
+    "url": "https://github.com/zhengfeiwen/hs-elementui-docs/issues"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
@@ -143,6 +145,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhengfeiwen/hs-do-you-know.git"
+    "url": "git+https://github.com/zhengfeiwen/hs-elementui-docs.git"
   }
 }

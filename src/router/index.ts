@@ -3,6 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 
 /* Layout */
 import Layout from '@/layout/index.vue'
+import BusiDemo from './modules/busiDemo'
 import Components from './modules/components'
 /* Router modules */
 
@@ -71,10 +72,10 @@ export const constantRoutes: RouteConfig[] = [
   {
     path: '/',
     component: Layout,
-    redirect: '/index',
+    redirect: '/dashboard',
     children: [
       {
-        path: 'index',
+        path: 'dashboard',
         component: () => import('@/views/dashboard/index.vue'),
         name: 'Dashboard',
         meta: {
@@ -85,7 +86,109 @@ export const constantRoutes: RouteConfig[] = [
       }
     ]
   },
+  {
+    path: '/documentation',
+    component: Layout,
+    redirect: '/documentation',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/ready/documentation.vue'),
+        name: 'documentation',
+        meta: {
+          title: 'documentation',
+          icon: 'documentation',
+          noCache: true
+        }
+      }
+    ]
+  },
+  {
+    path: '/install',
+    component: Layout,
+    redirect: '/install',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/ready/install/install.vue'),
+        name: 'install',
+        meta: {
+          title: 'install',
+          icon: 'guide',
+          noCache: true
+        }
+      }
+    ]
+  },
+  {
+    path: '/updatelog',
+    component: Layout,
+    redirect: '/updatelog',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/ready/update.vue'),
+        name: 'updatelog',
+        meta: {
+          title: 'updatelog',
+          icon: 'list',
+          noCache: true
+        }
+      }
+    ]
+  },
+  {
+    path: '/icon',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/icons/index.vue'),
+        name: 'Icons',
+        meta: {
+          title: 'icons',
+          icon: 'icon',
+          noCache: true
+        }
+      }
+    ]
+  },
   Components,
+  BusiDemo,
+  {
+    path: '/democode',
+    component: Layout,
+    redirect: '/democode',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/ready/democode/index.vue'),
+        name: 'democode',
+        meta: {
+          title: 'democode',
+          icon: 'guide',
+          noCache: true
+        }
+      }
+    ]
+  },
+  {
+    path: '/resourcepool',
+    component: Layout,
+    redirect: '/index',
+    children: [
+      {
+        path: 'resourcepool',
+        component: () => import('@/views/modules/studentmanage/resourcepool/index.vue'),
+        name: 'resourcepool',
+        meta: {
+          title: 'resourcepool',
+          icon: 'guide',
+          noCache: true
+        }
+      }
+    ]
+  },
   {
     path: '/profile',
     component: Layout,

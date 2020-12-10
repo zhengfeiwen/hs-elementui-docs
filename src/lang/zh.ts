@@ -28,10 +28,8 @@ export default {
     profile: '个人中心'
   },
   login: {
-    title: '知否',
-    desc: '注册知否，发现更多可依赖的解答',
+    title: '系统登录',
     logIn: '登录',
-    AppDownLoad: '下载知否APP',
     username: '账号',
     password: '密码',
     any: '随便填',

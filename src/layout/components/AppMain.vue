@@ -19,11 +19,11 @@ import { TagsViewModule } from '@/store/modules/tags-view'
   name: 'AppMain'
 })
 export default class extends Vue {
-  get cachedViews () {
+  get cachedViews() {
     return TagsViewModule.cachedViews
   }
 
-  get key () {
+  get key() {
     return this.$route.path
   }
 }
