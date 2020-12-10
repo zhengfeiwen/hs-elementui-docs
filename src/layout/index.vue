@@ -1,5 +1,9 @@
 <template>
-  <div :class="classObj" class="app-wrapper">
+  <div
+    v-if="roles.includes('admin')"
+    :class="classObj"
+    class="app-wrapper"
+  >
     <div
       v-if="classObj.mobile && sidebar.opened"
       class="drawer-bg"
@@ -8,7 +12,7 @@
     <sidebar class="sidebar-container" />
     <div :class="{ hasTagsView: showTagsView }" class="main-container">
       <div :class="{ 'fixed-header': fixedHeader }">
-        <navbar />
+        <navbar role="admin"/>
         <tags-view v-if="showTagsView" />
       </div>
       <app-main />
@@ -17,52 +21,63 @@
       </right-panel>
     </div>
   </div>
+  <div v-else class="home_container">
+    <Usernavbar/>
+    <user-main />
+  </div>
 </template>
 
 <script lang="ts">
-import { Component } from "vue-property-decorator";
-import { mixins } from "vue-class-component";
-import { DeviceType, AppModule } from "@/store/modules/app";
-import { SettingsModule } from "@/store/modules/settings";
-import { AppMain, Navbar, Settings, Sidebar, TagsView } from "./components";
-import RightPanel from "@/components/RightPanel/index.vue";
-import ResizeMixin from "./mixin/resize";
+import { Component } from 'vue-property-decorator'
+import { UserModule } from '@/store/modules/user'
+import { mixins } from 'vue-class-component'
+import { DeviceType, AppModule } from '@/store/modules/app'
+import { SettingsModule } from '@/store/modules/settings'
+import { AppMain, UserMain, Navbar, Settings, Sidebar, TagsView, Usernavbar } from './components'
+import RightPanel from '@/components/RightPanel/index.vue'
+import ResizeMixin from './mixin/resize'
 
 @Component({
-  name: "Layout",
+  name: 'Layout',
   components: {
     AppMain,
+    UserMain,
     Navbar,
+    Usernavbar,
     RightPanel,
     Settings,
     Sidebar,
-    TagsView,
-  },
+    TagsView
+  }
 })
 export default class extends mixins(ResizeMixin) {
-  get classObj() {
+  get classObj () {
     return {
       hideSidebar: !this.sidebar.opened,
       openSidebar: this.sidebar.opened,
       withoutAnimation: this.sidebar.withoutAnimation,
-      mobile: this.device === DeviceType.Mobile,
-    };
+      mobile: this.device === DeviceType.Mobile
+    }
   }
 
-  get showSettings() {
-    return SettingsModule.showSettings;
+  get roles () {
+    return UserModule.roles
   }
 
-  get showTagsView() {
-    return SettingsModule.showTagsView;
+  get showSettings () {
+    return SettingsModule.showSettings
   }
 
-  get fixedHeader() {
-    return SettingsModule.fixedHeader;
+  get showTagsView () {
+    return SettingsModule.showTagsView
   }
 
-  private handleClickOutside() {
-    AppModule.CloseSideBar(false);
+  get fixedHeader () {
+    return SettingsModule.fixedHeader
+  }
+
+  private handleClickOutside () {
+    AppModule.CloseSideBar(false)
   }
 }
 </script>
@@ -162,5 +177,14 @@ export default class extends mixins(ResizeMixin) {
   .sidebar-container {
     transition: none;
   }
+}
+</style>
+
+<style scoped>
+.home_container{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #F6F6F6;
 }
 </style>

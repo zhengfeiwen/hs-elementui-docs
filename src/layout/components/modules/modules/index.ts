@@ -1,0 +1,5 @@
+export { default as Preference } from './preference/main.vue'
+export { default as Write } from './write/main.vue'
+export { default as Category } from './category/main.vue'
+export { default as Cerator } from './cerator/main.vue'
+export { default as Advertisement } from './advertisement/main.vue'

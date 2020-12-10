@@ -73,22 +73,22 @@ export default class extends Vue {
   private selectedTag: ITagView = {}
   private affixTags: ITagView[] = []
 
-  get visitedViews() {
+  get visitedViews () {
     return TagsViewModule.visitedViews
   }
 
-  get routes() {
+  get routes () {
     return PermissionModule.routes
   }
 
   @Watch('$route')
-  private onRouteChange() {
+  private onRouteChange () {
     this.addTags()
     this.moveToCurrentTag()
   }
 
   @Watch('visible')
-  private onVisibleChange(value: boolean) {
+  private onVisibleChange (value: boolean) {
     if (value) {
       document.body.addEventListener('click', this.closeMenu)
     } else {
@@ -96,20 +96,20 @@ export default class extends Vue {
     }
   }
 
-  mounted() {
+  mounted () {
     this.initTags()
     this.addTags()
   }
 
-  private isActive(route: ITagView) {
+  private isActive (route: ITagView) {
     return route.path === this.$route.path
   }
 
-  private isAffix(tag: ITagView) {
+  private isAffix (tag: ITagView) {
     return tag.meta && tag.meta.affix
   }
 
-  private filterAffixTags(routes: RouteConfig[], basePath = '/') {
+  private filterAffixTags (routes: RouteConfig[], basePath = '/') {
     let tags: ITagView[] = []
     routes.forEach(route => {
       if (route.meta && route.meta.affix) {
@@ -131,7 +131,7 @@ export default class extends Vue {
     return tags
   }
 
-  private initTags() {
+  private initTags () {
     this.affixTags = this.filterAffixTags(this.routes)
     for (const tag of this.affixTags) {
       // Must have tag name
@@ -141,7 +141,7 @@ export default class extends Vue {
     }
   }
 
-  private addTags() {
+  private addTags () {
     const { name } = this.$route
     if (name) {
       TagsViewModule.addView(this.$route)
@@ -149,7 +149,7 @@ export default class extends Vue {
     return false
   }
 
-  private moveToCurrentTag() {
+  private moveToCurrentTag () {
     const tags = this.$refs.tag as any[] // TODO: better typescript support for router-link
     this.$nextTick(() => {
       for (const tag of tags) {
@@ -165,7 +165,7 @@ export default class extends Vue {
     })
   }
 
-  private refreshSelectedTag(view: ITagView) {
+  private refreshSelectedTag (view: ITagView) {
     TagsViewModule.delCachedView(view)
     const { fullPath } = view
     this.$nextTick(() => {
@@ -177,14 +177,14 @@ export default class extends Vue {
     })
   }
 
-  private closeSelectedTag(view: ITagView) {
+  private closeSelectedTag (view: ITagView) {
     TagsViewModule.delView(view)
     if (this.isActive(view)) {
       this.toLastView(TagsViewModule.visitedViews, view)
     }
   }
 
-  private closeOthersTags() {
+  private closeOthersTags () {
     if (this.selectedTag.fullPath !== this.$route.path && this.selectedTag.fullPath !== undefined) {
       this.$router.push(this.selectedTag.fullPath).catch(err => {
         console.warn(err)
@@ -194,7 +194,7 @@ export default class extends Vue {
     this.moveToCurrentTag()
   }
 
-  private closeAllTags(view: ITagView) {
+  private closeAllTags (view: ITagView) {
     TagsViewModule.delAllViews()
     if (this.affixTags.some(tag => tag.path === this.$route.path)) {
       return
@@ -202,7 +202,7 @@ export default class extends Vue {
     this.toLastView(TagsViewModule.visitedViews, view)
   }
 
-  private toLastView(visitedViews: ITagView[], view: ITagView) {
+  private toLastView (visitedViews: ITagView[], view: ITagView) {
     const latestView = visitedViews.slice(-1)[0]
     if (latestView !== undefined && latestView.fullPath !== undefined) {
       this.$router.push(latestView.fullPath).catch(err => {
@@ -223,7 +223,7 @@ export default class extends Vue {
     }
   }
 
-  private openMenu(tag: ITagView, e: MouseEvent) {
+  private openMenu (tag: ITagView, e: MouseEvent) {
     const menuMinWidth = 105
     const offsetLeft = this.$el.getBoundingClientRect().left // container margin left
     const offsetWidth = (this.$el as HTMLElement).offsetWidth // container width
@@ -239,11 +239,11 @@ export default class extends Vue {
     this.selectedTag = tag
   }
 
-  private closeMenu() {
+  private closeMenu () {
     this.visible = false
   }
 
-  private handleScroll() {
+  private handleScroll () {
     this.closeMenu()
   }
 }

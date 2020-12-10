@@ -1,12 +1,14 @@
 <template>
   <div class="navbar">
-    <hamburger
+   <template>
+      <hamburger
       id="hamburger-container"
       :is-active="sidebar.opened"
       class="hamburger-container"
       @toggle-click="toggleSideBar"
     />
     <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
+   </template>
     <div class="right-menu">
       <template v-if="device !== 'mobile'">
         <header-search class="right-menu-item" />
@@ -52,19 +54,19 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { AppModule } from "@/store/modules/app";
-import { UserModule } from "@/store/modules/user";
-import Breadcrumb from "@/components/Breadcrumb/index.vue";
-import ErrorLog from "@/components/ErrorLog/index.vue";
-import Hamburger from "@/components/Hamburger/index.vue";
-import HeaderSearch from "@/components/HeaderSearch/index.vue";
-import LangSelect from "@/components/LangSelect/index.vue";
-import Screenfull from "@/components/Screenfull/index.vue";
-import SizeSelect from "@/components/SizeSelect/index.vue";
+import { Component, Vue, Prop } from 'vue-property-decorator'
+import { AppModule } from '@/store/modules/app'
+import { UserModule } from '@/store/modules/user'
+import Breadcrumb from '@/components/Breadcrumb/index.vue'
+import ErrorLog from '@/components/ErrorLog/index.vue'
+import Hamburger from '@/components/Hamburger/index.vue'
+import HeaderSearch from '@/components/HeaderSearch/index.vue'
+import LangSelect from '@/components/LangSelect/index.vue'
+import Screenfull from '@/components/Screenfull/index.vue'
+import SizeSelect from '@/components/SizeSelect/index.vue'
 
 @Component({
-  name: "Navbar",
+  name: 'Navbar',
   components: {
     Breadcrumb,
     ErrorLog,
@@ -72,37 +74,40 @@ import SizeSelect from "@/components/SizeSelect/index.vue";
     HeaderSearch,
     LangSelect,
     Screenfull,
-    SizeSelect,
-  },
+    SizeSelect
+  }
 })
 export default class extends Vue {
-  get sidebar() {
-    return AppModule.sidebar;
+  @Prop({ type: String, required: true })
+  private role!: string;
+
+  get sidebar () {
+    return AppModule.sidebar
   }
 
-  get device() {
-    return AppModule.device.toString();
+  get device () {
+    return AppModule.device.toString()
   }
 
-  get avatar() {
-    return UserModule.avatar;
+  get avatar () {
+    return UserModule.avatar
   }
 
-  get userinfo() {
-    return UserModule.context.state;
+  get userinfo () {
+    return UserModule.context.state
   }
 
-  private toggleSideBar() {
-    AppModule.ToggleSideBar(false);
+  private toggleSideBar () {
+    AppModule.ToggleSideBar(false)
   }
 
-  private async logout() {
-    await UserModule.LogOut();
+  private async logout () {
+    await UserModule.LogOut()
     this.$router
       .push(`/login?redirect=${this.$route.fullPath}`)
       .catch((err) => {
-        console.warn(err);
-      });
+        console.warn(err)
+      })
   }
 }
 </script>

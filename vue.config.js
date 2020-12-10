@@ -9,22 +9,9 @@ const mockServerPort = 9528 // TODO: get this variable from setting.ts
 const name = 'Vue Typescript Admin' // TODO: get this variable from setting.ts
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/hs-elementui-docs/' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/hs-do-you-know/' : '/',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
-  configureWebpack: config => {
-    config.module.rules.push({
-      test: /\.md$/,
-      use: [
-        {
-          loader: 'vue-loader'
-        },
-        {
-          loader: require.resolve('./markdown-loader')
-        }
-      ]
-    })
-  },
   devServer: {
     port: devServerPort,
     open: true,

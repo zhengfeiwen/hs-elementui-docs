@@ -12,7 +12,7 @@ interface ISettings {
 
 // You can customize below settings :)
 const settings: ISettings = {
-  title: '云端组件库',
+  title: '知否',
   showSettings: true,
   showTagsView: true,
   fixedHeader: false,
