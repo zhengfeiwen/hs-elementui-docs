@@ -1,4 +1,7 @@
 #更新日志
+####0.1.82
+`2020/12/11`
+[svg-icon](#/icon/index) 新增图标库`svg-icon`
 ####0.1.79
 `2020/12/09`
 [hs-extendbutton](#/button/extendbutton/index) 新增按钮`hs-extendbutton`，收起展开用

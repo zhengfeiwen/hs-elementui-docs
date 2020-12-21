@@ -19,8 +19,8 @@ const settings: ISettings = {
   showSidebarLogo: false,
   errorLog: ['production'],
   sidebarTextTheme: true,
-  devServerPort: 9527,
-  mockServerPort: 9528
+  devServerPort: 9529,
+  mockServerPort: 9530
 }
 
 export default settings

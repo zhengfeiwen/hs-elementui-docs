@@ -8,7 +8,7 @@
       </a>
     </aside>
     <el-tabs type="border-card">
-      <el-tab-pane label="Icons">
+      <el-tab-pane label="Hs-icons">
         <div class="grid">
           <div
             v-for="item of svgIcons"
@@ -95,7 +95,6 @@ export default class extends Vue {
     width: 100px;
     float: left;
     font-size: 30px;
-    color: #24292e;
     cursor: pointer;
   }
 

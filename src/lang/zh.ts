@@ -17,7 +17,11 @@ export default {
     democode: '模板页面',
     profile: '个人中心',
     progress: '进度条',
-    upload: '上传'
+    upload: '上传',
+    button: '按钮',
+    iconbutton: '图标按钮',
+    logobutton: 'logo按钮',
+    extendbutton: '展开按钮'
   },
   navbar: {
     logOut: '退出登录',

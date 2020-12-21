@@ -5,6 +5,7 @@ import Datepicker from './datepicker'
 import Navigation from './navigation'
 import Progress from './progress'
 import Upload from './upload'
+import Button from './button'
 
 const Components: RouteConfig = {
   path: '/components',
@@ -18,7 +19,8 @@ const Components: RouteConfig = {
     Datepicker,
     Navigation,
     Progress,
-    Upload
+    Upload,
+    Button
   ]
 }
 

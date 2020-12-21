@@ -4,14 +4,7 @@
     class="upload-demo"
     action="https://jsonplaceholder.typicode.com/posts/"
     :on-preview="handlePreview"
-    :on-remove="handleRemove"
-    :before-remove="beforeRemove"
-    multiple
-    :limit="3"
-    submitBtnTxt="点击上传"
-    submitBtnClass="primary"
     :on-exceed="handleExceed"
-    :file-list="fileList"
   >
     <div slot="tip" class="el-upload__tip">
       只能上传jpg/png文件，且不超过500kb

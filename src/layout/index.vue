@@ -20,49 +20,49 @@
 </template>
 
 <script lang="ts">
-import { Component } from "vue-property-decorator";
-import { mixins } from "vue-class-component";
-import { DeviceType, AppModule } from "@/store/modules/app";
-import { SettingsModule } from "@/store/modules/settings";
-import { AppMain, Navbar, Settings, Sidebar, TagsView } from "./components";
-import RightPanel from "@/components/RightPanel/index.vue";
-import ResizeMixin from "./mixin/resize";
+import { Component } from 'vue-property-decorator'
+import { mixins } from 'vue-class-component'
+import { DeviceType, AppModule } from '@/store/modules/app'
+import { SettingsModule } from '@/store/modules/settings'
+import { AppMain, Navbar, Settings, Sidebar, TagsView } from './components'
+import RightPanel from '@/components/RightPanel/index.vue'
+import ResizeMixin from './mixin/resize'
 
 @Component({
-  name: "Layout",
+  name: 'Layout',
   components: {
     AppMain,
     Navbar,
     RightPanel,
     Settings,
     Sidebar,
-    TagsView,
-  },
+    TagsView
+  }
 })
 export default class extends mixins(ResizeMixin) {
-  get classObj() {
+  get classObj () {
     return {
       hideSidebar: !this.sidebar.opened,
       openSidebar: this.sidebar.opened,
       withoutAnimation: this.sidebar.withoutAnimation,
-      mobile: this.device === DeviceType.Mobile,
-    };
+      mobile: this.device === DeviceType.Mobile
+    }
   }
 
-  get showSettings() {
-    return SettingsModule.showSettings;
+  get showSettings () {
+    return SettingsModule.showSettings
   }
 
-  get showTagsView() {
-    return SettingsModule.showTagsView;
+  get showTagsView () {
+    return SettingsModule.showTagsView
   }
 
-  get fixedHeader() {
-    return SettingsModule.fixedHeader;
+  get fixedHeader () {
+    return SettingsModule.fixedHeader
   }
 
-  private handleClickOutside() {
-    AppModule.CloseSideBar(false);
+  private handleClickOutside () {
+    AppModule.CloseSideBar(false)
   }
 }
 </script>
