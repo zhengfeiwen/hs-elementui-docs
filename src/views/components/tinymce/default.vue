@@ -9,9 +9,7 @@
 import { Component, Vue } from 'vue-property-decorator'
 
 @Component({
-  name: 'hs-tinymce',
-  components: {
-  }
+  name: 'hs-tinymce'
 })
 export default class extends Vue {
   private tinymce = ''
