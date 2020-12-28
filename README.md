@@ -12,91 +12,68 @@
 
 ## 截图
 
-![主页](./demo.png)
+![主页](https://github.com/zhengfeiwen/hs-do-you-know/blob/main/demo.png)
 
 ## 相关项目
 
-[hs-modules](https://github.com/zhengfeiwen/hs-modules) (hs-modules)
+[hs-modules](https://github.com/zhengfeiwen/hs-elementui-master) (hs-modules)
 
 ## 功能
 
 ```txt
 - 登录 / 注销
-
-- 权限验证
-  - 页面权限
-  - 指令权限
-  - 权限配置
-  - 二步登录
-
-- 多环境发布
-  - Dev / Stage / Prod
-
-- 全局功能
-  - 国际化多语言
-  - 动态换肤
-  - 动态侧边栏（支持多级路由嵌套）
-  - 动态面包屑
-  - 快捷导航(支持右键操作)
-  - 粘贴板
-  - Svg 图标
-  - 搜索
-  - 全屏
-  - 设置
-  - Mock 数据 / Mock 服务器
-  - 支持 PWA
-
-- 组件
-  - 编辑器
+  - 目前统一用admin/admin登录
+-全局功能
+  - 首页
+  - 文档
+  - 安装
+  - 更新日志
+  - 图标
+  - 组件
     - 富文本编辑器
-    - Markdown 编辑器
-    - JSON 编辑器
-  - 头像上传
-  - 返回顶部
-  - CountTo
-  - 拖放区
-  - 拖拽弹窗
-  - 拖拽看板
-  - 拖拽列表
-  - 拖拽选择
-  - ECharts 图表
-  - Mixin
-  - 拆分窗格
-  - 黏性组件
+    - 日期选择器
+    - 导航栏
+    - 进度条
+    - 上传
+    - 按钮
+      - 展开按钮
+      - 图标按钮
+      - logo按钮
+    - 业务组件
+      - 操作按钮组
+      - 查询条件
+  - 表格
+    - 基本表格
+    - 树形表格
+  - 模板页面
+  - 综合实例
+  - 错误页面
+    - 401
+    - 404
 
-- 表格
-  - 动态表格
-  - 拖拽表格
-  - 内联编辑表格
-  - 复杂表格
-
-- Excel
-  - 导出excel
-  - 导入excel
-  - 前端可视化excel
-
-- Zip
-  - 导出zip
-
-- PDF
-  - 下载 pdf
-
-- 控制台
-- 引导页
-- 综合实例
-- 错误日志
-- 错误页面
-  - 401
-  - 404
+- 环境要求
+  - npm.js  ^6.14.4
+  - node.js ^10.0.0
+  - vue/cli ^4.0.0
+- 安装步骤
+  - 从`github`上下载源码到本地
+  - 在项目根目录执行 npm i 安装所需依赖
+    - 如果安装时候有报错：`3657 error syscall spawn git`的错误，请先安装git，[传送门](https://npm.taobao.org/mirrors/git-for-windows/v2.29.2.windows.1/Git-2.29.2-64-bit.exe)
+    - 如果安装`hs-elementui`报错，可能是镜像不对，尝试用npm的代理去安装(可以安装nrm去管理代理)
+    - npm i -g nrm 
+    - nrm use npm
+    - 或者也可以单独安装 `npm i hs-elementui`
+  - 启动项目 `npm run serve`
+    如果是mock后台，则会启动mock服务
 ```
 
 ## 前序准备
 
-`你需要在本地安装 [hs-elementui](npm install hs-elementui --save --registry=http://192.168.0.177:4873)`
+`你需要在本地安装` [npm](https://www.runoob.com/nodejs/nodejs-npm.html) [vue/cli](https://cli.vuejs.org/zh/guide/installation.html) [node](https://www.runoob.com/nodejs/nodejs-install-setup.html)
 
 ## 目录结构
 
-本项目已经为你生成了一个完整的开发框架，提供了涵盖后台开发的各类功能和坑位，下面是整个项目的目录结构。
+本项目已经主要是为云端组件库做文档说明，功能上主要是为了展示demo
 
 ```bash
 ├── mock                       # mock 服务器 与 模拟数据
@@ -143,42 +120,14 @@
 ### 安装依赖
 
 ```bash
-yarn install
+npm install
 ```
 
 ### 启动本地开发环境（自带热启动）
 
 ```bash
-yarn serve
+npm serve
 ```
-
-### 构建生产环境 (自带压缩)
-
-```bash
-yarn build:prod
-```
-
-### 代码格式检查以及自动修复
-
-```bash
-yarn lint
-```
-
-### 运行单元测试
-
-```bash
-yarn test:unit
-```
-
-### 自动生成 svg 组件
-
-```bash
-yarn run svg
-```
-
-### 自定义 Vue 配置
-
-请看 [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## 浏览器支持
 
@@ -190,7 +139,7 @@ Modern browsers and Internet Explorer 10+.
 
 ## 参与贡献
 
-EmperorZfw
+FeiWen Zheng
 
 ## License
 

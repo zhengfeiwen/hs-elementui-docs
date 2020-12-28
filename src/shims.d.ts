@@ -23,3 +23,6 @@ declare module 'vue-image-crop-upload'
 // declare module 'hs-elementui' {
 //   export const hselementui: any
 // }
+declare module 'apiDatas'
+
+declare module "*.md"

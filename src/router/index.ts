@@ -247,7 +247,7 @@ export const asyncRoutes: RouteConfig[] = [
 ]
 
 const createRouter = () => new VueRouter({
-  // mode: 'history', // Disabled due to Github Pages doesn't support this, enable this if you need.
+  mode: 'hash', // Disabled due to Github Pages doesn't support this, enable this if you need.
   scrollBehavior: (to, from, savedPosition) => {
     if (savedPosition) {
       return savedPosition

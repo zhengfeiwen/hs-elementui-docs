@@ -12,6 +12,10 @@ export default {
     return {
       btns: [
         {
+          title: 'hs-elementui',
+          href: 'https://github.com/zhengfeiwen/hs-elementui-docs'
+        },
+        {
           title: 'iview-admin',
           href: 'https://panjiachen.gitee.io/vue-element-admin/#/dashboard'
         },
