@@ -58,7 +58,7 @@
 - 安装步骤
   - 从`github`上下载源码到本地
   - 在项目根目录执行 npm i 安装所需依赖
-    - 如果安装时候有报错：`3657 error syscall spawn git`的错误，请先安装git，[传送门](https://npm.taobao.org/mirrors/git-for-windows/v2.29.2.windows.1/Git-2.29.2-64-bit.exe)
+    - 如果安装时候有报错：`3657 error syscall spawn git`的错误，请先安装git。
     - 如果安装`hs-elementui`报错，可能是镜像不对，尝试用npm的代理去安装(可以安装nrm去管理代理)
     - npm i -g nrm 
     - nrm use npm
@@ -66,7 +66,9 @@
   - 启动项目 `npm run serve`
     如果是mock后台，则会启动mock服务
 ```
-
+PS:传送门
+  [git](https://npm.taobao.org/mirrors/git-for-windows/v2.29.2.windows.1/Git-2.29.2-64-bit.exe)
+  [hs-elementui-master](https://github.com/zhengfeiwen/hs-elementui-master)
 ## 前序准备
 
 `你需要在本地安装` [npm](https://www.runoob.com/nodejs/nodejs-npm.html) [vue/cli](https://cli.vuejs.org/zh/guide/installation.html) [node](https://www.runoob.com/nodejs/nodejs-install-setup.html)
