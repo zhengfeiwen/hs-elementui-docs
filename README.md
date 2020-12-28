@@ -66,10 +66,8 @@
   - 启动项目 `npm run serve`
     如果是mock后台，则会启动mock服务
 ```
-PS:传送门
-
+## 传送门
   [git](https://npm.taobao.org/mirrors/git-for-windows/v2.29.2.windows.1/Git-2.29.2-64-bit.exe)
-  
   [hs-elementui-master](https://github.com/zhengfeiwen/hs-elementui-master)
 ## 前序准备
 
