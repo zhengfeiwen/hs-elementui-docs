@@ -16,7 +16,7 @@
 
 ## 相关项目
 
-[hs-modules](https://github.com/zhengfeiwen/hs-elementui-master) (hs-modules)
+[hs-modules-master](https://github.com/zhengfeiwen/hs-elementui-master) (hs-modules-master)
 
 ## 功能
 
