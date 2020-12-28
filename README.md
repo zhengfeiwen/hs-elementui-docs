@@ -12,7 +12,7 @@
 
 ## 截图
 
-![主页](https://github.com/zhengfeiwen/hs-do-you-know/blob/main/demo.png)
+![主页](https://github.com/zhengfeiwen/hs-do-you-docs/blob/main/demo.png)
 
 ## 相关项目
 
