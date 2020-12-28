@@ -20,6 +20,7 @@
 
 ## 功能
 
+```txt
 - 登录 / 注销
   - 目前统一用admin/admin登录
 -全局功能
@@ -55,17 +56,20 @@
   - node.js ^10.0.0
   - vue/cli ^4.0.0
 - 安装步骤
-  - 从`github`上下载源码到本地
+  - 从[github]上下载源码到本地
   - 在项目根目录执行 npm i 安装所需依赖
-    - 如果安装时候有报错：`3657 error syscall spawn git`的错误，请先安装git.
+    - 如果安装时候有报错:[3657 error syscall spawn git]的错误，请先安装git.
     - 如果安装`hs-elementui`报错，可能是镜像不对，尝试用npm的代理去安装(可以安装nrm去管理代理)
     - npm i -g nrm 
     - nrm use npm
     - 或者也可以单独安装 `npm i hs-elementui`
   - 启动项目 `npm run serve`
     如果是mock后台，则会启动mock服务
+```
 PS:传送门
+
   [git](https://npm.taobao.org/mirrors/git-for-windows/v2.29.2.windows.1/Git-2.29.2-64-bit.exe)
+  
   [hs-elementui-master](https://github.com/zhengfeiwen/hs-elementui-master)
 ## 前序准备
 
