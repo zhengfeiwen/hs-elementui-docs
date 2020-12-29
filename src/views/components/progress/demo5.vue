@@ -24,8 +24,8 @@ import { Component, Vue } from 'vue-property-decorator'
 })
 
 export default class ProgressDemo extends Vue {
-  public percentage = 0;
-  public tasks:string[] = ['task0', 'task1', 'task2'];
+  public percentage = 0
+  public tasks: string[] = ['task0', 'task1', 'task2']
   public cur = 0;
   public taskChains:any = {
     task0: {

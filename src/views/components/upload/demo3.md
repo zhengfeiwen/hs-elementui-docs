@@ -34,26 +34,24 @@
     </el-dialog>
   </div>
 </template>
-<script>
-export default {
-  data () {
-    return {
-      dialogImageUrl: '',
-      dialogVisible: false,
-      disabled: false
-    }
-  },
-  methods: {
-    handleRemove (file) {
-      console.log(file)
-    },
-    handlePictureCardPreview (file) {
-      this.dialogImageUrl = file.url
-      this.dialogVisible = true
-    },
-    handleDownload (file) {
-      console.log(file)
-    }
+<script lang='ts'>
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
+  name: 'demo3'
+})
+export default class extends Vue {
+  private dialogImageUrl: string = ''
+  private dialogVisible: boolean = !1
+  private disabled: boolean = !1
+  handleRemove (file: any) {
+    console.log(file)
+  }
+  handlePictureCardPreview (file: any) {
+    this.dialogImageUrl = file.url
+    this.dialogVisible = true
+  }
+  handleDownload (file: any) {
+    console.log(file)
   }
 }
 </script>

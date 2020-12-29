@@ -1,25 +1,34 @@
 ```
 <template>
   <div>
-    <hs-progress :stroke-width="26" :taskChains="taskChains" :percentage="percentage" @finished="finished"></hs-progress>
-    <button @click="btnFinished">finished</button>
+    <hs-progress :stroke-width="26" :interval="10000" :taskChains="taskChains" :percentage="percentage" @finished="finished"></hs-progress>
+    <br/>
+    <br/>
+    <el-button
+      style="margin-left: 10px"
+      size="small"
+      type="success"
+      @click="btnFinished"
+      v-if="cur < 3"
+      >完成{{tasks[cur]}}</el-button
+    >
   </div>
 </template>
 
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator'
-import progress from '@/packages/progress/main.vue'
 
 @Component({
-  name: 'hs-progress-demoe',
+  name: 'demo5',
   components: {
-    'hs-progress': progress
   }
 })
 
 export default class ProgressDemo extends Vue {
-  public percentage = 0;
-  public taskChains = {
+  public percentage = 0
+  public tasks: string[] = ['task0', 'task1', 'task2']
+  public cur = 0;
+  public taskChains:any = {
     task0: {
       status: 'doing'
     },
@@ -37,11 +46,15 @@ export default class ProgressDemo extends Vue {
   }
 
   public btnFinished () {
-    this.taskChains.task1.status = 'finished'
+    if (this.cur > 2) {
+      return
+    }
+    const key = this.tasks[this.cur++]
+    this.taskChains[key].status = 'finished'
   }
 
   public finished () {
-    alert('结束任务')
+    alert('任务完成')
   }
 }
 </script>

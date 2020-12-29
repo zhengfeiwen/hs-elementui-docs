@@ -36,13 +36,13 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { SettingsModule } from "@/store/modules/settings";
-import ThemePicker from "@/components/ThemePicker/index.vue";
+<script lang='ts'>
+import { Component, Vue } from 'vue-property-decorator';
+import { SettingsModule } from '@/store/modules/settings';
+import ThemePicker from '@/components/ThemePicker/index.vue';
 
 @Component({
-  name: "Settings",
+  name: 'Settings',
   components: {
     ThemePicker,
   },
@@ -53,7 +53,7 @@ export default class extends Vue {
   }
 
   set fixedHeader(value) {
-    SettingsModule.ChangeSetting({ key: "fixedHeader", value });
+    SettingsModule.ChangeSetting({ key: 'fixedHeader', value });
   }
 
   get showTagsView() {
@@ -61,7 +61,7 @@ export default class extends Vue {
   }
 
   set showTagsView(value) {
-    SettingsModule.ChangeSetting({ key: "showTagsView", value });
+    SettingsModule.ChangeSetting({ key: 'showTagsView', value });
   }
 
   get showSidebarLogo() {
@@ -69,7 +69,7 @@ export default class extends Vue {
   }
 
   set showSidebarLogo(value) {
-    SettingsModule.ChangeSetting({ key: "showSidebarLogo", value });
+    SettingsModule.ChangeSetting({ key: 'showSidebarLogo', value });
   }
 
   get sidebarTextTheme() {
@@ -77,16 +77,16 @@ export default class extends Vue {
   }
 
   set sidebarTextTheme(value) {
-    SettingsModule.ChangeSetting({ key: "sidebarTextTheme", value });
+    SettingsModule.ChangeSetting({ key: 'sidebarTextTheme', value });
   }
 
   private themeChange(value: string) {
-    SettingsModule.ChangeSetting({ key: "theme", value });
+    SettingsModule.ChangeSetting({ key: 'theme', value });
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 .drawer-container {
   padding: 24px;
   font-size: 14px;

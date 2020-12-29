@@ -14,8 +14,11 @@
     </template>
   </hs-upload>
 </template>
-<script>
-export default {
+<script lang='ts'>
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
   name: 'demo5'
+})
+export default class extends Vue {
 }
 </script>

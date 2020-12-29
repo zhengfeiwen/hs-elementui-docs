@@ -37,6 +37,8 @@ import demoDefault from './default.vue'
   }
 })
 export default class extends Vue {
+  private events:any = events
+  private attributes:any = attributes
 }
 </script>
 <style lang='scss' scope>

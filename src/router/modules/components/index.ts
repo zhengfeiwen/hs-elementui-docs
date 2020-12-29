@@ -6,6 +6,7 @@ import Navigation from './navigation'
 import Progress from './progress'
 import Upload from './upload'
 import Button from './button'
+import Tinymce from './tinymce'
 
 const Components: RouteConfig = {
   path: '/components',
@@ -20,7 +21,8 @@ const Components: RouteConfig = {
     Navigation,
     Progress,
     Upload,
-    Button
+    Button,
+    Tinymce
   ]
 }
 

@@ -12,32 +12,40 @@
       <template slot="ext1">
         <i class="el-icon-mobile-phone" />
       </template>
+      <template slot="ext2">
+        随意
+      </template>
     </hs-logobutton>
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      buttons: [
-        {
-          id: 'live',
-          title: 'Live',
-          color: 'yellow'
-        },
-        {
-          id: 'store',
-          title: '书店',
-          color: 'green'
-        }
-      ]
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
+  name: 'default'
+})
+export default class extends Vue{
+  private buttons:object[] = [
+    {
+      id: 'live',
+      title: 'Live',
+      color: 'yellow',
+      icon: 'cir-book'
+    },
+    {
+      id: 'store',
+      title: '书店',
+      icon: 'edit',
+      color: 'green'
+    },
+    {
+      title: '圆桌',
+      icon: 'org',
+      color: 'lightbule'
     }
-  },
-  methods: {
-    handleClick (key) {
-      alert(key)
-    }
+  ]
+  private handleClick (key: string) {
+    alert(key)
   }
 }
 </script>

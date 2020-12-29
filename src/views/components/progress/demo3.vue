@@ -11,19 +11,21 @@
     ></hs-progress>
   </div>
 </template>
-<script>
-export default {
-  name: 'demo2'
+
+<script lang='ts'>
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
+  name: 'demo3'
+})
+export default class extends Vue{
 }
 </script>
-
-<style scoped>
+<style lang='scss' scoped>
 .hs-progress_container{
   display:flex;
   flex-direction: row;
-}
-.hs-progress{
-  margin-right: 20px;
-
+  .hs-progress{
+    margin-bottom: 20px;
+  }
 }
 </style>

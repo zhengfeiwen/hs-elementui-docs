@@ -21,27 +21,25 @@
     </template>
   </index-md>
 </template>
-<script>
+
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator'
 import indexMd from './index.md'
 import defaultMd from './default.md'
 import attributes from './attributes'
 import events from './events'
-import demoDefault from './default'
+import demoDefault from './default.vue'
 
-export default {
-  name: 'tinymce',
+@Component({
+  name: 'hs-tinymce',
   components: {
-    defaultMd,
+    'default-md': defaultMd,
     indexMd,
     'demo-default': demoDefault
-  },
-  data () {
-    return {
-      attributes,
-      events,
-      value: true,
-      value1: true
-    }
   }
+})
+export default class extends Vue {
+  private events:any = events
+  private attributes:any = attributes
 }
 </script>

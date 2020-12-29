@@ -32,33 +32,29 @@
     </template>
   </index-md>
 </template>
-<script>
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator'
 import indexMd from './index.md'
 import defaultMd from './default.md'
+import demo1Md from './demo1.md'
+import demo1 from './demo1.vue'
 import attributes from './attributes'
 import events from './events'
-import demoDefault from './default'
-
-import demo1 from './demo1'
-
-import demo1Md from './demo1.md'
-
-export default {
-  name: 'logobutton',
+import demoDefault from './default.vue'
+@Component({
+  name: 'hs-logobutton',
   components: {
-    defaultMd,
+    'default-md': defaultMd,
     indexMd,
     'demo-default': demoDefault,
     demo1,
     demo1Md
-  },
-  data () {
-    return {
-      attributes,
-      events,
-      value: true,
-      value1: true
-    }
   }
+})
+export default class extends Vue {
+  private events:any = events
+  private attributes:any = attributes
+  private value: boolean = !0
+  private value1: boolean = !0
 }
 </script>

@@ -13,23 +13,20 @@
   </el-dialog>
   </div>
 </template>
-<script>
-export default {
-  name: 'demo2',
-  data () {
-    return {
-      dialogImageUrl: '',
-      dialogVisible: false
-    }
-  },
-  methods: {
-    handleRemove (file, fileList) {
-      console.log(file, fileList)
-    },
-    handlePictureCardPreview (file) {
-      this.dialogImageUrl = file.url
-      this.dialogVisible = true
-    }
+<script lang='ts'>
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
+  name: 'demo2'
+})
+export default class extends Vue {
+  private dialogImageUrl: string = ''
+  private dialogVisible: boolean = !1
+  private handleRemove (file: any, fileList: any) {
+    console.log(file, fileList)
+  }
+  private handlePictureCardPreview (file: any) {
+    this.dialogImageUrl = file.url
+    this.dialogVisible = true
   }
 }
 </script>

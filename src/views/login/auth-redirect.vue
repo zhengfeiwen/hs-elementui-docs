@@ -5,7 +5,7 @@ import { Component, Vue } from 'vue-property-decorator'
   name: 'AuthRedirect'
 })
 export default class extends Vue {
-  created() {
+  created () {
     const hash = window.location.search.slice(1)
     if (window.localStorage) {
       window.localStorage.setItem('x-admin-oauth-code', hash)
@@ -13,7 +13,7 @@ export default class extends Vue {
     }
   }
 
-  render() {
+  render () {
     // Avoid warning for missing template
   }
 }

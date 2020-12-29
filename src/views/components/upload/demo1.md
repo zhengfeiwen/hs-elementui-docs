@@ -14,6 +14,31 @@
   </hs-upload>
 </template>
 
+<script lang='ts'>
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
+  name: 'demo1'
+})
+export default class extends Vue {
+  private imageUrl: string = ''
+  private handleAvatarSuccess (res: any, file: any) {
+    this.imageUrl = URL.createObjectURL(file.raw)
+  }
+  private beforeAvatarUpload (file: any) {
+    const isJPG = file.type === 'image/jpeg'
+    const isLt2M = file.size / 1024 / 1024 < 2
+
+    if (!isJPG) {
+      this.$message.error('上传头像图片只能是 JPG 格式!')
+    }
+    if (!isLt2M) {
+      this.$message.error('上传头像图片大小不能超过 2MB!')
+    }
+    return isJPG && isLt2M
+  }
+}
+</script>
+
 <style>
 .avatar-uploader .el-upload {
   border: 1px dashed #d9d9d9;
@@ -39,31 +64,4 @@
   display: block;
 }
 </style>
-
-<script>
-export default {
-  data () {
-    return {
-      imageUrl: ''
-    }
-  },
-  methods: {
-    handleAvatarSuccess (res, file) {
-      this.imageUrl = URL.createObjectURL(file.raw)
-    },
-    beforeAvatarUpload (file) {
-      const isJPG = file.type === 'image/jpeg'
-      const isLt2M = file.size / 1024 / 1024 < 2
-
-      if (!isJPG) {
-        this.$message.error('上传头像图片只能是 JPG 格式!')
-      }
-      if (!isLt2M) {
-        this.$message.error('上传头像图片大小不能超过 2MB!')
-      }
-      return isJPG && isLt2M
-    }
-  }
-}
-</script>
 ```

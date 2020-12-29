@@ -8,12 +8,14 @@
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    format (percentage) {
-      return percentage === 100 ? '满' : `${percentage}%`
-    }
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
+  name: 'progress'
+})
+export default class extends Vue{
+  private format (percentage: number) {
+    return percentage === 100 ? '满' : `${percentage}%`
   }
 }
 </script>

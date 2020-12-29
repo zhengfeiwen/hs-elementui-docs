@@ -74,18 +74,20 @@
     </template>
   </index-md>
 </template>
-<script>
+
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator'
 import indexMd from './index.md'
 import defaultMd from './default.md'
 import attributes from './attributes'
 import events from './events'
-import demoDefault from './default'
+import demoDefault from './default.vue'
 
-import demo1 from './demo1'
-import demo2 from './demo2'
-import demo3 from './demo3'
-import demo4 from './demo4'
-import demo5 from './demo5'
+import demo1 from './demo1.vue'
+import demo2 from './demo2.vue'
+import demo3 from './demo3.vue'
+import demo4 from './demo4.vue'
+import demo5 from './demo5.vue'
 
 import demo1Md from './demo1.md'
 import demo2Md from './demo2.md'
@@ -93,10 +95,10 @@ import demo3Md from './demo3.md'
 import demo4Md from './demo4.md'
 import demo5Md from './demo5.md'
 
-export default {
-  name: 'upload',
+@Component({
+  name: 'hs-progress',
   components: {
-    defaultMd,
+    'default-md': defaultMd,
     indexMd,
     'demo-default': demoDefault,
     demo1,
@@ -109,14 +111,12 @@ export default {
     demo3Md,
     demo4Md,
     demo5Md
-  },
-  data () {
-    return {
-      attributes,
-      events,
-      value: true,
-      value1: true
-    }
   }
+})
+export default class extends Vue {
+  private events:any = events
+  private attributes:any = attributes
+  private value: boolean = !0
+  private value1: boolean = !0
 }
 </script>

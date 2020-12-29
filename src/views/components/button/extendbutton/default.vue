@@ -9,20 +9,18 @@
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      active: {
-        active: false
-      },
-      titles: ['展开', '收起']
-    }
-  },
-  methods: {
-    change (state) {
-      this.active.active = state
-    }
+<script lang='ts'>
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
+  name: 'default'
+})
+export default class extends Vue{
+  private active = { active: !1 }
+  
+  private titles = ['展开', '收起']
+
+  private change (state: boolean) {
+    this.active.active = state
   }
 }
 </script>

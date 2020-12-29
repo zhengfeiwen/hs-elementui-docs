@@ -34,7 +34,9 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx",
-    "src/views/dashboard/admin/apiDatas.js"
+    "apiDatas.js",
+    "events.js",
+    "attributes.js"
   ],
   "exclude": [
     "node_modules"

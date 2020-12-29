@@ -29,7 +29,7 @@ import { Component, Vue } from 'vue-property-decorator'
   name: 'SocialSignin'
 })
 export default class extends Vue {
-  private wechatHandleClick(param: string) {
+  private wechatHandleClick (param: string) {
     alert('handle ' + param + ' here')
     // const appid = 'xxxxx'
     // const redirect_uri = encodeURIComponent('xxx/redirect?redirect=' + window.location.origin + '/auth-redirect')
@@ -37,7 +37,7 @@ export default class extends Vue {
     // openWindow(url, 'wechat', 540, 540)
   }
 
-  private tencentHandleClick(param: string) {
+  private tencentHandleClick (param: string) {
     alert('handle ' + param + ' here')
     // const client_id = 'xxxxx'
     // const redirect_uri = encodeURIComponent('xxx/redirect?redirect=' + window.location.origin + '/auth-redirect')

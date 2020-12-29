@@ -19,25 +19,25 @@ const sf = screenfull
 export default class extends Vue {
   private isFullscreen = false
 
-  mounted() {
+  mounted () {
     if (sf.isEnabled) {
       sf.on('change', this.change)
     }
   }
 
-  beforeDestory() {
+  beforeDestory () {
     if (sf.isEnabled) {
       sf.off('change', this.change)
     }
   }
 
-  private change() {
+  private change () {
     if (sf.isEnabled) {
       this.isFullscreen = sf.isFullscreen
     }
   }
 
-  private click() {
+  private click () {
     if (!sf.isEnabled) {
       this.$message({
         message: 'you browser can not work',

@@ -2,7 +2,6 @@
 <template>
   <div>
     <hs-iconbutton
-      flexStyle="horizontal"
       icon="wechat"
       desc="聊天"
       @click="click"
@@ -11,13 +10,16 @@
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    click () {
+
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
+  name: 'default'
+})
+export default class extends Vue{
+  private click () {
       alert('开始聊天')
     }
-  }
 }
 </script>
 ```

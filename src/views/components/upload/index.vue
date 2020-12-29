@@ -84,21 +84,22 @@
     </template>
   </index-md>
 </template>
-<script>
+
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator'
 import indexMd from './index.md'
 import defaultMd from './default.md'
 import attributes from './attributes'
 import slot from './slot'
 import events from './events'
+import demoDefault from './default.vue'
 
-import demoDefault from './default'
-
-import demo1 from './demo1'
-import demo2 from './demo2'
-import demo3 from './demo3'
-import demo4 from './demo4'
-import demo5 from './demo5'
-import demo6 from './demo6'
+import demo1 from './demo1.vue'
+import demo2 from './demo2.vue'
+import demo3 from './demo3.vue'
+import demo4 from './demo4.vue'
+import demo5 from './demo5.vue'
+import demo6 from './demo6.vue'
 
 import demo1Md from './demo1.md'
 import demo2Md from './demo2.md'
@@ -107,10 +108,10 @@ import demo4Md from './demo4.md'
 import demo5Md from './demo5.md'
 import demo6Md from './demo6.md'
 
-export default {
-  name: 'upload',
+@Component({
+  name: 'hs-progress',
   components: {
-    defaultMd,
+    'default-md': defaultMd,
     indexMd,
     'demo-default': demoDefault,
     demo1,
@@ -125,13 +126,13 @@ export default {
     demo4Md,
     demo5Md,
     demo6Md
-  },
-  data () {
-    return {
-      attributes,
-      slot,
-      events
-    }
   }
+})
+export default class extends Vue {
+  private events:any = events
+  private slot:any = slot
+  private attributes:any = attributes
+  private value: boolean = !0
+  private value1: boolean = !0
 }
 </script>
