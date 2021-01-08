@@ -84,11 +84,11 @@ import { ErrorLogModule } from '@/store/modules/error-log'
 export default class extends Vue {
   private dialogTableVisible = false
 
-  get errorLogs() {
+  get errorLogs () {
     return ErrorLogModule.logs
   }
 
-  private clearAll() {
+  private clearAll () {
     this.dialogTableVisible = false
     ErrorLogModule.ClearErrorLog()
   }

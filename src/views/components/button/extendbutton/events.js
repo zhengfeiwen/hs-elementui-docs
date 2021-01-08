@@ -1,4 +1,4 @@
-export default [
+export const events = [
   {
     prop: 'change',
     desc: '切换事件',

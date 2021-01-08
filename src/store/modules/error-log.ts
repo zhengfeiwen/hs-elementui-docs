@@ -17,22 +17,22 @@ class ErrorLog extends VuexModule implements IErrorLogState {
   public logs: IErrorLog[] = []
 
   @Mutation
-  private ADD_ERROR_LOG(log: IErrorLog) {
+  private ADD_ERROR_LOG (log: IErrorLog) {
     this.logs.push(log)
   }
 
   @Mutation
-  private CLEAR_ERROR_LOG() {
+  private CLEAR_ERROR_LOG () {
     this.logs.splice(0)
   }
 
   @Action
-  public AddErrorLog(log: IErrorLog) {
+  public AddErrorLog (log: IErrorLog) {
     this.ADD_ERROR_LOG(log)
   }
 
   @Action
-  public ClearErrorLog() {
+  public ClearErrorLog () {
     this.CLEAR_ERROR_LOG()
   }
 }

@@ -70,7 +70,7 @@ export default class extends Vue {
   private ewizardClap = 'https://wpimg.wallstcn.com/007ef517-bafd-4066-aae4-6883632d9646'
   private dialogVisible = false
 
-  private back() {
+  private back () {
     if (this.$route.query.noGoBack) {
       this.$router.push({ path: '/dashboard' }).catch(err => {
         console.warn(err)

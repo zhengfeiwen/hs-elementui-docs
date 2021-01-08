@@ -1,4 +1,4 @@
-export default [
+export const attributes = [
   {
     prop: 'percentage',
     desc: '百分比（必填）',

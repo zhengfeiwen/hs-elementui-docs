@@ -1,7 +1,7 @@
 import { DirectiveOptions } from 'vue'
 
 export const elDraggableDialog: DirectiveOptions = {
-  bind(el, _, vnode) {
+  bind (el, _, vnode) {
     const dragDom = el.querySelector('.el-dialog') as HTMLElement
     const dialogHeaderEl = el.querySelector('.el-dialog__header') as HTMLElement
     dragDom.style.cssText += ';top:0px;'

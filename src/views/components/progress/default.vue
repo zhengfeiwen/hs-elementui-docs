@@ -11,9 +11,9 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 @Component({
-  name: 'progress'
+  name: 'defalut'
 })
-export default class extends Vue{
+export default class extends Vue {
   private format (percentage: number) {
     return percentage === 100 ? '满' : `${percentage}%`
   }

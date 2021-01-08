@@ -11,15 +11,15 @@ let errorCallback: Function | null
 let clipboardInstance: Clipboard | null
 
 export const clipboard: DirectiveOptions = {
-  bind(el, binding) {
+  bind (el, binding) {
     if (binding.arg === 'success') {
       successCallback = binding.value
     } else if (binding.arg === 'error') {
       errorCallback = binding.value
     } else {
       clipboardInstance = new Clipboard(el, {
-        text() { return binding.value },
-        action() { return binding.arg === 'cut' ? 'cut' : 'copy' }
+        text () { return binding.value },
+        action () { return binding.arg === 'cut' ? 'cut' : 'copy' }
       })
       clipboardInstance.on('success', e => {
         const callback = successCallback
@@ -32,20 +32,20 @@ export const clipboard: DirectiveOptions = {
     }
   },
 
-  update(el, binding) {
+  update (el, binding) {
     if (binding.arg === 'success') {
       successCallback = binding.value
     } else if (binding.arg === 'error') {
       errorCallback = binding.value
     } else {
       clipboardInstance = new Clipboard(el, {
-        text() { return binding.value },
-        action() { return binding.arg === 'cut' ? 'cut' : 'copy' }
+        text () { return binding.value },
+        action () { return binding.arg === 'cut' ? 'cut' : 'copy' }
       })
     }
   },
 
-  unbind(_, binding) {
+  unbind (_, binding) {
     if (binding.arg === 'success') {
       successCallback = null
     } else if (binding.arg === 'error') {

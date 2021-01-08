@@ -6,42 +6,42 @@
   </div>
 </template>
 
-<script>
-export default {
-  data () {
-    return {
-      btns: [
-        {
-          title: 'hs-elementui',
-          href: 'https://github.com/zhengfeiwen/hs-elementui-docs'
-        },
-        {
-          title: 'iview-admin',
-          href: 'https://panjiachen.gitee.io/vue-element-admin/#/dashboard'
-        },
-        {
-          title: 'vue',
-          href: 'https://cn.vuejs.org/v2/guide/index.html'
-        },
-        {
-          title: 'Mock',
-          href: 'http://mockjs.com/'
-        },
-        {
-          title: 'TypeScript',
-          href: 'https://www.tslang.cn/docs/home.html'
-        },
-        {
-          title: 'Element-ui',
-          href: 'https://element.eleme.cn/#/zh-CN/component/card'
-        },
-        {
-          title: 'vue-elemrnt-admin',
-          href: 'https://panjiachen.gitee.io/vue-element-admin-site/zh/guide/'
-        }
-      ]
+<script lang='ts'>
+import { Component, Vue } from 'vue-property-decorator'
+@Component({
+  name: 'documentation'
+})
+export default class extends Vue {
+  private btns = [
+    {
+      title: 'hs-elementui',
+      href: 'https://github.com/zhengfeiwen/hs-elementui-docs'
+    },
+    {
+      title: 'iview-admin',
+      href: 'https://panjiachen.gitee.io/vue-element-admin/#/dashboard'
+    },
+    {
+      title: 'vue',
+      href: 'https://cn.vuejs.org/v2/guide/index.html'
+    },
+    {
+      title: 'Mock',
+      href: 'http://mockjs.com/'
+    },
+    {
+      title: 'TypeScript',
+      href: 'https://www.tslang.cn/docs/home.html'
+    },
+    {
+      title: 'Element-ui',
+      href: 'https://element.eleme.cn/#/zh-CN/component/card'
+    },
+    {
+      title: 'vue-elemrnt-admin',
+      href: 'https://panjiachen.gitee.io/vue-element-admin-site/zh/guide/'
     }
-  }
+  ]
 }
 </script>
 

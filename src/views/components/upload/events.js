@@ -1,4 +1,4 @@
-export default [
+export const events = [
   {
     prop: 'clearFiles',
     desc: '清空已上传的文件列表（该方法不支持在 before-upload 中调用）',

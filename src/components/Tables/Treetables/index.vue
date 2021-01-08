@@ -118,7 +118,7 @@ export default {
       if (row.hasChild) {
         return 'col-parents'
       } else {
-        if (this.tableSessionMing['resourcePoolMing'] && this.tableSessionMing['resourcePoolMing'].indexOf(row.id) !== -1) {
+        if (this.tableSessionMing.resourcePoolMing && this.tableSessionMing.resourcePoolMing.indexOf(row.id) !== -1) {
           return 'col-chlid col-chlid-title'
         } else {
           return 'col-chlid-title'

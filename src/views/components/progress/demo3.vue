@@ -17,7 +17,7 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'demo3'
 })
-export default class extends Vue{
+export default class extends Vue {
 }
 </script>
 <style lang='scss' scoped>

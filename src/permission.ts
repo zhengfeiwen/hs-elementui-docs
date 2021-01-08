@@ -4,6 +4,7 @@ import 'nprogress/nprogress.css'
 import { Message } from 'element-ui'
 import { Route } from 'vue-router'
 import { UserModule } from '@/store/modules/user'
+import { RightModule } from '@/store/modules/right'
 import { PermissionModule } from '@/store/modules/permission'
 import i18n from '@/lang' // Internationalization
 import settings from './settings'
@@ -21,7 +22,7 @@ const getPageTitle = (key: string) => {
   return `${settings.title}`
 }
 
-router.beforeEach(async(to: Route, _: Route, next: any) => {
+router.beforeEach(async (to: Route, _: Route, next: any) => {
   // Start progress bar
   NProgress.start()
 
@@ -33,13 +34,17 @@ router.beforeEach(async(to: Route, _: Route, next: any) => {
       NProgress.done()
     } else {
       // Check whether the user has obtained his permission roles
-      if (UserModule.roles.length === 0) {
+      if (RightModule.accessroutes.length === 0) {
         try {
           // Note: roles must be a object array! such as: ['admin'] or ['developer', 'editor']
-          await UserModule.GetUserInfo()
-          const roles = UserModule.roles
+          await RightModule.getRightByUserId(UserModule.id).catch(res => {
+            RightModule.ResetToken()
+            Message.error(res.msg || 'Has Error')
+            next(`/login?redirect=${to.path}`)
+            NProgress.done()
+          })
           // Generate accessible routes map based on role
-          PermissionModule.GenerateRoutes(roles)
+          PermissionModule.GenerateRoutes(RightModule.accessroutes)
           // Dynamically add accessible routes
           router.addRoutes(PermissionModule.dynamicRoutes)
           // Hack: ensure addRoutes is complete
@@ -47,7 +52,7 @@ router.beforeEach(async(to: Route, _: Route, next: any) => {
           next({ ...to, replace: true })
         } catch (err) {
           // Remove token and redirect to login page
-          UserModule.ResetToken()
+          RightModule.ResetToken()
           Message.error(err || 'Has Error')
           next(`/login?redirect=${to.path}`)
           NProgress.done()

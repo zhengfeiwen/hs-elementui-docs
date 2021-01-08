@@ -16,7 +16,7 @@
       filterable
       default-first-option
       remote
-      placeholder="Search"
+      placeholder="搜索菜单"
       class="header-search-select"
       @change="change"
     >
@@ -49,31 +49,31 @@ export default class extends Vue {
   private searchPool: RouteConfig[] = []
   private fuse?: Fuse<RouteConfig>
 
-  get routes() {
+  get routes () {
     return PermissionModule.routes
   }
 
-  get lang() {
+  get lang () {
     return AppModule.language
   }
 
   @Watch('lang')
-  private onLangChange() {
+  private onLangChange () {
     this.searchPool = this.generateRoutes(this.routes)
   }
 
   @Watch('routes')
-  private onRoutesChange() {
+  private onRoutesChange () {
     this.searchPool = this.generateRoutes(this.routes)
   }
 
   @Watch('searchPool')
-  private onSearchPoolChange(value: RouteConfig[]) {
+  private onSearchPoolChange (value: RouteConfig[]) {
     this.initFuse(value)
   }
 
   @Watch('show')
-  private onShowChange(value: boolean) {
+  private onShowChange (value: boolean) {
     if (value) {
       document.body.addEventListener('click', this.close)
     } else {
@@ -81,24 +81,24 @@ export default class extends Vue {
     }
   }
 
-  mounted() {
+  mounted () {
     this.searchPool = this.generateRoutes(this.routes)
   }
 
-  private click() {
+  private click () {
     this.show = !this.show
     if (this.show) {
       this.$refs.headerSearchSelect && (this.$refs.headerSearchSelect as HTMLElement).focus()
     }
   }
 
-  private close() {
+  private close () {
     this.$refs.headerSearchSelect && (this.$refs.headerSearchSelect as HTMLElement).blur()
     this.options = []
     this.show = false
   }
 
-  private change(route: RouteConfig) {
+  private change (route: RouteConfig) {
     this.$router.push(route.path).catch(err => {
       console.warn(err)
     })
@@ -109,7 +109,7 @@ export default class extends Vue {
     })
   }
 
-  private initFuse(list: RouteConfig[]) {
+  private initFuse (list: RouteConfig[]) {
     this.fuse = new Fuse(list, {
       shouldSort: true,
       threshold: 0.4,
@@ -117,8 +117,11 @@ export default class extends Vue {
       distance: 100,
       minMatchCharLength: 1,
       keys: [{
+        name: 'name',
+        weight: 0.4
+      }, {
         name: 'title',
-        weight: 0.7
+        weight: 0.3
       }, {
         name: 'path',
         weight: 0.3
@@ -128,25 +131,23 @@ export default class extends Vue {
 
   // Filter out the routes that can be displayed in the sidebar
   // And generate the internationalized title
-  private generateRoutes(routes: RouteConfig[], basePath = '/', prefixTitle: string[] = []) {
+  private generateRoutes (routes: RouteConfig[], basePath = '/', prefixTitle: string[] = []) {
     let res: RouteConfig[] = []
-
     for (const router of routes) {
       // skip hidden router
       if (router.meta && router.meta.hidden) {
         continue
       }
-
       const data: RouteConfig = {
         path: path.resolve(basePath, router.path),
         meta: {
           title: [...prefixTitle]
         }
       }
-
+      let i18ntitle = ''
       if (router.meta && router.meta.title) {
         // generate internationalized title
-        const i18ntitle = i18n.t(`route.${router.meta.title}`).toString()
+        i18ntitle = i18n.t(`route.${router.meta.title}`).toString()
         data.meta.title = [...data.meta.title, i18ntitle]
         if (router.redirect !== 'noRedirect') {
           // only push the routes with title
@@ -161,13 +162,16 @@ export default class extends Vue {
         if (tempRoutes.length >= 1) {
           res = [...res, ...tempRoutes]
         }
+      } else {
+        data.name = i18ntitle
       }
     }
     return res
   }
 
-  private querySearch(query: string) {
+  private querySearch (query: string) {
     if (query !== '') {
+      console.log(this.fuse)
       if (this.fuse) {
         this.options = this.fuse.search(query).map((result) => result.item)
       }

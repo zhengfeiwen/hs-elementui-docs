@@ -44,19 +44,19 @@ import variables from '@/styles/_variables.scss'
   }
 })
 export default class extends Vue {
-  get sidebar() {
+  get sidebar () {
     return AppModule.sidebar
   }
 
-  get routes() {
+  get routes () {
     return PermissionModule.routes
   }
 
-  get showLogo() {
+  get showLogo () {
     return SettingsModule.showSidebarLogo
   }
 
-  get menuActiveTextColor() {
+  get menuActiveTextColor () {
     if (SettingsModule.sidebarTextTheme) {
       return SettingsModule.theme
     } else {
@@ -64,11 +64,11 @@ export default class extends Vue {
     }
   }
 
-  get variables() {
+  get variables () {
     return variables
   }
 
-  get activeMenu() {
+  get activeMenu () {
     const route = this.$route
     const { meta, path } = route
     // if set path, the sidebar will highlight the path you set
@@ -78,7 +78,7 @@ export default class extends Vue {
     return path
   }
 
-  get isCollapse() {
+  get isCollapse () {
     return !this.sidebar.opened
   }
 }

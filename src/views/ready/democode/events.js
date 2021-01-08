@@ -1,7 +1,7 @@
-export default [
+export const events = [
   {
-    prop: 'change',
-    desc: 'change事件',
-    callback: 'val:String'
+    prop: 'handle',
+    desc: 'do something',
+    callback: 'arg1:string, arg2:number'
   }
 ]

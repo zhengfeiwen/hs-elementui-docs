@@ -32,12 +32,15 @@ export default class extends Vue {
       url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
     }
   ]
+
   private submitUpload () {
     (this.$refs.upload as Upload).submit()
   }
+
   private handleRemove (file: any, fileList: any) {
     console.log(file, fileList)
   }
+
   private handlePreview (file: any) {
     console.log(file)
   }

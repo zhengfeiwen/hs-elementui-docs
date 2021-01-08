@@ -34,12 +34,12 @@ export default class extends Vue {
 
   private show = false
 
-  get theme() {
+  get theme () {
     return SettingsModule.theme
   }
 
   @Watch('show')
-  private onShowChange(value: boolean) {
+  private onShowChange (value: boolean) {
     if (value && !this.clickNotClose) {
       this.addEventClick()
     }
@@ -50,20 +50,20 @@ export default class extends Vue {
     }
   }
 
-  mounted() {
+  mounted () {
     this.insertToBody()
   }
 
-  beforeDestroy() {
+  beforeDestroy () {
     const elx = this.$refs.rightPanel as Element
     elx.remove()
   }
 
-  private addEventClick() {
+  private addEventClick () {
     window.addEventListener('click', this.closeSidebar)
   }
 
-  private closeSidebar(ev: MouseEvent) {
+  private closeSidebar (ev: MouseEvent) {
     const parent = (ev.target as HTMLElement).closest('.rightPanel')
     if (!parent) {
       this.show = false
@@ -71,7 +71,7 @@ export default class extends Vue {
     }
   }
 
-  private insertToBody() {
+  private insertToBody () {
     const elx = this.$refs.rightPanel as Element
     const body = document.querySelector('body')
     if (body) {

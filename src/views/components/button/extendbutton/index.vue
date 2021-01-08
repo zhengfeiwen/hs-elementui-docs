@@ -22,12 +22,12 @@
   </index-md>
 </template>
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import indexMd from './index.md'
 import defaultMd from './default.md'
-import attributes from './attributes'
-import events from './events'
 import demoDefault from './default.vue'
+const { attributes } = require('./attributes.js')
+const { events } = require('./events.js')
 @Component({
   name: 'hs-extendbutton',
   components: {

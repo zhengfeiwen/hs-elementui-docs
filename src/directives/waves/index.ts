@@ -2,7 +2,7 @@ import './waves.css'
 import { DirectiveOptions } from 'vue'
 
 export const waves: DirectiveOptions = {
-  bind(el, binding) {
+  bind (el, binding) {
     el.addEventListener('click', e => {
       const customOpts = Object.assign({}, binding.value)
       const opts = Object.assign({
@@ -25,15 +25,15 @@ export const waves: DirectiveOptions = {
           ripple.className = 'waves-ripple'
         }
         switch (opts.type) {
-          case 'center':
-            ripple.style.top = rect.height / 2 - ripple.offsetHeight / 2 + 'px'
-            ripple.style.left = rect.width / 2 - ripple.offsetWidth / 2 + 'px'
-            break
-          default:
-            ripple.style.top =
+        case 'center':
+          ripple.style.top = rect.height / 2 - ripple.offsetHeight / 2 + 'px'
+          ripple.style.left = rect.width / 2 - ripple.offsetWidth / 2 + 'px'
+          break
+        default:
+          ripple.style.top =
               (e.pageY - rect.top - ripple.offsetHeight / 2 - document.documentElement.scrollTop ||
                 document.body.scrollTop) + 'px'
-            ripple.style.left =
+          ripple.style.left =
               (e.pageX - rect.left - ripple.offsetWidth / 2 - document.documentElement.scrollLeft ||
                 document.body.scrollLeft) + 'px'
         }

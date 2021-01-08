@@ -22,17 +22,17 @@ export default class extends Vue {
   private chalk = '' // The content of theme-chalk css
   private theme = ''
 
-  get defaultTheme() {
+  get defaultTheme () {
     return SettingsModule.theme
   }
 
   @Watch('defaultTheme', { immediate: true })
-  private onDefaultThemeChange(value: string) {
+  private onDefaultThemeChange (value: string) {
     this.theme = value
   }
 
   @Watch('theme')
-  private async onThemeChange(value: string) {
+  private async onThemeChange (value: string) {
     if (!value) return
     const oldValue = this.chalk ? this.theme : ORIGINAL_THEME
     const themeCluster = this.getThemeCluster(value.replace('#', ''))
@@ -83,7 +83,7 @@ export default class extends Vue {
     message.close()
   }
 
-  private updateStyle(style: string, oldCluster: string[], newCluster: string[]) {
+  private updateStyle (style: string, oldCluster: string[], newCluster: string[]) {
     let newStyle = style
     oldCluster.forEach((color, index) => {
       newStyle = newStyle.replace(new RegExp(color, 'ig'), newCluster[index])
@@ -91,13 +91,13 @@ export default class extends Vue {
     return newStyle
   }
 
-  private getCSSString(url: string, variable: string) {
+  private getCSSString (url: string, variable: string) {
     return new Promise(resolve => {
       const xhr = new XMLHttpRequest()
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
           (this as any)[variable] = xhr.responseText.replace(/@font-face{[^}]+}/, '')
-          resolve()
+          resolve(null)
         }
       }
       xhr.open('GET', url)
@@ -105,7 +105,7 @@ export default class extends Vue {
     })
   }
 
-  private getThemeCluster(theme: string) {
+  private getThemeCluster (theme: string) {
     const tintColor = (color: string, tint: number) => {
       let red = parseInt(color.slice(0, 2), 16)
       let green = parseInt(color.slice(2, 4), 16)

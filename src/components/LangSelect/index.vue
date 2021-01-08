@@ -59,11 +59,11 @@ import settings from '../../settings'
   name: 'Login'
 })
 export default class extends Vue {
-  get language() {
+  get language () {
     return AppModule.language
   }
 
-  private handleSetLanguage(lang: string) {
+  private handleSetLanguage (lang: string) {
     this.$i18n.locale = lang
     AppModule.SetLanguage(lang)
     document.documentElement.lang = lang

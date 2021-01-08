@@ -19,7 +19,7 @@ Vue.use(VueRouter)
                                  detail see : https://vuejs.org/v2/guide/components-dynamic-async.html#keep-alive-with-Dynamic-Components
   redirect:                      if set to 'noredirect', no redirect action will be trigger when clicking the breadcrumb
   meta: {
-    roles: ['admin', 'editor']   will control the page roles (allow setting multiple roles)
+    id: '10000001'   will control the page roles (allow setting multiple roles)
     title: 'title'               the name showed in subMenu and breadcrumb (recommend set)
     icon: 'svg-name'             the icon showed in the sidebar
     hidden: true                 if true, this route will not show in the sidebar (default is false)
@@ -33,9 +33,7 @@ Vue.use(VueRouter)
 */
 
 /**
-  ConstantRoutes
-  a base page that does not have permission requirements
-  all roles can be accessed
+  基本路由，不受权限控制
 */
 export const constantRoutes: RouteConfig[] = [
   {
@@ -85,17 +83,25 @@ export const constantRoutes: RouteConfig[] = [
         }
       }
     ]
-  },
+  }
+]
+
+/**
+ * 动态路由，受权限控制
+*/
+export const asyncRoutes: RouteConfig[] = [
   {
     path: '/documentation',
     component: Layout,
     redirect: '/documentation',
+    meta: { id: '10000000' },
     children: [
       {
         path: 'index',
         component: () => import('@/views/ready/documentation.vue'),
         name: 'documentation',
         meta: {
+          id: '10000001',
           title: 'documentation',
           icon: 'documentation',
           noCache: true
@@ -107,12 +113,14 @@ export const constantRoutes: RouteConfig[] = [
     path: '/install',
     component: Layout,
     redirect: '/install',
+    meta: { id: '10000000' },
     children: [
       {
         path: 'index',
         component: () => import('@/views/ready/install/install.vue'),
         name: 'install',
         meta: {
+          id: '10000002',
           title: 'install',
           icon: 'guide',
           noCache: true
@@ -202,43 +210,6 @@ export const constantRoutes: RouteConfig[] = [
         meta: {
           title: 'profile',
           icon: 'user',
-          noCache: true
-        }
-      }
-    ]
-  }
-]
-
-/**
- * asyncRoutes
- * the routes that need to be dynamically loaded based on user roles
-*/
-export const asyncRoutes: RouteConfig[] = [
-  /** when your routing map is too long, you can split it into small modules **/
-  {
-    path: '/error',
-    component: Layout,
-    redirect: 'noredirect',
-    meta: {
-      title: 'errorPages',
-      icon: 'bug'
-    },
-    children: [
-      {
-        path: '401',
-        component: () => import(/* webpackChunkName: "error-page-401" */ '@/views/error-page/401.vue'),
-        name: 'Page401',
-        meta: {
-          title: 'page401',
-          noCache: true
-        }
-      },
-      {
-        path: '404',
-        component: () => import(/* webpackChunkName: "error-page-404" */ '@/views/error-page/404.vue'),
-        name: 'Page404',
-        meta: {
-          title: 'page404',
           noCache: true
         }
       }

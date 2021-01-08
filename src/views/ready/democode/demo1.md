@@ -1,14 +1,3 @@
 ```
-<template>
-  <el-switch v-model="value1"></el-switch>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        value1: true,
-      },
-    }
-  }
-</script>
+这里贴组件其他实现代码
 ```

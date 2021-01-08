@@ -1,4 +1,4 @@
-export default [
+export const attributes = [
   {
     prop: 'tabType',
     desc: 'tab的类型',

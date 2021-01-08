@@ -19,10 +19,12 @@ import { Component, Vue } from 'vue-property-decorator'
   name: 'demo1'
 })
 export default class extends Vue {
-  private imageUrl: string = ''
+  private imageUrl = ''
+
   private handleAvatarSuccess (res: any, file: any) {
     this.imageUrl = URL.createObjectURL(file.raw)
   }
+
   private beforeAvatarUpload (file: any) {
     const isJPG = file.type === 'image/jpeg'
     const isLt2M = file.size / 1024 / 1024 < 2

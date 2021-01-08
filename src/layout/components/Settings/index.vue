@@ -37,51 +37,51 @@
 </template>
 
 <script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator';
-import { SettingsModule } from '@/store/modules/settings';
-import ThemePicker from '@/components/ThemePicker/index.vue';
+import { Component, Vue } from 'vue-property-decorator'
+import { SettingsModule } from '@/store/modules/settings'
+import ThemePicker from '@/components/ThemePicker/index.vue'
 
 @Component({
   name: 'Settings',
   components: {
-    ThemePicker,
-  },
+    ThemePicker
+  }
 })
 export default class extends Vue {
-  get fixedHeader() {
-    return SettingsModule.fixedHeader;
+  get fixedHeader () {
+    return SettingsModule.fixedHeader
   }
 
-  set fixedHeader(value) {
-    SettingsModule.ChangeSetting({ key: 'fixedHeader', value });
+  set fixedHeader (value) {
+    SettingsModule.ChangeSetting({ key: 'fixedHeader', value })
   }
 
-  get showTagsView() {
-    return SettingsModule.showTagsView;
+  get showTagsView () {
+    return SettingsModule.showTagsView
   }
 
-  set showTagsView(value) {
-    SettingsModule.ChangeSetting({ key: 'showTagsView', value });
+  set showTagsView (value) {
+    SettingsModule.ChangeSetting({ key: 'showTagsView', value })
   }
 
-  get showSidebarLogo() {
-    return SettingsModule.showSidebarLogo;
+  get showSidebarLogo () {
+    return SettingsModule.showSidebarLogo
   }
 
-  set showSidebarLogo(value) {
-    SettingsModule.ChangeSetting({ key: 'showSidebarLogo', value });
+  set showSidebarLogo (value) {
+    SettingsModule.ChangeSetting({ key: 'showSidebarLogo', value })
   }
 
-  get sidebarTextTheme() {
-    return SettingsModule.sidebarTextTheme;
+  get sidebarTextTheme () {
+    return SettingsModule.sidebarTextTheme
   }
 
-  set sidebarTextTheme(value) {
-    SettingsModule.ChangeSetting({ key: 'sidebarTextTheme', value });
+  set sidebarTextTheme (value) {
+    SettingsModule.ChangeSetting({ key: 'sidebarTextTheme', value })
   }
 
-  private themeChange(value: string) {
-    SettingsModule.ChangeSetting({ key: 'theme', value });
+  private themeChange (value: string) {
+    SettingsModule.ChangeSetting({ key: 'theme', value })
   }
 }
 </script>

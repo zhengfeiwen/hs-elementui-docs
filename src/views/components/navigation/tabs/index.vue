@@ -52,8 +52,8 @@
 import indexMd from './index.md'
 import defaultDemoMd from './defaultDemo.md'
 import demo1Md from './demo1.md'
-import attributes from './attributes'
-import events from './events'
+const { attributes } = require('./attributes.js')
+const { events } = require('./events.js')
 
 export default {
   name: 'tabs',

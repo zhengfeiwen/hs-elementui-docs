@@ -26,8 +26,8 @@
 <script>
 import indexMd from './index.md'
 import defaultDemoMd from './defaultDemo.md'
-import attributes from './attributes'
-import events from './events'
+const attributes = require('./attributes.js')
+const events = require('./events.js')
 
 export default {
   name: 'querycondition',
@@ -279,7 +279,6 @@ export default {
     changeQ: function (data, key, labels) {
       // do someing
       if (!key) return
-      console.log(data[key])
       alert(key + '|' + data[key] + '|' + (labels[key] ? labels[key] : ''))
       this.conditions[key].options = [
         {

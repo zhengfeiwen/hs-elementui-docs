@@ -21,7 +21,14 @@ export default {
     button: '按钮',
     iconbutton: '图标按钮',
     logobutton: 'logo按钮',
-    extendbutton: '展开按钮'
+    extendbutton: '展开按钮',
+    tinymce: '富文本框',
+    card: '卡片',
+    image: '图片',
+    drawer: '抽屉',
+    divider: '分割线',
+    page401: '401',
+    page404: '404'
   },
   navbar: {
     logOut: '退出登录',

@@ -1,4 +1,4 @@
-export default [
+export const attributes = [
   {
     prop: 'dateType',
     desc: 'datepicker的类型',

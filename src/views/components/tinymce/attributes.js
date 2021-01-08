@@ -1,4 +1,4 @@
-export default [
+export const attributes = [
   {
     prop: 'tinyVal',
     desc: '富文本内容',

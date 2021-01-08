@@ -707,6 +707,51 @@ paths:
                         $ref: '#/components/schemas/User'
         401:
           $ref: '#/components/responses/Unauthorized'
+  /json/getRightByUserId:
+    post:
+      tags:
+        - right
+      summary: 获取用户权限
+      description: 获取用户权限.
+      operationId: getRightByUserId
+      security:
+        - AccessTokenAuth: []
+      parameters:
+        - id: id
+          in: path
+          required: true
+          description: Article id.
+          schema:
+            type: integer
+            format: int64
+        - sysId: id
+          in: path
+          required: true
+          description: Article id.
+          schema:
+            type: integer
+            format: int64
+        - token: id
+          in: path
+          required: true
+          description: Article id.
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    format: int32
+                  data:
+                    type: object
+        401:
+          $ref: '#/components/responses/Unauthorized'
 components:
   securitySchemes:
     AccessTokenAuth:

@@ -16,49 +16,49 @@
   </el-dropdown>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { AppModule } from "@/store/modules/app";
-import { TagsViewModule } from "@/store/modules/tags-view";
+<script lang='ts'>
+import { Component, Vue } from 'vue-property-decorator'
+import { AppModule } from '@/store/modules/app'
+import { TagsViewModule } from '@/store/modules/tags-view'
 
 @Component({
-  name: "SizeSelect",
+  name: 'SizeSelect'
 })
 export default class extends Vue {
   private sizeOptions = [
-    { label: "Default", value: "default" },
-    { label: "Medium", value: "medium" },
-    { label: "Small", value: "small" },
-    { label: "Mini", value: "mini" },
+    { label: 'Default', value: 'default' },
+    { label: 'Medium', value: 'medium' },
+    { label: 'Small', value: 'small' },
+    { label: 'Mini', value: 'mini' }
   ];
 
-  get size() {
-    return AppModule.size;
+  get size () {
+    return AppModule.size
   }
 
-  private handleSetSize(size: string) {
-    (this as any).$ELEMENT.size = size;
-    AppModule.SetSize(size);
-    this.refreshView();
+  private handleSetSize (size: string) {
+    (this as any).$ELEMENT.size = size
+    AppModule.SetSize(size)
+    this.refreshView()
     this.$message({
-      message: "Switch Size Success",
-      type: "success",
-    });
+      message: 'Switch Size Success',
+      type: 'success'
+    })
   }
 
-  private refreshView() {
+  private refreshView () {
     // In order to make the cached page re-rendered
-    TagsViewModule.delAllCachedViews();
-    const { fullPath } = this.$route;
+    TagsViewModule.delAllCachedViews()
+    const { fullPath } = this.$route
     this.$nextTick(() => {
       this.$router
         .replace({
-          path: "/redirect" + fullPath,
+          path: '/redirect' + fullPath
         })
         .catch((err) => {
-          console.warn(err);
-        });
-    });
+          console.warn(err)
+        })
+    })
   }
 }
 </script>

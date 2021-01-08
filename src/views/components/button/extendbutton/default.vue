@@ -14,9 +14,9 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'default'
 })
-export default class extends Vue{
+export default class extends Vue {
   private active = { active: !1 }
-  
+
   private titles = ['展开', '收起']
 
   private change (state: boolean) {

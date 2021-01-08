@@ -323,10 +323,12 @@ export default {
     },
     toDetail: function (row, column) {
       // do someing
+      console.log(row, column)
     },
 
     toDetailClick: function (row, column) {
       // do someing
+      console.log(row, column)
     }
   }
 }

@@ -4,7 +4,7 @@
     <hs-progress
       type="dashboard"
       :percentage="percentage"
-      :color="colors"
+      :color="customColors"
     ></hs-progress>
     <div>
       <el-button-group>
@@ -18,7 +18,7 @@
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator'
 @Component({
-  name: 'demo2'
+  name: 'demo4'
 })
 export default class extends Vue{
   private percentage: number =  10

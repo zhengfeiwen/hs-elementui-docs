@@ -21,7 +21,7 @@ import { Component, Vue } from 'vue-property-decorator'
 })
 export default class extends Vue {
   private fileList: object[] = [
-    { 
+    {
       ame: 'food.jpeg',
       url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
     },
@@ -30,10 +30,12 @@ export default class extends Vue {
       url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
     }
   ]
-  handleRemove (file: any, fileList: any) {
+
+  private handleRemove (file: any, fileList: any) {
     console.log(file, fileList)
   }
-  handlePreview (file: any) {
+
+  private handlePreview (file: any) {
     console.log(file)
   }
 }

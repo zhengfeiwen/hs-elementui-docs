@@ -1,7 +1,5 @@
 <template>
-  <ea-view center>
-    <update-md />
-  </ea-view>
+  <update-md />
 </template>
 <script>
 import updateMd from '../../../UPDATE.md'

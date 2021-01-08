@@ -1,4 +1,4 @@
-export default [
+export const slot = [
   {
     prop: 'trigger',
     desc: '触发文件选择框的内容'

@@ -3,7 +3,7 @@
     <div class="home_recommend">
       <el-carousel :interval="4000" type="card" height="200px">
         <el-carousel-item v-for="(item, i) in reconmmends" :key="i">
-          <el-card><img :src="item.href" alt=""></el-card>
+          <el-card><hs-image :src="item.href" ></hs-image></el-card>
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -54,7 +54,7 @@ const { api, latest, hot } = require('./datas.js')
 @Component({
   name: 'dashboard'
 })
-export default class extends Vue { 
+export default class extends Vue {
   private apiData = api
   private latestData = latest
   private hotData = hot
@@ -81,10 +81,9 @@ export default class extends Vue {
       href: require('@/assets/statics/home/upload.png')
     }
   ]
-  
 
   private handleNodeClick () {
-    
+    // do something
   }
 }
 </script>
@@ -119,7 +118,6 @@ export default class extends Vue {
         }
       }
     }
-    
   }
   .home_desc{
     height: 10%;

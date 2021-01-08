@@ -1,4 +1,4 @@
-export default [
+export const events = [
   {
     prop: 'handleClick',
     desc: '点击事件',

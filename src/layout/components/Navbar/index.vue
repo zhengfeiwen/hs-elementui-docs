@@ -52,19 +52,20 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { AppModule } from "@/store/modules/app";
-import { UserModule } from "@/store/modules/user";
-import Breadcrumb from "@/components/Breadcrumb/index.vue";
-import ErrorLog from "@/components/ErrorLog/index.vue";
-import Hamburger from "@/components/Hamburger/index.vue";
-import HeaderSearch from "@/components/HeaderSearch/index.vue";
-import LangSelect from "@/components/LangSelect/index.vue";
-import Screenfull from "@/components/Screenfull/index.vue";
-import SizeSelect from "@/components/SizeSelect/index.vue";
+import { Component, Vue } from 'vue-property-decorator'
+import { AppModule } from '@/store/modules/app'
+import { UserModule } from '@/store/modules/user'
+import { RightModule } from '@/store/modules/right'
+import Breadcrumb from '@/components/Breadcrumb/index.vue'
+import ErrorLog from '@/components/ErrorLog/index.vue'
+import Hamburger from '@/components/Hamburger/index.vue'
+import HeaderSearch from '@/components/HeaderSearch/index.vue'
+import LangSelect from '@/components/LangSelect/index.vue'
+import Screenfull from '@/components/Screenfull/index.vue'
+import SizeSelect from '@/components/SizeSelect/index.vue'
 
 @Component({
-  name: "Navbar",
+  name: 'Navbar',
   components: {
     Breadcrumb,
     ErrorLog,
@@ -72,37 +73,37 @@ import SizeSelect from "@/components/SizeSelect/index.vue";
     HeaderSearch,
     LangSelect,
     Screenfull,
-    SizeSelect,
-  },
+    SizeSelect
+  }
 })
 export default class extends Vue {
-  get sidebar() {
-    return AppModule.sidebar;
+  get sidebar () {
+    return AppModule.sidebar
   }
 
-  get device() {
-    return AppModule.device.toString();
+  get device () {
+    return AppModule.device.toString()
   }
 
-  get avatar() {
-    return UserModule.avatar;
+  get avatar () {
+    return RightModule.userInfo.avatar
   }
 
-  get userinfo() {
-    return UserModule.context.state;
+  get userinfo () {
+    return RightModule.userinfo
   }
 
-  private toggleSideBar() {
-    AppModule.ToggleSideBar(false);
+  private toggleSideBar () {
+    AppModule.ToggleSideBar(false)
   }
 
-  private async logout() {
-    await UserModule.LogOut();
+  private async logout () {
+    await UserModule.LogOut()
     this.$router
       .push(`/login?redirect=${this.$route.fullPath}`)
       .catch((err) => {
-        console.warn(err);
-      });
+        console.warn(err)
+      })
   }
 }
 </script>

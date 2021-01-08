@@ -76,11 +76,9 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 import indexMd from './index.md'
 import defaultMd from './default.md'
-import attributes from './attributes'
-import events from './events'
 import demoDefault from './default.vue'
 
 import demo1 from './demo1.vue'
@@ -94,6 +92,8 @@ import demo2Md from './demo2.md'
 import demo3Md from './demo3.md'
 import demo4Md from './demo4.md'
 import demo5Md from './demo5.md'
+const { attributes } = require('./attributes.js')
+const { events } = require('./events.js')
 
 @Component({
   name: 'hs-progress',
@@ -116,7 +116,7 @@ import demo5Md from './demo5.md'
 export default class extends Vue {
   private events:any = events
   private attributes:any = attributes
-  private value: boolean = !0
-  private value1: boolean = !0
+  private value = !0
+  private value1 = !0
 }
 </script>

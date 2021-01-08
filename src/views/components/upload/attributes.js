@@ -1,4 +1,4 @@
-export default [
+export const attributes = [
   {
     prop: 'action',
     desc: '必选参数，上传的地址',

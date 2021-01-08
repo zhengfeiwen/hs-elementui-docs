@@ -1,7 +1,5 @@
 <template>
-  <ea-view center>
-    <install-md></install-md>
-  </ea-view>
+  <install-md></install-md>
 </template>
 <script>
 import installMd from './install.md'

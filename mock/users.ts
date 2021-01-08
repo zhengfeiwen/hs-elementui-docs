@@ -4,7 +4,7 @@ import { IUserData } from '../src/api/types'
 
 const userList: IUserData[] = [
   {
-    id: 0,
+    id: 1,
     username: 'admin',
     password: 'any',
     name: 'Super Admin',
@@ -15,7 +15,7 @@ const userList: IUserData[] = [
     roles: ['admin'],
   },
   {
-    id: 1,
+    id: 2,
     username: 'editor',
     password: 'any',
     name: 'Normal Editor',
@@ -55,7 +55,8 @@ export const login = (req: Request, res: Response) => {
       return res.json({
         code: 20000,
         data: {
-          accessToken: username + '-token'
+          accessToken: username + '-token',
+          id: user.id
         }
       })
     }

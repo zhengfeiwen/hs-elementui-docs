@@ -14,8 +14,8 @@ import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'default'
 })
-export default class extends Vue{
-  private buttons:object[] = [
+export default class extends Vue {
+  private buttons = [
     {
       id: 'live',
       title: 'Live',
@@ -34,6 +34,7 @@ export default class extends Vue{
       color: 'lightbule'
     }
   ]
+
   private handleClick (key: string) {
     alert(key)
   }

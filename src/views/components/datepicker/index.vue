@@ -14,7 +14,7 @@
       <demo-block>
         <p>切换日期事件操作<code>@change</code>事件</p>
         <template v-slot:source>
-          <hs-datepicker @change="daterangeHandle"></hs-datepicker>
+          <hs-datepicker @change="daterangeHandle" :pickerOptions="pickerOptions"></hs-datepicker>
         </template>
         <template v-slot:highlight>
           <demo1-md></demo1-md>
@@ -35,8 +35,8 @@
 import indexMd from './index.md'
 import defaultDemoMd from './defaultDemo.md'
 import demo1Md from './demo1.md'
-import attributes from './attributes'
-import events from './events'
+const { attributes } = require('./attributes.js')
+const { events } = require('./events.js')
 
 export default {
   name: 'datepicker',
@@ -48,6 +48,7 @@ export default {
   data () {
     return {
       attributes,
+      pickerOptions: {},
       events,
       curTab: 'documentary',
       tabs: [

@@ -1,4 +1,4 @@
-export default [
+export const attributes = [
   {
     prop: 'titles',
     desc: '按钮名称组',

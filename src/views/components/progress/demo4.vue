@@ -3,7 +3,7 @@
     <hs-progress
       type="dashboard"
       :percentage="percentage"
-      :color="colors"
+      :color="customColors"
     ></hs-progress>
     <div>
       <el-button-group>
@@ -17,23 +17,25 @@
 <script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator'
 @Component({
-  name: 'demo2'
+  name: 'demo4'
 })
-export default class extends Vue{
-  private percentage: number =  10
-  private customColors: object[] = [
+export default class extends Vue {
+  private percentage = 10
+  private customColors = [
     { color: '#f56c6c', percentage: 20 },
     { color: '#e6a23c', percentage: 40 },
     { color: '#5cb87a', percentage: 60 },
     { color: '#1989fa', percentage: 80 },
     { color: '#6f7ad3', percentage: 100 }
   ]
+
   private increase () {
     this.percentage += 10
     if (this.percentage > 100) {
       this.percentage = 100
     }
   }
+
   private decrease () {
     this.percentage -= 10
     if (this.percentage < 0) {

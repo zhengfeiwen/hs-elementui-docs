@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { Message, MessageBox } from 'element-ui'
 import { UserModule } from '@/store/modules/user'
+import { RightModule } from '@/store/modules/right'
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
@@ -51,6 +52,7 @@ service.interceptors.response.use(
           }
         ).then(() => {
           UserModule.ResetToken()
+          RightModule.ResetToken()
           location.reload() // To prevent bugs from vue-router
         })
       }

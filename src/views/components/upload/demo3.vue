@@ -39,17 +39,20 @@ import { Component, Vue } from 'vue-property-decorator'
   name: 'demo3'
 })
 export default class extends Vue {
-  private dialogImageUrl: string = ''
-  private dialogVisible: boolean = !1
-  private disabled: boolean = !1
-  handleRemove (file: any) {
+  private dialogImageUrl = ''
+  private dialogVisible = !1
+  private disabled = !1
+
+  private handleRemove (file: any) {
     console.log(file)
   }
-  handlePictureCardPreview (file: any) {
+
+  private handlePictureCardPreview (file: any) {
     this.dialogImageUrl = file.url
     this.dialogVisible = true
   }
-  handleDownload (file: any) {
+
+  private handleDownload (file: any) {
     console.log(file)
   }
 }
