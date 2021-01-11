@@ -1,7 +1,7 @@
 import { Response, Request, NextFunction } from 'express'
 import faker from 'faker'
 
-const right = {
+const menuRight = {
   code: 10000,
   message: "success",
   accessRoutes: [
@@ -27,7 +27,7 @@ const right = {
     phone: "13995277428",
     address: "FuZhou somewhere"
   },
-  rpcuser: {
+  rpcUser: {
     test: "xxx"
   },
   token: "VUGUHINSASASQASQWSQSHSQNS"
@@ -38,7 +38,22 @@ export const getRightByUserId = (req: Request, res: Response) => {
   return res.json({
     code: 20000,
     data: {
-      ...right
+      ...menuRight
+    }
+  })
+}
+
+
+const opRight = {
+  opType: 'query',
+  opCode: 'search'
+}
+export const getOperaRight = (req: Request, res: Response) => {
+  // const { id, sysId, token } = req.params
+  return res.json({
+    code: 20000,
+    data: {
+      ...opRight
     }
   })
 }

@@ -19,7 +19,7 @@ Vue.use(VueRouter)
                                  detail see : https://vuejs.org/v2/guide/components-dynamic-async.html#keep-alive-with-Dynamic-Components
   redirect:                      if set to 'noredirect', no redirect action will be trigger when clicking the breadcrumb
   meta: {
-    id: '10000001'   will control the page roles (allow setting multiple roles)
+    id: '10000001'               will control the page roles (allow setting multiple roles)
     title: 'title'               the name showed in subMenu and breadcrumb (recommend set)
     icon: 'svg-name'             the icon showed in the sidebar
     hidden: true                 if true, this route will not show in the sidebar (default is false)
@@ -79,7 +79,8 @@ export const constantRoutes: RouteConfig[] = [
         meta: {
           title: 'dashboard',
           icon: 'dashboard',
-          affix: true
+          affix: true,
+          id: '90000000'
         }
       }
     ]

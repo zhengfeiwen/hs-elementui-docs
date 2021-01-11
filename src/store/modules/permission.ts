@@ -8,7 +8,7 @@ const hasPermission = (rights: RightRoute[], route: RouteConfig) => {
   if (route.meta && route.meta.id) {
     return rights.some(right => route.meta.id === right.menuId)
   } else {
-    return true
+    return false
   }
 }
 

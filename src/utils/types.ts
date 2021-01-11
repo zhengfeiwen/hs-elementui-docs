@@ -16,3 +16,10 @@ export interface IUserInfo {
 }
 
 export type UserInfo  = IUserInfo
+
+export interface IOpType {
+  opType: string
+  opCode: string
+}
+
+export type OpType  = IOpType

@@ -752,6 +752,51 @@ paths:
                     type: object
         401:
           $ref: '#/components/responses/Unauthorized'
+  /json/getOperaRight:
+    post:
+      tags:
+        - right
+      summary: 获取菜单操作权限
+      description: 获取菜单操作权限.
+      operationId: getOperaRight
+      security:
+        - AccessTokenAuth: []
+      parameters:
+        - id: id
+          in: path
+          required: true
+          description: Article id.
+          schema:
+            type: integer
+            format: int64
+        - sysId: id
+          in: path
+          required: true
+          description: Article id.
+          schema:
+            type: integer
+            format: int64
+        - menuId: id
+          in: path
+          required: true
+          description: Article id.
+          schema:
+            type: string
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    format: int32
+                  data:
+                    type: object
+        401:
+          $ref: '#/components/responses/Unauthorized'
 components:
   securitySchemes:
     AccessTokenAuth:

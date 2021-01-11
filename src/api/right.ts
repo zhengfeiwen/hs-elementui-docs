@@ -7,9 +7,9 @@ export const getRightByUserId = (data: any) =>
     data
   })
 
-export const getOperaRightByUserId = (data: any) =>
+export const getOperaRight = (data: any) =>
   request({
-    url: '/json/getOperaRightByUserId',
+    url: '/json/getOperaRight',
     method: 'post',
     data
   })

@@ -36,28 +36,42 @@ router.beforeEach(async (to: Route, _: Route, next: any) => {
       // Check whether the user has obtained his permission roles
       if (RightModule.accessroutes.length === 0) {
         try {
-          // Note: roles must be a object array! such as: ['admin'] or ['developer', 'editor']
+          // 获取菜单权限
           await RightModule.getRightByUserId(UserModule.id).catch(res => {
             RightModule.ResetToken()
-            Message.error(res.msg || 'Has Error')
+            Message.error(res.msg || 'getRightByUserId Has Error')
             next(`/login?redirect=${to.path}`)
             NProgress.done()
           })
-          // Generate accessible routes map based on role
+          // 初始化菜单权限
           PermissionModule.GenerateRoutes(RightModule.accessroutes)
-          // Dynamically add accessible routes
+          // 菜单权限加入到动态路由中
           router.addRoutes(PermissionModule.dynamicRoutes)
-          // Hack: ensure addRoutes is complete
-          // Set the replace: true, so the navigation will not leave a history record
+          // 确认添加完成后 获取菜单权限
+          await RightModule.getOperaRight({id: to.meta.id, menuId: to.meta.id}).catch(res => {
+            RightModule.ResetToken()
+            Message.error(res.msg || 'getOperaRight Has Error')
+            next(`/login?redirect=${to.path}`)
+            NProgress.done()
+          })
+          // 设置 replace: true, 这样就不会留下历史记录了
           next({ ...to, replace: true })
         } catch (err) {
-          // Remove token and redirect to login page
+          // 移除token 返回到登录界面
+          UserModule.ResetToken()
           RightModule.ResetToken()
-          Message.error(err || 'Has Error')
+          Message.error(err)
           next(`/login?redirect=${to.path}`)
           NProgress.done()
         }
       } else {
+        await RightModule.getOperaRight({id: to.meta.id, menuId: to.meta.id}).catch(res => {
+          RightModule.ResetToken()
+          Message.error(res.msg || 'getOperaRight Has Error')
+          next(`/login?redirect=${to.path}`)
+          NProgress.done()
+        })
+        // 设置 replace: true, 这样就不会留下历史记录了
         next()
       }
     }

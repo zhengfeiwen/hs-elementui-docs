@@ -15,7 +15,7 @@ export const setSize = (size: string) => Cookies.set(sizeKey, size)
 
 // User
 const tokenKey = 'right_token'
-export const getToken = () => Cookies.get(tokenKey)
+export const getToken = () => Cookies.get(tokenKey) || ''
 export const setToken = (token: string) => Cookies.set(tokenKey, token)
 export const removeToken = () => Cookies.remove(tokenKey)
 // common
