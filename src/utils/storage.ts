@@ -6,7 +6,7 @@ export const SessionStorage = {
     sessionStorage.removeItem(key)
     sessionStorage.setItem(key, value)
   },
-  get: (key: string, format: string = '') => {
+  get: (key: string, format = '') => {
     if (!key) {
       throw Error('key is null')
     }

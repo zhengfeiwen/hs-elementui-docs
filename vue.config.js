@@ -6,7 +6,7 @@ const path = require('path')
 // For example, on Mac: sudo npm run / sudo yarn
 const devServerPort = 9529 // TODO: get this variable from setting.ts
 const mockServerPort = 9530 // TODO: get this variable from setting.ts
-const name = 'Vue Typescript Admin' // TODO: get this variable from setting.ts
+const name = '云端组件库文档' // TODO: get this variable from setting.ts
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/' : '/',

@@ -38,7 +38,7 @@ export default class extends Vue {
       href: 'https://element.eleme.cn/#/zh-CN/component/card'
     },
     {
-      title: 'vue-elemrnt-admin',
+      title: 'vue-element-admin',
       href: 'https://panjiachen.gitee.io/vue-element-admin-site/zh/guide/'
     }
   ]
@@ -51,6 +51,7 @@ export default class extends Vue {
   height: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
   flex-wrap: wrap;
 }
 .link_area {

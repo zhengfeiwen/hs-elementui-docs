@@ -10,7 +10,7 @@ export interface IRightInfo {
   token: string
   accessroutes: RightRoute[]
   rpcUser: object
-  userInfo: UserInfo,
+  userInfo: UserInfo
   opRight: OpType
 }
 
@@ -34,7 +34,8 @@ class Right extends VuexModule implements IRightInfo {
     introduction: '',
     email: ''
   }
-  opRight: OpType = {
+
+  opRight = {
     opType: '',
     opCode: ''
   }
@@ -71,7 +72,7 @@ class Right extends VuexModule implements IRightInfo {
   @Action
   public async getRightByUserId (id: number) {
     // 判断是否已经获取过权限了
-    const routes = SessionStorage.get(this.KEYS.ROUTE,'array')
+    const routes = SessionStorage.get(this.KEYS.ROUTE, 'array')
     if (!routes || routes.length === 0) {
       const { data } = await getRightByUserId({
         id: id
@@ -92,22 +93,22 @@ class Right extends VuexModule implements IRightInfo {
       this.SET_TOKEN(token)
       setToken(token)
       this.SET_ACCESSROUTES(routes)
-      this.SET_RPCUSER(SessionStorage.get(this.KEYS.RPC_USER,'object'))
-      this.SET_USERINFO(SessionStorage.get(this.KEYS.USER_INFO,'object'))
+      this.SET_RPCUSER(SessionStorage.get(this.KEYS.RPC_USER, 'object'))
+      this.SET_USERINFO(SessionStorage.get(this.KEYS.USER_INFO, 'object'))
     }
   }
 
   @Action
-  public async getOperaRight (opData: {id: number, menuId: number}) {
+  public async getOperaRight (opData: { id: number, menuId: number }) {
     // 判断是否已经获取过权限了
-    if (opData.menuId == -1) {
+    if (opData.menuId === -1) {
       return
     }
-    let opRight = SessionStorage.get(this.KEYS.OP_RIGHT,'object')
+    const opRight = SessionStorage.get(this.KEYS.OP_RIGHT, 'object')
     if (!opRight || !opRight['op_' + opData.menuId]) {
       const { data } = await getOperaRight({
         id: opData.id,
-        menuId: opData.menuId                                           
+        menuId: opData.menuId
       })
       // 缓存权限信息
       opRight['op_' + opData.menuId] = {

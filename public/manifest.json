@@ -1,6 +1,6 @@
 {
-  "name": "Vue Typescript Admin",
-  "short_name": "Vue Ts Admin",
+  "name": "云端组件库文档",
+  "short_name": "组件文档",
   "icons": [],
   "start_url": "./index.html",
   "display": "standalone",

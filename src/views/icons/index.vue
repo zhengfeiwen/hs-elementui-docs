@@ -20,7 +20,7 @@
                 {{ generateSvgIconCode(item) }}
               </div>
               <div class="icon-item">
-                <svg-icon
+                <hs-svgicon
                   :name="item"
                   class="disabled"
                 />
@@ -42,7 +42,7 @@
                 {{ generateElementIconCode(item) }}
               </div>
               <div class="icon-item">
-                <i :class="'el-icon-' + item" />
+                <i :class="'hs-icon-' + item" />
                 <span>{{ item }}</span>
               </div>
             </el-tooltip>
@@ -68,11 +68,11 @@ export default class extends Vue {
   private handleClipboard = handleClipboard
 
   private generateElementIconCode (symbol: string) {
-    return `<i class="el-icon-${symbol}" />`
+    return `<i class="hs-icon-${symbol}" />`
   }
 
   private generateSvgIconCode (symbol: string) {
-    return `<svg-icon name="${symbol}" />`
+    return `<hs-svgicon name="${symbol}" />`
   }
 }
 </script>

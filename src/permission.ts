@@ -48,7 +48,7 @@ router.beforeEach(async (to: Route, _: Route, next: any) => {
           // 菜单权限加入到动态路由中
           router.addRoutes(PermissionModule.dynamicRoutes)
           // 确认添加完成后 获取菜单权限
-          await RightModule.getOperaRight({id: to.meta.id, menuId: to.meta.id}).catch(res => {
+          await RightModule.getOperaRight({ id: to.meta.id, menuId: to.meta.id }).catch(res => {
             RightModule.ResetToken()
             Message.error(res.msg || 'getOperaRight Has Error')
             next(`/login?redirect=${to.path}`)
@@ -65,7 +65,7 @@ router.beforeEach(async (to: Route, _: Route, next: any) => {
           NProgress.done()
         }
       } else {
-        await RightModule.getOperaRight({id: to.meta.id, menuId: to.meta.id}).catch(res => {
+        await RightModule.getOperaRight({ id: to.meta.id, menuId: to.meta.id }).catch(res => {
           RightModule.ResetToken()
           Message.error(res.msg || 'getOperaRight Has Error')
           next(`/login?redirect=${to.path}`)

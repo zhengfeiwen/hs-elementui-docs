@@ -73,6 +73,7 @@ export default class extends mixins(ResizeMixin) {
   position: relative;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .drawer-bg {
@@ -90,6 +91,7 @@ export default class extends mixins(ResizeMixin) {
   transition: margin-left 0.28s;
   margin-left: $sideBarWidth;
   position: relative;
+  overflow: hidden;
 }
 
 .sidebar-container {

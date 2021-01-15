@@ -5,6 +5,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import Layout from '@/layout/index.vue'
 import BusiDemo from './modules/busiDemo'
 import Components from './modules/components'
+import Rule from './modules/rule'
 /* Router modules */
 
 Vue.use(VueRouter)
@@ -84,13 +85,33 @@ export const constantRoutes: RouteConfig[] = [
         }
       }
     ]
-  }
+  },
+  Rule
 ]
 
 /**
  * 动态路由，受权限控制
 */
 export const asyncRoutes: RouteConfig[] = [
+  {
+    path: '/layout',
+    component: Layout,
+    redirect: '/documentation',
+    meta: { id: '10000000' },
+    children: [
+      {
+        path: 'layout',
+        component: () => import('@/views/layout/index.vue'),
+        name: 'layout',
+        meta: {
+          id: '10000001',
+          icon: 'table',
+          title: 'layout',
+          noCache: true
+        }
+      }
+    ]
+  },
   {
     path: '/documentation',
     component: Layout,

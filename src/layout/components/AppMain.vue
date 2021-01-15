@@ -32,10 +32,30 @@ export default class extends Vue {
 <style lang="scss" scoped>
 .app-main {
   /* 50= navbar  50  */
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 84px);
+  height: calc(100vh - 84px);
   width: 100%;
+  padding: 0 5%;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
+  scroll-padding: 1px;
+}
+.app-main::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width : 10px;  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 1px;
+}
+.app-main::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background   : rgb(48, 65, 86);
+}
+.app-main::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background   : #ededed;
 }
 
 .fixed-header+.app-main {

@@ -78,15 +78,18 @@ pre code {
 .markdown h5 {
   font-size: 1em;
   line-height: 0.86em;
+  font-weight: 200;
+  margin-left: 20px;
 }
 
 .markdown h6 {
   font-size: 0.86em;
-  line-height: 0.75em
+  font-weight: 200;
+  line-height: 0.75em;
 }
 
-.markdown h4, .markdown h5, .markdown p, .markdown ol, .markdown pre, .markdown blockquote, .markdown table:not([class]) {
-  margin: 1.5em 0
+.markdown h4, .markdown h5, .markdown p, .markdown ol, .markdown pre, .markdown blockquote{
+  margin: 1.5em
 }
 
 .markdown h1, .markdown h2, .markdown h3 {
@@ -96,9 +99,11 @@ pre code {
 .markdown h1 + .widget-codetool + pre, .markdown h2 + .widget-codetool + pre, .markdown h3 + .widget-codetool + pre {
   margin-top: 1.5em !important
 }
-
-.markdown h1, .markdown h2 {
-  border-bottom: 1px solid #eee;
+.markdown h1{
+  padding-bottom: 10px
+}
+.markdown h2 {
+  /* border-bottom: 1px solid #eee; */
   padding-bottom: 10px
 }
 
@@ -180,7 +185,7 @@ pre code {
 
 .markdown hr {
   margin: 1.5em auto;
-  border-top: 2px dotted #eee
+  border-top: 1px solid #ccc
 }
 
 .markdown kbd {
@@ -195,17 +200,24 @@ pre code {
 }
 
 .markdown table:not([class]) {
-  width: 100%
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
 }
 
-.markdown table:not([class]) th, .markdown table:not([class]) td {
-  border: 1px solid #E6E6E6;
-  padding: 5px 8px;
-  word-break: normal
+.markdown table:not([class]) th{
+  border-bottom: 1px solid #E6E6E6;
+  margin-top: 5px;
+  font-size: 16px;
+  color: #909399;
+}
+.markdown table:not([class]) thead tr,.markdown table:not([class]) tbody tr{
+  border-bottom: 1px solid #E6E6E6;
+  height: 36px;
 }
 
-.markdown table:not([class]) th {
-  background: #F3F3F3
+.markdown table:not([class]) tr td,.markdown table:not([class]) tr th{
+  padding: 0 18px;
 }
 
 .markdown a:not([class]) {

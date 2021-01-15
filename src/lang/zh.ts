@@ -28,7 +28,12 @@ export default {
     drawer: '抽屉',
     divider: '分割线',
     page401: '401',
-    page404: '404'
+    page404: '404',
+    rule: '规范',
+    font: '字体',
+    color: '颜色',
+    layout: '布局',
+    border: '边框'
   },
   navbar: {
     logOut: '退出登录',
