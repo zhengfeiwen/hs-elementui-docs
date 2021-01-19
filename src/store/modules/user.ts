@@ -68,9 +68,13 @@ class User extends VuexModule implements IUserState {
     let { username, password } = userInfo
     username = username.trim()
     const { data } = await login({ username, password })
+    // const data = {
+    //   accessToken: '1232121',
+    //   id:1
+    // }
     setCookie(this.tokenKey, data.accessToken)
     this.SET_TOKEN(data.accessToken)
-    setCookie(this.userIdKey, data.id)
+    setCookie(this.userIdKey, '' + data.id)
     this.SET_ID(data.id)
   }
 

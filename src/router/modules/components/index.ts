@@ -11,6 +11,7 @@ import Card from './card'
 import Drawer from './drawer'
 import Image from './image'
 import Divider from './divider'
+import Table from './table'
 
 const Components: RouteConfig = {
   path: '/components',
@@ -30,7 +31,8 @@ const Components: RouteConfig = {
     Card,
     Drawer,
     Image,
-    Divider
+    Divider,
+    Table
   ]
 }
 

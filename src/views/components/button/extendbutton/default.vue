@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    
     <hs-extendbutton
       :titles= "titles"
       @change="change"

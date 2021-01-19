@@ -22,9 +22,9 @@ import { Component, Vue } from 'vue-property-decorator'
   name: 'default'
 })
 export default class extends Vue {
-  private article = { 
+  private article = {
     article: !0,
-    active: !1 
+    active: !1
   }
 
   private titles = ['展开', '收起']

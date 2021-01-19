@@ -44,7 +44,7 @@ for (let i = 2; i < userCount; i++) {
 
 export const register = (req: Request, res: Response) => {
   return res.json({
-    code: 20000
+    code: 10000
   })
 }
 
@@ -53,7 +53,7 @@ export const login = (req: Request, res: Response) => {
   for (const user of userList) {
     if (user.username === username) {
       return res.json({
-        code: 20000,
+        code: 10000,
         data: {
           accessToken: username + '-token',
           id: user.id
@@ -69,7 +69,7 @@ export const login = (req: Request, res: Response) => {
 
 export const logout = (req: Request, res: Response) => {
   return res.json({
-    code: 20000
+    code: 10000
   })
 }
 
@@ -80,7 +80,7 @@ export const getUsers = (req: Request, res: Response) => {
     return !(name && lowerCaseName.indexOf((name as string).toLowerCase()) < 0)
   })
   return res.json({
-    code: 20000,
+    code: 10000,
     data: {
       items: users
     }
@@ -90,7 +90,7 @@ export const getUsers = (req: Request, res: Response) => {
 export const getUserInfo = (req: Request, res: Response) => {
   // Mock data based on access token
   return res.json({
-    code: 20000,
+    code: 10000,
     data: {
       user: req.header('X-Access-Token') == 'admin-token' ? userList[0] : userList[1]
     }
@@ -102,7 +102,7 @@ export const getUserByName = (req: Request, res: Response) => {
   for (const user of userList) {
     if (user.username === username) {
       return res.json({
-        code: 20000,
+        code: 10000,
         data: {
           user
         }
@@ -121,7 +121,7 @@ export const updateUser = (req: Request, res: Response) => {
   for (const v of userList) {
     if (v.username === username) {
       return res.json({
-        code: 20000,
+        code: 10000,
         data: {
           user
         }
@@ -136,6 +136,6 @@ export const updateUser = (req: Request, res: Response) => {
 
 export const deleteUser = (req: Request, res: Response) => {
   return res.json({
-    code: 20000
+    code: 10000
   })
 }

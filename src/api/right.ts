@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export const getRightByUserId = (data: any) =>
   request({
-    url: '/json/getRightByUserId',
+    url: '/json/getRightByUserId', // '/jida/base/user/right/list',
     method: 'post',
     data
   })

@@ -45,6 +45,18 @@ module.exports = {
         }
       }
     }
+    // proxy: {
+    //   // change xxx-api/login => /mock-api/v1/login
+    //   // detail: https://cli.vuejs.org/config/#devserver-proxy
+    //   [process.env.VUE_APP_BASE_API]: {
+    //     target: 'http://192.168.0.71:8282/',
+    //     changeOrigin: true, // needed for virtual hosted sites
+    //     ws: true, // proxy websockets
+    //     pathRewrite: {
+    //       '/dev-api': '/'
+    //     }
+    //   }
+    // }
   },
   pwa: {
     name: name,

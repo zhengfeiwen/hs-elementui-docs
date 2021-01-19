@@ -33,7 +33,8 @@ export default {
     font: '字体',
     color: '颜色',
     layout: '布局',
-    border: '边框'
+    border: '边框',
+    table: '表格'
   },
   navbar: {
     logOut: '退出登录',

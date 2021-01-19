@@ -36,7 +36,7 @@ const menuRight = {
 export const getRightByUserId = (req: Request, res: Response) => {
   // const { id, sysId, token } = req.params
   return res.json({
-    code: 20000,
+    code: 10000,
     data: {
       ...menuRight
     }
@@ -51,7 +51,7 @@ const opRight = {
 export const getOperaRight = (req: Request, res: Response) => {
   // const { id, sysId, token } = req.params
   return res.json({
-    code: 20000,
+    code: 10000,
     data: {
       ...opRight
     }
