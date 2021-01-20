@@ -2,7 +2,7 @@
 <template>
   <div>
     <hs-tinymce placeholder="请输入正文" menubar="" :value="tinymce" ref="editor" @input="tinymce = $event"></hs-tinymce>
-    <el-button @click="click" type="primary">获取文本内容</el-button>
+    <hs-button @click="click" type="primary">获取文本内容</hs-button>
   </div>
 </template>
 

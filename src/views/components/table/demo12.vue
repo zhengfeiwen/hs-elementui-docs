@@ -1,7 +1,7 @@
 <template>
   <div>
-    <el-button @click="resetDateFilter">清除日期过滤器</el-button>
-    <el-button @click="clearFilter">清除所有过滤器</el-button>
+    <hs-button @click="resetDateFilter">清除日期过滤器</hs-button>
+    <hs-button @click="clearFilter">清除所有过滤器</hs-button>
     <hs-table
       ref="filterTable"
       :data="tableData"

@@ -3,13 +3,13 @@
     <hs-progress :stroke-width="26" :interval="10000" :taskChains="taskChains" :percentage="percentage" @finished="finished"></hs-progress>
     <br/>
     <br/>
-    <el-button
+    <hs-button
       style="margin-left: 10px"
       size="small"
       type="success"
       @click="btnFinished"
       v-if="cur < 3"
-      >完成{{tasks[cur]}}</el-button
+      >完成{{tasks[cur]}}</hs-button
     >
   </div>
 </template>

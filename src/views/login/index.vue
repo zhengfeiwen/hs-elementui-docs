@@ -62,14 +62,14 @@
         </el-form-item>
       </el-tooltip>
 
-      <el-button
+      <hs-button
         :loading="loading"
         type="primary"
         style="width:100%; margin-bottom:30px;"
         @click.native.prevent="handleLogin"
       >
         {{ $t('login.logIn') }}
-      </el-button>
+      </hs-button>
 
       <div style="position:relative">
         <div class="tips">
@@ -81,13 +81,13 @@
           <span>{{ $t('login.password') }} : {{ $t('login.any') }} </span>
         </div>
 
-        <el-button
+        <hs-button
           class="thirdparty-button"
           type="primary"
           @click="showDialog=true"
         >
           {{ $t('login.thirdparty') }}
-        </el-button>
+        </hs-button>
       </div>
     </el-form>
 

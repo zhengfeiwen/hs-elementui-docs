@@ -5,13 +5,13 @@
       style="line-height: 25px; margin-top: -5px;"
       @click.native="dialogTableVisible=true"
     >
-      <el-button
+      <hs-button
         style="padding: 8px 10px;"
         size="small"
         type="danger"
       >
         <svg-icon name="bug" />
-      </el-button>
+      </hs-button>
     </el-badge>
 
     <el-dialog
@@ -21,14 +21,14 @@
     >
       <div slot="title">
         <span style="padding-right: 10px;">Error Log</span>
-        <el-button
+        <hs-button
           size="mini"
           type="primary"
           icon="el-icon-delete"
           @click="clearAll"
         >
           Clear All
-        </el-button>
+        </hs-button>
       </div>
       <el-table
         :data="errorLogs"

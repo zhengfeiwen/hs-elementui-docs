@@ -2,7 +2,7 @@
   <div>
     <hs-tinymce placeholder="请输入正文" menubar="" :value="tyniVal" ref="editor" @input="tyniVal = $event"></hs-tinymce>
     <br/>
-    <el-button @click="handleClick" type="primary">获取文本内容</el-button>
+    <hs-button @click="handleClick" type="primary">获取文本内容</hs-button>
   </div>
 </template>
 <script lang="ts">

@@ -9,7 +9,7 @@
         do something
       </template>
     </hs-drawer>
-    <el-button @click="click">drawer-open</el-button>
+    <hs-button @click="click">drawer-open</hs-button>
   </div>
 </template>
 

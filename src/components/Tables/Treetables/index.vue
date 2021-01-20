@@ -81,7 +81,7 @@ export default {
       // let _self = this
       const childDataObject = await loadChildren(this.loadChildrenApi, { parentId: row.id })
       const childData = childDataObject.object.datas.map(item => {
-        item.snid = '<span class="el-button--text">' + item.orderNo + '</span>'
+        item.snid = '<span class="hs-button--text">' + item.orderNo + '</span>'
         item.studentSourceId = item.id
         return item
       })

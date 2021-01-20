@@ -6,7 +6,7 @@
         <span>好吃的汉堡</span>
         <div class="bottom clearfix">
           <time class="time">new date()</time>
-          <el-button type="text" class="button">操作按钮</el-button>
+          <hs-button type="text" class="button">操作按钮</hs-button>
         </div>
       </div>
   </hs-card>

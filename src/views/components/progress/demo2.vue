@@ -7,10 +7,10 @@
     ></hs-progress>
     <hs-progress :percentage="percentage" :color="customColors"></hs-progress>
     <div>
-      <el-button-group>
-        <el-button icon="el-icon-minus" @click="decrease"></el-button>
-        <el-button icon="el-icon-plus" @click="increase"></el-button>
-      </el-button-group>
+      <hs-button-group>
+        <hs-button icon="el-icon-minus" @click="decrease"></hs-button>
+        <hs-button icon="el-icon-plus" @click="increase"></hs-button>
+      </hs-button-group>
     </div>
   </div>
 </template>

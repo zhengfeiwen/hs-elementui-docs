@@ -25,13 +25,13 @@
     </hs-table-column>
     <hs-table-column label="操作">
       <template slot-scope="scope">
-        <el-button
+        <hs-button
           size="mini"
-          @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-        <el-button
+          @click="handleEdit(scope.$index, scope.row)">编辑</hs-button>
+        <hs-button
           size="mini"
           type="danger"
-          @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+          @click="handleDelete(scope.$index, scope.row)">删除</hs-button>
       </template>
     </hs-table-column>
   </hs-table>

@@ -3,7 +3,7 @@
   <div>
     <hs-drawer :wrapperClosable="wrapperClosable" :withHeader="withHeader" :show-close="showClose" :direction="direction" title="dddd" :visible.sync="drawer" @before-close="handleClose">
     </hs-drawer>
-    <el-button @click="click">drawer-open</el-button>
+    <hs-button @click="click">drawer-open</hs-button>
   </div>
 </template>
 

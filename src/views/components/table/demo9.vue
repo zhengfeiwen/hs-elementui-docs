@@ -26,8 +26,8 @@
     </hs-table-column>
   </hs-table>
   <div style="margin-top: 20px">
-    <el-button @click="setCurrent(tableData[1])">选中第二行</el-button>
-    <el-button @click="setCurrent()">取消选择</el-button>
+    <hs-button @click="setCurrent(tableData[1])">选中第二行</hs-button>
+    <hs-button @click="setCurrent()">取消选择</hs-button>
   </div>
   </div>
 </template>
