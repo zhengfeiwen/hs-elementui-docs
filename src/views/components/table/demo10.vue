@@ -1,25 +1,40 @@
 <template>
-  <hs-table
-    :data="tableData"
-    style="width: 100%">
-    <hs-table-column
-      prop="date"
-      label="日期"
-      width="180">
-    </hs-table-column>
-    <hs-table-column
-      prop="name"
-      label="姓名"
-      width="180">
-    </hs-table-column>
-    <hs-table-column
-      prop="address"
-      label="地址">
-    </hs-table-column>
-  </hs-table>
+  <div>
+    <hs-table
+      ref="hsTable"
+      :data="tableData"
+      tooltip-effect="dark"
+      style="width: 100%"
+      @selection-change="handleSelectionChange">
+      <hs-table-column
+        type="selection"
+        width="55">
+      </hs-table-column>
+      <hs-table-column
+        label="日期"
+        width="120">
+        <template slot-scope="scope">{{ scope.row.date }}</template>
+      </hs-table-column>
+      <hs-table-column
+        prop="name"
+        label="姓名"
+        width="120">
+      </hs-table-column>
+      <hs-table-column
+        prop="address"
+        label="地址"
+        show-overflow-tooltip>
+      </hs-table-column>
+    </hs-table>
+    <div style="margin-top: 20px">
+      <el-button @click="toggleSelection([tableData[1], tableData[2]])">切换第二、第三行的选中状态</el-button>
+      <el-button @click="toggleSelection()">取消选择</el-button>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
+import { ElTable } from 'element-ui/types/table'
 import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'demo10'
@@ -42,6 +57,21 @@ export default class extends Vue {
     name: '王小虎',
     address: '上海市普陀区金沙江路 1516 弄'
   }]
+
+  private toggleSelection (rows: any) {
+    console.log(this.$refs.hsTable, 'this.$refs.hsTable')
+    if (rows) {
+      rows.forEach((row: any) => {
+        (this.$refs.hsTable as ElTable).toggleRowSelection(row)
+      })
+    } else {
+      (this.$refs.hsTable as ElTable).clearSelection()
+    }
+  }
+
+  private handleSelectionChange (val: any) {
+    this.$refs.hsTable = val
+  }
 }
 </script>
 

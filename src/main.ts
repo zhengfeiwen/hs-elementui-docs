@@ -27,7 +27,6 @@ import '@/styles/markdown-segmentfault.css'
 
 import HsElementui from 'hs-elementui'
 import 'hs-elementui/lib/hs-elementui.css'
-
 import DemoBlock from '@/components/demo-block/DemoBlock.vue'
 import DocumentTable from '@/components/DocumentTable.vue'
 

@@ -5,11 +5,13 @@
     <hs-table-column
       prop="date"
       label="日期"
+      sortable
       width="180">
     </hs-table-column>
     <hs-table-column
       prop="name"
       label="姓名"
+      sortable
       width="180">
     </hs-table-column>
     <hs-table-column

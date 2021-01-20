@@ -1,33 +1,81 @@
 ```
 <template>
-  <hs-card style="width:400px" :shadow="shadow" :body-style ="bodyStyle">
-    <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" class="image">
-      <div style="padding: 14px;">
-        <span>好吃的汉堡</span>
-        <div class="bottom clearfix">
-          <time class="time">new date()</time>
-          <el-button type="text" class="button">操作按钮</el-button>
-        </div>
-      </div>
-  </hs-card>
+  <div>
+    <hs-table
+      ref="hsTable"
+      :data="tableData"
+      tooltip-effect="dark"
+      style="width: 100%"
+      @selection-change="handleSelectionChange">
+      <hs-table-column
+        type="selection"
+        width="55">
+      </hs-table-column>
+      <hs-table-column
+        label="日期"
+        width="120">
+        <template slot-scope="scope">{{ scope.row.date }}</template>
+      </hs-table-column>
+      <hs-table-column
+        prop="name"
+        label="姓名"
+        width="120">
+      </hs-table-column>
+      <hs-table-column
+        prop="address"
+        label="地址"
+        show-overflow-tooltip>
+      </hs-table-column>
+    </hs-table>
+    <div style="margin-top: 20px">
+      <el-button @click="toggleSelection([tableData[1], tableData[2]])">切换第二、第三行的选中状态</el-button>
+      <el-button @click="toggleSelection()">取消选择</el-button>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
+import { ElTable } from 'element-ui/types/table'
 import { Component, Vue } from 'vue-property-decorator'
 @Component({
-  name: 'demo1'
+  name: 'demo10'
 })
 export default class extends Vue {
-  private shadow = 'hover'
-  private bodyStyle = {
-    padding: '0px'
+  private tableData = [{
+    date: '2016-05-02',
+    name: '王小虎',
+    address: '上海市普陀区金沙江路 1518 弄'
+  }, {
+    date: '2016-05-04',
+    name: '王小虎',
+    address: '上海市普陀区金沙江路 1517 弄'
+  }, {
+    date: '2016-05-01',
+    name: '王小虎',
+    address: '上海市普陀区金沙江路 1519 弄'
+  }, {
+    date: '2016-05-03',
+    name: '王小虎',
+    address: '上海市普陀区金沙江路 1516 弄'
+  }]
+
+  private toggleSelection (rows: any) {
+    console.log(this.$refs.hsTable, 'this.$refs.hsTable')
+    if (rows) {
+      rows.forEach((row: any) => {
+        (this.$refs.hsTable as ElTable).toggleRowSelection(row)
+      })
+    } else {
+      (this.$refs.hsTable as ElTable).clearSelection()
+    }
+  }
+
+  private handleSelectionChange (val: any) {
+    this.$refs.hsTable = val
   }
 }
 </script>
 
-<style lang="scss"> 
-.image{
-  width: 100%;
-}
+<style lang="scss">
 </style>
 ```

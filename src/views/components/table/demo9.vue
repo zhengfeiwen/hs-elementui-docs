@@ -11,23 +11,23 @@
       width="50">
     </hs-table-column>
     <hs-table-column
-      property="date"
+      prop="date"
       label="日期"
       width="120">
     </hs-table-column>
     <hs-table-column
-      property="name"
+      prop="name"
       label="姓名"
       width="120">
     </hs-table-column>
     <hs-table-column
-      property="address"
+      prop="address"
       label="地址">
     </hs-table-column>
   </hs-table>
   <div style="margin-top: 20px">
-    <hs-button @click="setCurrent(tableData[1])">选中第二行</hs-button>
-    <hs-button @click="setCurrent()">取消选择</hs-button>
+    <el-button @click="setCurrent(tableData[1])">选中第二行</el-button>
+    <el-button @click="setCurrent()">取消选择</el-button>
   </div>
   </div>
 </template>

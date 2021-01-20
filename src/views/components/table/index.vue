@@ -220,6 +220,17 @@
         </template>
       </demo-block>
     </template>
+    <template v-slot:demo20>
+      <demo-block>
+        <p>结合使用列合并，懒加载，树形等综合应用</p>
+        <template v-slot:source>
+          <demo20></demo20>
+        </template>
+        <template v-slot:highlight>
+          <demo20-md></demo20-md>
+        </template>
+      </demo-block>
+    </template>
   </index-md>
 </template>
 <script lang="ts">
@@ -265,6 +276,8 @@ import demo18Md from './demo18.md'
 import demo18 from './demo18.vue'
 import demo19Md from './demo19.md'
 import demo19 from './demo19.vue'
+import demo20Md from './demo20.md'
+import demo20 from './demo20.vue'
 @Component({
   name: 'hs-table',
   components: {
@@ -308,7 +321,9 @@ import demo19 from './demo19.vue'
     demo18,
     demo18Md,
     demo19,
-    demo19Md
+    demo19Md,
+    demo20,
+    demo20Md
   }
 })
 export default class extends Vue {

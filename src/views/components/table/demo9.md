@@ -12,17 +12,17 @@
       width="50">
     </hs-table-column>
     <hs-table-column
-      property="date"
+      prop="date"
       label="日期"
       width="120">
     </hs-table-column>
     <hs-table-column
-      property="name"
+      prop="name"
       label="姓名"
       width="120">
     </hs-table-column>
     <hs-table-column
-      property="address"
+      prop="address"
       label="地址">
     </hs-table-column>
   </hs-table>
