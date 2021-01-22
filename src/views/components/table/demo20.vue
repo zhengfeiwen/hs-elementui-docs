@@ -23,9 +23,21 @@
       prop="cno"
       label="自编号">
         <template slot-scope="scope">
-          <span  v-if="scope.row.hasChildren">
-            父编号1111：360352姓名：黄人人Tel：15832******分裂条数：1总跟单状态：已报名来源：地区：null录入者：杨欣录入时间：{{ scope.row.date }}
-          </span>
+          <el-popover trigger="hover" placement="top" v-if="scope.row.hasChildren">
+            <p>父编号: 360352</p>
+            <p>姓名: 黄人人</p>
+            <p>Tel: 15832******</p>
+            <p>分裂条数: 1</p>
+            <p>来源: fujian</p>
+            <p>地区: fuzhou</p>
+            <p>录入者: 杨欣</p>
+            <p>录入时间：{{ scope.row.date }}</p>
+            <div slot="reference" class="name-wrapper">
+              <span>
+                父编号：360352 姓名：黄人人Tel：15832******分裂条数：1总跟单状态：已报名 来源：fujian 地区：fuzhou 录入者：杨欣 录入时间：{{ scope.row.date }}
+              </span>
+            </div>
+          </el-popover>
           <span v-else>{{ scope.row.date }}</span>
         </template>
     </hs-table-column>
@@ -151,4 +163,7 @@ export default class extends Vue {
 </script>
 
 <style lang="scss">
+.name-wrapper,.el-table__expand-icon.el-table__expand-icon--expanded{
+  float: left;
+}
 </style>

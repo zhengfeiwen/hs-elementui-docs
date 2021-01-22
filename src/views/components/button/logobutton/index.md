@@ -1,4 +1,4 @@
-#HsLogobutton logo按钮
+#HsLogobutton logo按钮-参考文字链接[link](#/link/index)
 图标为主的标志按钮
 
 ###基本用法

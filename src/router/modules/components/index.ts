@@ -12,6 +12,7 @@ import Drawer from './drawer'
 import Image from './image'
 import Divider from './divider'
 import Table from './table'
+import Plupload from './plupload'
 
 const Components: RouteConfig = {
   path: '/components',
@@ -26,6 +27,7 @@ const Components: RouteConfig = {
     Navigation,
     Progress,
     Upload,
+    Plupload,
     Button,
     Tinymce,
     Card,

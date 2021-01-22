@@ -41,7 +41,7 @@ export default class extends Vue {
   height: 100px;
   padding: 20px;
   border: 1px solid #ccc;
-  div{
+  div:first-child{
     height: calc(100% - 20px);
     width: 100%;
     overflow: hidden;

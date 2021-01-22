@@ -1,3 +1,20 @@
+
+#### 版本 : 0.2.55
+`日期`2021/01/22  
+`作者`zhengfeiwen  
+`说明`[plupload](#/plupload/index) 新增文件下载组件`plupload`
+#### 版本 : 0.2.50
+`日期`2021/01/21  
+`作者`zhengfeiwen  
+`说明`[link](#/link/index) 新增链接按钮组件`link`,并整合了iconbutton，extendbutton，logobutton，原先的弃用
+#### 版本 : 0.2.48
+`日期`2021/01/18  
+`作者`zhengfeiwen  
+`说明`[button](#/button/index) 新增按钮组件`button`
+#### 版本 : 0.2.45
+`日期`2021/01/15  
+`作者`zhengfeiwen  
+`说明`[layout](#/layout/index) 新增布局组件`layout`
 #### 版本 : 0.1.82
 `日期`2020/12/11  
 `作者`zhengfeiwen  

@@ -1,4 +1,4 @@
-#HsExtendbutton 展开按钮
+#HsExtendbutton 展开按钮-参考文字链接[link](#/link/index)
 展开，收起的一组按钮
 
 ###基本用法
