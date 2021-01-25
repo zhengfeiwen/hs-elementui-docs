@@ -21,9 +21,5 @@ HsProgress 组件可通过`type`属性来指定使用环形进度条，在环形
 ###仪表盘形进度条
 使用`before-upload`限制用户上传的图片格式和大小。
 <slot name="demo4"></slot>
-###任务链
-配置任务链`taskChains`有序执行任务。
-<slot name="demo5"></slot>
-
 
 <slot name="table"></slot>

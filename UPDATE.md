@@ -1,24 +1,36 @@
 
+#### 版本 : 0.2.61
+`日期`2021/01/25  
+`作者`zhengfeiwen  
+`说明`[tag](#/container/index) 新增容器组件`hs-container`,`hs-header`,`hs-main`,`hs-aside`,`hs-footer`
+#### 版本 : 0.2.59
+`日期`2021/01/25  
+`作者`zhengfeiwen  
+`说明`[tag](#/progress/index) 重构组件`hs-progress`
+#### 版本 : 0.2.58
+`日期`2021/01/25  
+`作者`zhengfeiwen  
+`说明`[tag](#/tag/index) 新增标签组件`hs-tag`
 #### 版本 : 0.2.55
 `日期`2021/01/22  
 `作者`zhengfeiwen  
-`说明`[plupload](#/plupload/index) 新增文件下载组件`plupload`
+`说明`[plupload](#/plupload/index) 新增文件下载组件`hs-plupload`
 #### 版本 : 0.2.50
 `日期`2021/01/21  
 `作者`zhengfeiwen  
-`说明`[link](#/link/index) 新增链接按钮组件`link`,并整合了iconbutton，extendbutton，logobutton，原先的弃用
+`说明`[link](#/link/index) 新增链接按钮组件`hs-link`,并整合了iconbutton，extendbutton，logobutton，原先的弃用
 #### 版本 : 0.2.48
 `日期`2021/01/18  
 `作者`zhengfeiwen  
-`说明`[button](#/button/index) 新增按钮组件`button`
+`说明`[button](#/button/index) 新增按钮组件`hs-button`
 #### 版本 : 0.2.45
 `日期`2021/01/15  
 `作者`zhengfeiwen  
-`说明`[layout](#/layout/index) 新增布局组件`layout`
+`说明`[layout](#/layout/index) 新增布局组件`hs-row`,`hs-col`
 #### 版本 : 0.1.82
 `日期`2020/12/11  
 `作者`zhengfeiwen  
-`说明`[svg-icon](#/icon/index) 新增图标库`svg-icon`
+`说明`[svg-icon](#/icon/index) 新增图标库`hs-svgicon`
 #### 版本 : 0.1.79
 `日期`2020/12/09  
 `作者`zhengfeiwen  

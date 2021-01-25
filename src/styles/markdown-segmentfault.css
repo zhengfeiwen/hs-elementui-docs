@@ -156,7 +156,8 @@ pre code {
   border-left: 2px solid #409EFF;
   background: #F6F6F6;
   color: #555;
-  font-size: 1em
+  font-size: 1em;
+  padding: 10px;
 }
 
 .markdown pre, .markdown code {

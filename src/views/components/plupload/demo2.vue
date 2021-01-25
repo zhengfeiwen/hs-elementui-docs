@@ -1,15 +1,15 @@
 <template>
   <div>
     <hs-plupload
-        browse_button="browse_button"
-        :url="server_config.url+'/BigFile/'"
+        browse_button="browse_button_big"
+        :url="url + '/BigFile/'"
         chunk_size="2MB"
         :filters="{prevent_duplicates:true}"
         :FilesAdded="filesAdded"
         :BeforeUpload="beforeUpload"
         @inputUploader="inputUploader"
     />
-    <hs-button type="primary" id="browse_button">选择多个文件</hs-button>
+    <hs-button type="primary" id="browse_button_big">选择多个文件</hs-button>
     <br/>
     <hs-table
       :data="tableData"
@@ -55,48 +55,43 @@ import { FileMd5 } from 'hs-elementui/src/utils/commons'
   name: 'demo2'
 })
 export default class extends Vue {
-  private serverConfigUrl = ''
+  private url = ''
   private files = []
   private up: any = {}
-  private dialogTableVisible = !1
+  private tableData:any[] = []
   get status () {
     const files = this.files.length > 0 ? this.files[0] : null
     return files ? (files as any).status : null
   }
 
-  @Watch('status')
-  private changeStatus () {
-    if (this.status === 5) {
-      this.$confirm('文件上传成功', '提示', {
-        confirmButtonText: '确定',
-        type: 'warning'
-      }).then(() => {
-        this.dialogTableVisible = false
+  @Watch('files', { deep: !0 })
+  private changeFiles () {
+    this.tableData = []
+    this.files.forEach((e: any) => {
+      this.tableData.push({
+        name: e.name,
+        size: e.size,
+        status: e.status,
+        id: e.id,
+        percent: e.percent
       })
-    }
+    })
   }
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  private filesAdded (up: any, files: any) {
-    if (up.files.length > 1) {
-      files.forEach((f: any) => {
-        f.status = -1
-        FileMd5(f.getNative(), (e: any, md5: any) => {
-          f.md5 = md5
-          f.status = 1
-        })
-      })
-    }
-  }
-
   private inputUploader (up: any) {
     this.up = up
     this.files = up.files
   }
 
-  private uploadStart () {
-    this.dialogTableVisible = true
-    this.up.start()
+  private filesAdded (up: any, files: any) {
+    files.forEach((f: any) => {
+      f.status = -1
+      FileMd5(f.getNative(), (e: any, md5: any) => {
+        f.md5 = md5
+        f.status = 1
+      })
+    })
   }
 
   private deleteFile (id: any) {

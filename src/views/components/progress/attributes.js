@@ -63,7 +63,7 @@ export const attributes = [
     default: 'round'
   },
   {
-    prop: 'taskChains',
+    prop: 'taskChains(作废)',
     desc: '定时按任务链顺序执行任务',
     type: 'object',
     enum: '-',

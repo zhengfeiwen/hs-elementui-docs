@@ -35,6 +35,7 @@ export default {
     color: '颜色',
     layout: '布局',
     border: '边框',
+    container: '容器',
     table: '表格'
   },
   navbar: {

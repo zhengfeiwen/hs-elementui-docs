@@ -1,42 +1,126 @@
 <template>
-  <hs-upload
-    class="upload-demo"
-    action="https://jsonplaceholder.typicode.com/posts/"
-    :on-preview="handlePreview"
-    :on-remove="handleRemove"
-    :file-list="fileList"
-    list-type="picture"
-    submitBtnTxt="点击上传"
-    submitBtnClass="primary"
-  >
-    <div slot="tip" class="el-upload__tip">
-      只能上传jpg/png文件，且不超过500kb
-    </div>
-  </hs-upload>
+  <div>
+    <hs-plupload
+      browse_button="browse_button_quick"
+      :url="url + '/BigFile/'"
+      chunk_size="2MB"
+      :filters="{prevent_duplicates:true}"
+      :FilesAdded="filesAdded"
+      :BeforeUpload="beforeUpload"
+      @inputUploader="inputUploader"
+    />
+    <hs-button type="primary" id="browse_button_quick">选择多个文件</hs-button>
+    <br/>
+    <hs-table
+      :data="tableData"
+      style="width: 100%; margin: 10px 10px;">
+      <hs-table-column
+        label="文件名">
+        <template slot-scope="scope">
+          <span>{{scope.row.name}}</span>
+        </template>
+      </hs-table-column>
+      <hs-table-column
+        label="大小">
+        <template slot-scope="scope">
+          <span>{{scope.row.size}}</span>
+        </template>
+      </hs-table-column>
+      <hs-table-column
+        label="状态">
+        <template slot-scope="scope">
+          <span v-if="scope.row.status === -1">正在计算MD5</span>
+          <span v-if="scope.row.status === 1">MD5计算完成，准备上传</span>
+          <span v-if="scope.row.status === 4" style="color: brown">上传失败</span>
+          <span v-if="scope.row.status === 5 && scope.row.percent === 100" style="color: chartreuse">已上传</span>
+          <span v-if="scope.row.status === 5 && scope.row.percent < 100" style="color: darkgreen">妙传成功</span>
+          <hs-progress v-if="scope.row.status === 2" :text-inside="true" :stroke-width="20" :percentage="scope.row.percent"></hs-progress>
+        </template>
+      </hs-table-column>
+      <hs-table-column
+        label="操作">
+        <template slot-scope="scope">
+          <hs-button type="danger" @click="deleteFile(scope.row.id)">删除</hs-button>
+        </template>
+      </hs-table-column>
+    </hs-table>
+    <br/>
+    <hs-button type="danger" @click="uploadStart()">开始上传</hs-button>
+  </div>
 </template>
 <script lang='ts'>
-import { Component, Vue } from 'vue-property-decorator'
+import { Component, Vue, Watch } from 'vue-property-decorator'
+import { FileMd5 } from 'hs-elementui/src/utils/commons'
+import request from '@/utils/request'
 @Component({
   name: 'demo4'
 })
 export default class extends Vue {
-  private fileList: object[] = [
-    {
-      ame: 'food.jpeg',
-      url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-    },
-    {
-      name: 'food2.jpeg',
-      url: 'https://fuss10.elemecdn.com/3/63/4e7f3a15429bfda99bce42a18cdd1jpeg.jpeg?imageMogr2/thumbnail/360x360/format/webp/quality/100'
-    }
-  ]
+  private url = ''
+  private files = []
+  private up: any = {}
+  private tableData:any[] = []
+  $http: any
 
-  private handleRemove (file: any, fileList: any) {
-    console.log(file, fileList)
+  @Watch('files', { deep: !0 })
+  private changeFiles () {
+    this.tableData = []
+    this.files.forEach((e: any) => {
+      this.tableData.push({
+        name: e.name,
+        size: e.size,
+        status: e.status,
+        id: e.id,
+        percent: e.percent
+      })
+    })
   }
 
-  private handlePreview (file: any) {
-    console.log(file)
+  private inputUploader (up: any) {
+    this.up = up
+    this.files = up.files
+  }
+
+  private filesAdded (up: any, files: any) {
+    files.forEach((f: any) => {
+      f.status = -1
+      FileMd5(f.getNative(), (e: any, md5: any) => {
+        f.md5 = md5
+        f.status = 1
+      })
+    })
+  }
+
+  private deleteFile (id: any) {
+    const file = this.up.getFile(id)
+    this.up.removeFile(file)
+  }
+
+  private beforeUpload (up: any, file: any) {
+    up.setOption('multipart_params', { size: file.size, md5: file.md5 })
+  }
+
+  private uploadStart () {
+    let count = 0
+    const size = this.files.length
+    this.files.forEach((e: any) => {
+      if (e.status === 1) {
+        request({
+          url: this.url + '/QuickUpload/?md5=' + e.md5,
+          method: 'post'
+        })
+          .then((response: any) => {
+            count += 1
+            console.log(count)
+            if (!response.data) {
+              e.status = 5
+            }
+            if (count === size) {
+              this.up.start()
+            }
+          })
+      }
+    })
   }
 }
 </script>

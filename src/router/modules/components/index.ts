@@ -13,6 +13,7 @@ import Image from './image'
 import Divider from './divider'
 import Table from './table'
 import Plupload from './plupload'
+import Container from './container'
 
 const Components: RouteConfig = {
   path: '/components',
@@ -34,7 +35,8 @@ const Components: RouteConfig = {
     Drawer,
     Image,
     Divider,
-    Table
+    Table,
+    Container
   ]
 }
 
