@@ -20,4 +20,8 @@
 ###图片上传
 <slot name="demo5"></slot>
 
-<slot name="table"></slot>
+###拖拽上传
+<slot name="demo6"></slot>
+
+###卡片化
+<slot name="demo7"></slot>

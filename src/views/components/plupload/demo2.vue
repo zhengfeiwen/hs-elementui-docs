@@ -2,7 +2,7 @@
   <div>
     <hs-plupload
         browse_button="browse_button_big"
-        :url="url + '/BigFile/'"
+        :url="url"
         chunk_size="2MB"
         :filters="{prevent_duplicates:true}"
         :FilesAdded="filesAdded"
@@ -55,7 +55,7 @@ import { FileMd5 } from 'hs-elementui/src/utils/commons'
   name: 'demo2'
 })
 export default class extends Vue {
-  private url = ''
+  private url = 'http://192.168.0.123:3000/upload'
   private files = []
   private up: any = {}
   private tableData:any[] = []

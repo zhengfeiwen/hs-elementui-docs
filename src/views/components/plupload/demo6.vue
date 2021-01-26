@@ -1,21 +1,21 @@
 <template>
   <div>
     <hs-plupload
-      browse_button="browse_button_pic"
-      :url="url + '/File/'"
+      :url="url"
       :FilesAdded="filesAdded"
+      drop_element="drag-area"
       @inputUploader="inputUploader"
     />
-    <hs-button id="browse_button_pic" type="primary">选择图片</hs-button>
     <br/>
     <br/>
-    <hs-tag type="info">图片预览区域</hs-tag>
-    <hs-row style="height: 360px; width: 100%; background-color: honeydew" >
+    <hs-tag type="warning">图片预览区域,也可以拖拽进去</hs-tag>
+    <br/>
+    <br/>
+    <hs-row style="height: 360px; width: 100%; background-color: honeydew" id="drag-area">
       <hs-col style="margin: 20px 20px" :span="4" v-for="(image, index) in images" :key="index" :offset="index > 0 ? 1 : 0">
         <hs-card :body-style="{ padding: '0px' }">
-          <img width="240px" height="240px" :src="image.src" class="image">
-          <hr/>
-          <div style="padding: 5px; display: flex">
+          <img width="60px" height="80px" :src="image.src" class="image">
+          <div style="padding: 3px; display: flex">
               <div style="flex: 3; display: flex; justify-content:center;align-items:center;">
                 <span v-if="image.file.status === 1" style="color: aqua;">准备上传</span>
                 <span v-if="image.file.status === 4" style="color: brown">上传失败</span>
@@ -38,7 +38,7 @@ import { FileUrl } from 'hs-elementui/src/utils/commons'
   name: 'demo6'
 })
 export default class extends Vue {
-  private url = ''
+  private url = 'http://192.168.0.123:3000/upload'
   private files = []
   private up: any = {}
   private images: any[] = []
@@ -74,3 +74,20 @@ export default class extends Vue {
   }
 }
 </script>
+<style lang="scss">
+.image{
+  width: 100%;
+  height: 100%;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+.drag-area{
+  border: 1px solid #ccc;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  color: #aaa;
+  width: 150px;
+  margin: 10px auto;
+}
+</style>

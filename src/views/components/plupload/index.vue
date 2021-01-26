@@ -60,6 +60,26 @@
         </template>
       </demo-block>
     </template>
+     <template v-slot:demo6>
+      <demo-block>
+        <template v-slot:source>
+          <demo6></demo6>
+        </template>
+        <template v-slot:highlight>
+          <demo6-md></demo6-md>
+        </template>
+      </demo-block>
+    </template>
+    <template v-slot:demo7>
+      <demo-block>
+        <template v-slot:source>
+          <demo7></demo7>
+        </template>
+        <template v-slot:highlight>
+          <demo7-md></demo7-md>
+        </template>
+      </demo-block>
+    </template>
   </index-md>
 </template>
 
@@ -74,12 +94,16 @@ import demo2 from './demo2.vue'
 import demo3 from './demo3.vue'
 import demo4 from './demo4.vue'
 import demo5 from './demo5.vue'
+import demo6 from './demo6.vue'
+import demo7 from './demo7.vue'
 
 import demo1Md from './demo1.md'
 import demo2Md from './demo2.md'
 import demo3Md from './demo3.md'
 import demo4Md from './demo4.md'
 import demo5Md from './demo5.md'
+import demo6Md from './demo6.md'
+import demo7Md from './demo7.md'
 
 @Component({
   name: 'hs-progress',
@@ -92,11 +116,15 @@ import demo5Md from './demo5.md'
     demo3,
     demo4,
     demo5,
+    demo6,
+    demo7,
     demo1Md,
     demo2Md,
     demo3Md,
     demo4Md,
-    demo5Md
+    demo5Md,
+    demo6Md,
+    demo7Md
   }
 })
 export default class extends Vue {
