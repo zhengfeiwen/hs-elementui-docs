@@ -1,7 +1,8 @@
 import axios from 'axios'
-import { Message, MessageBox } from 'element-ui'
 import { UserModule } from '@/store/modules/user'
 import { RightModule } from '@/store/modules/right'
+
+const that: any = this
 
 const service = axios.create({
   baseURL: process.env.VUE_APP_BASE_API, // url = base url + request url
@@ -25,7 +26,7 @@ service.interceptors.request.use(
 )
 
 // Response interceptors
-service.interceptors.response.use(
+service.interceptors.response.use( 
   (response) => {
     // Some example codes here:
     // code == 20000: success
@@ -37,13 +38,13 @@ service.interceptors.response.use(
     // You can change this part for your own usage.
     const res = response.data
     if (res.code !== 10000) {
-      Message({
+      that.$message({
         message: res.message || 'Error',
         type: 'error',
         duration: 5 * 1000
       })
       if (res.code === 50008 || res.code === 50012 || res.code === 50014) {
-        MessageBox.confirm(
+        that.$confirm(
           '你已被登出，可以取消继续留在该页面，或者重新登录',
           '确定登出',
           {
@@ -63,7 +64,7 @@ service.interceptors.response.use(
     }
   },
   (error) => {
-    Message({
+    that.$message({
       message: error.message,
       type: 'error',
       duration: 5 * 1000

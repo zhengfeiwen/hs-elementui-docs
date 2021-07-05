@@ -3,7 +3,7 @@
     <template v-slot:defalutDemo>
       <demo-block>
         <template v-slot:source>
-          <hs-datepicker></hs-datepicker>
+          <hs-date-picker></hs-date-picker>
         </template>
         <template v-slot:highlight>
           <defaultDemo-md></defaultDemo-md>
@@ -14,7 +14,7 @@
       <demo-block>
         <p>切换日期事件操作<code>@change</code>事件</p>
         <template v-slot:source>
-          <hs-datepicker size="large" @change="daterangeHandle"></hs-datepicker>
+          <hs-date-picker size="large" @change="daterangeHandle"></hs-date-picker>
         </template>
         <template v-slot:highlight>
           <demo1-md></demo1-md>

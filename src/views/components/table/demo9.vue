@@ -34,7 +34,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { Table } from 'element-ui'
 @Component({
   name: 'demo9'
 })
@@ -60,7 +59,7 @@ export default class extends Vue {
   private currentRow = null
 
   private setCurrent (row: any) {
-    (this.$refs.singleTable as Table).setCurrentRow(row)
+    (this.$refs.singleTable as any).setCurrentRow(row)
   }
 
   private handleCurrentChange (val: any) {

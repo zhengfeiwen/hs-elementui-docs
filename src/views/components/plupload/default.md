@@ -2,7 +2,7 @@
 <template>
   <div>
     <hs-plupload
-        browse_button="browse_button"
+        browseButton="browseButton"
         :url="serverConfigUrl+'/File/'"
         :multi_selection="false"
         :FilesAdded="filesAdded"
@@ -15,7 +15,7 @@
         }"
         @inputUploader="inputUploader"
       />
-      <hs-button id="browse_button" type="primary">选择文件</hs-button>
+      <hs-button id="browseButton" type="primary">选择文件</hs-button>
       <span v-for="(file, i) in files" :key="i">{{file.name}}</span>
       <hs-button type="danger" @click="uploadStart()">开始上传</hs-button>
 

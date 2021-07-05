@@ -33,7 +33,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo3>
+    <template v-slot:demo3>
       <demo-block>
         <p>可以通过指定 <code>Table</code> 组件的 <code>row-class-name</code> 属性来为 <code>Table</code> 中的某一行添加 <code>class</code>，表明该行处于某种状态。</p>
         <template v-slot:source>
@@ -44,7 +44,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo4>
+    <template v-slot:demo4>
       <demo-block>
         <p>只要在<code>el-table</code>元素中定义了<code>height</code>属性，即可实现固定表头的表格，而不需要额外的代码。</p>
         <template v-slot:source>
@@ -55,7 +55,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo5>
+    <template v-slot:demo5>
       <demo-block>
         <p>固定列需要使用<code>fixed</code>属性，它接受 <code>Boolean</code> 值或者<code>leftright</code>，表示左边固定还是右边固定。</p>
         <template v-slot:source>
@@ -66,18 +66,18 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo6>
-      <demo-block>
-        <p>固定列和表头可以同时使用，只需要将上述两个属性分别设置好即可。</p>
-        <template v-slot:source>
-          <demo6></demo6>
-        </template>
-        <template v-slot:highlight>
-          <demo6-md></demo6-md>
-        </template>
-      </demo-block>
-    </template>
-  <template v-slot:demo7>
+    <template v-slot:demo6>
+        <demo-block>
+          <p>固定列和表头可以同时使用，只需要将上述两个属性分别设置好即可。</p>
+          <template v-slot:source>
+            <demo6></demo6>
+          </template>
+          <template v-slot:highlight>
+            <demo6-md></demo6-md>
+          </template>
+        </demo-block>
+      </template>
+    <template v-slot:demo7>
       <demo-block>
         <p>通过设置<code>max-height</code>属性为 <code>Table</code> 指定最大高度。此时若表格所需的高度大于最大高度，则会显示一个滚动条。</p>
         <template v-slot:source>
@@ -88,7 +88,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo8>
+    <template v-slot:demo8>
       <demo-block>
         <p>只需要在 <code>el-table-column</code> 里面嵌套 <code>el-table-column</code>，就可以实现多级表头。</p>
         <template v-slot:source>
@@ -99,7 +99,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo9>
+    <template v-slot:demo9>
       <demo-block>
         <p><code>Table</code> 组件提供了单选的支持，只需要配置<code>highlight-current-row</code>属性即可实现单选。之后由<code>current-change</code>事件来管理选中时触发的事件，它会传入<code>currentRow</code>，<code>oldCurrentRow</code>。如果需要显示索引，可以增加一列<code>el-table-column</code>，设置<code>type</code>属性为<code>index</code>即可显示从 <code>1</code> 开始的索引号。</p>
         <template v-slot:source>
@@ -110,7 +110,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo10>
+   <template v-slot:demo10>
       <demo-block>
         <p>实现多选非常简单: 手动添加一个<code>el-table-column</code>，设<code>type</code>属性为<code>selection</code>即可；默认情况下若内容过多会折行显示，若需要单行显示可以使用<code>show-overflow-tooltip</code>属性，它接受一个<code>Boolean</code>，为<code>true</code>时多余的内容会在 <code>hover</code> 时以 <code>tooltip</code> 的形式显示出来。</p>
         <template v-slot:source>
@@ -121,7 +121,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo11>
+    <template v-slot:demo11>
       <demo-block>
         <p>在列中设置<code>sortable</code>属性即可实现以该列为基准的排序，接受一个<code>Boolean</code>，默认为<code>false</code>。可以通过 <code>Table</code> 的<code>default-sort</code>属性设置默认的排序列和排序顺序。可以使用<code>sort-method</code>或者<code>sort-by</code>使用自定义的排序规则。如果需要后端排序，需将<code>sortable</code>设置为<code>custom</code>，同时在 <code>Table</code> 上监听<code>sort-change</code>事件，在事件回调中可以获取当前排序的字段名和排序顺序，从而向接口请求排序后的表格数据。在本例中，我们还使用了<code>formatter</code>属性，它用于格式化指定列的值，接受一个<code>Function</code>，会传入两个参数：<code>row</code>和<code>column</code>，可以根据自己的需求进行处理。</p>
         <template v-slot:source>
@@ -132,7 +132,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo12>
+    <template v-slot:demo12>
       <demo-block>
         <p>在列中设置<code>filtersfilter-method</code>属性即可开启该列的筛选，<code>filters</code> 是一个数组，<code>filter-method</code>是一个方法，它用于决定某些数据是否显示，会传入三个参数：<code>value</code>, <code>row</code> 和 <code>column</code>。</p>
         <template v-slot:source>
@@ -143,7 +143,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo13>
+    <template v-slot:demo13>
       <demo-block>
         <p>通过 <code>Scoped</code> <code>slot</code> 可以获取到 <code>row</code>, <code>column</code>, <code>$index</code> 和 <code>store</code>（<code>table</code> 内部的状态管理）的数据，用法参考 <code>demo</code>。</p>
         <template v-slot:source>
@@ -154,7 +154,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo14>
+   <template v-slot:demo14>
       <demo-block>
         <p>通过设置 <code>type="expand"</code> 和 <code>Scoped</code> <code>slot</code> 可以开启展开行功能 <code>el-table-column</code> 的模板会被渲染成为展开行的内容，展开行可访问的属性与使用自定义列模板时的 <code>Scoped</code> <code>slot</code> 相同。</p>
         <template v-slot:source>
@@ -165,7 +165,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo15>
+    <template v-slot:demo15>
       <demo-block>
         <p>支持树类型的数据的显示。当 <code>row</code> 中包含 <code>children</code> 字段时，被视为树形数据。渲染树形数据时，必须要指定<code>row-key</code>。支持子节点数据异步加载。设置<code>Table</code> 的<code>lazy</code> 属性为<code>true</code> 与加载函数 <code>load</code> 。通过指定 <code>row</code> 中的 <code>hasChildren</code> 字段来指定哪些行是包含子节点。<code>children</code> 与<code>hasChildren</code> 都可以通过 <code>tree-props</code> 配置。</p>
         <template v-slot:source>
@@ -176,7 +176,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo16>
+    <template v-slot:demo16>
       <demo-block>
         <p>通过设置 <code>Scoped slot</code> 来自定义表头。</p>
         <template v-slot:source>
@@ -187,7 +187,7 @@
         </template>
       </demo-block>
     </template>
-  <template v-slot:demo17>
+    <template v-slot:demo17>
       <demo-block>
         <p>将 <code>show-summary</code> 设置为 <code>true</code> 就会在表格尾部展示合计行。默认情况下，对于合计行，第一列不进行数据求合操作，而是显示「合计」二字（可通过<code>sum-text</code>配置），其余列会将本列所有数值进行求合操作，并显示出来。当然，你也可以定义自己的合计逻辑。使用 <code>summary-method</code> 并传入一个方法，返回一个数组，这个数组中的各项就会显示在合计行的各列中，具体可以参考本例中的第二个表格。</p>
         <template v-slot:source>

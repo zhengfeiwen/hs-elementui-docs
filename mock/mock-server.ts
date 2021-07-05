@@ -10,7 +10,7 @@ import * as api from './api'
 import { accessTokenAuth } from './security'
 
 const app = express()
-const port = 9530
+const port = 9730
 const { connector, summarise } = require('swagger-routes-express')
 
 // Compression
@@ -65,7 +65,7 @@ server.on('error', onError)
 console.log('Mock server started on port ' + port + '!')
 
 // Event listener for HTTP server "error" event.
-function onError(error: any) {
+function onError (error: any) {
   if (error.syscall !== 'listen') {
     throw error
   }

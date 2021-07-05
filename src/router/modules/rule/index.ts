@@ -10,6 +10,15 @@ const Rule: RouteConfig = {
     icon: 'excel'
   },
   children: [{
+    path: 'contain/index',
+    component: () => import('@/views/rule/contain/index.vue'),
+    name: 'contain',
+    meta: {
+      title: 'contain',
+      noCache: true
+    }
+  },
+  {
     path: 'color/index',
     component: () => import('@/views/rule/color/index.vue'),
     name: 'color',
@@ -33,6 +42,15 @@ const Rule: RouteConfig = {
     name: 'font',
     meta: {
       title: 'font',
+      noCache: true
+    }
+  },
+  {
+    path: 'button/index',
+    component: () => import('@/views/rule/button/index.vue'),
+    name: 'button',
+    meta: {
+      title: 'button',
       noCache: true
     }
   }

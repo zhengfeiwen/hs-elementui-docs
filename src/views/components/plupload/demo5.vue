@@ -1,19 +1,19 @@
 <template>
   <div>
     <hs-plupload
-      browse_button="browse_button_pic"
+      browseButton="browseButton_pic"
       :url="url + '/File/'"
       :FilesAdded="filesAdded"
       @inputUploader="inputUploader"
     />
-    <hs-button id="browse_button_pic" type="primary">选择图片</hs-button>
+    <hs-button id="browseButton_pic" type="primary">选择图片</hs-button>
     <br/>
     <br/>
     <hs-tag type="info">图片预览区域</hs-tag>
     <hs-row style="height: 360px; width: 100%; background-color: honeydew" >
       <hs-col style="margin: 20px 20px" :span="4" v-for="(image, index) in images" :key="index" :offset="index > 0 ? 1 : 0">
         <hs-card :body-style="{ padding: '0px' }">
-          <img width="240px" height="240px" :src="image.src" class="image">
+          <img width="240px" height="240px" :src="image.src" class="image" style="height:220px;">
           <hr/>
           <div style="padding: 5px; display: flex">
               <div style="flex: 3; display: flex; justify-content:center;align-items:center;">

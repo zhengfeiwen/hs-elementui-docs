@@ -12,7 +12,7 @@ import { Component, Vue, Watch } from 'vue-property-decorator'
 import { SettingsModule } from '@/store/modules/settings'
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const version = require('element-ui/package.json').version // element-ui version from node_modules
+const version = require('hs-elementui/package.json').version // element-ui version from node_modules
 const ORIGINAL_THEME = '#409EFF' // default color
 
 @Component({
@@ -37,7 +37,7 @@ export default class extends Vue {
     const oldValue = this.chalk ? this.theme : ORIGINAL_THEME
     const themeCluster = this.getThemeCluster(value.replace('#', ''))
     const originalCluster = this.getThemeCluster(oldValue.replace('#', ''))
-    const message = this.$message({
+    const message = (this as any).$message({
       message: '  Compiling the theme',
       customClass: 'theme-message',
       type: 'success',

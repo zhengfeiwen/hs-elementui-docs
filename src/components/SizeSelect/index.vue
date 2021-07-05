@@ -39,8 +39,8 @@ export default class extends Vue {
   private handleSetSize (size: string) {
     (this as any).$ELEMENT.size = size
     AppModule.SetSize(size)
-    this.refreshView()
-    this.$message({
+    this.refreshView();
+    (this as any).$message({
       message: 'Switch Size Success',
       type: 'success'
     })

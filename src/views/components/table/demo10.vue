@@ -34,7 +34,6 @@
 </template>
 
 <script lang="ts">
-import { ElTable } from 'element-ui/types/table'
 import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'demo10'
@@ -62,10 +61,10 @@ export default class extends Vue {
     console.log(this.$refs.hsTable, 'this.$refs.hsTable')
     if (rows) {
       rows.forEach((row: any) => {
-        (this.$refs.hsTable as ElTable).toggleRowSelection(row)
+        (this.$refs.hsTable as any).toggleRowSelection(row)
       })
     } else {
-      (this.$refs.hsTable as ElTable).clearSelection()
+      (this.$refs.hsTable as any).clearSelection()
     }
   }
 

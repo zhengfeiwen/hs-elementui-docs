@@ -1,47 +1,47 @@
 <template>
   <div class="home_container">
     <div class="home_recommend">
-      <el-carousel :interval="4000" type="card" height="200px">
-        <el-carousel-item v-for="(item, i) in reconmmends" :key="i">
-          <el-card><hs-image :src="item.href" ></hs-image></el-card>
-        </el-carousel-item>
-      </el-carousel>
+      <hs-carousel :interval="4000" type="card" height="200px">
+        <hs-carousel-item v-for="(item, i) in reconmmends" :key="i">
+          <hs-card><hs-image :src="item.href" ></hs-image></hs-card>
+        </hs-carousel-item>
+      </hs-carousel>
     </div>
     <div class="home_desc">
       <h3>项目快速成型工具</h3>
       <section>使用组件 Demo 快速体验交互细节；使用前端框架封装的代码帮助工程师快速开发。</section>
     </div>
-    <el-divider></el-divider>
+    <hs-divider></hs-divider>
     <transition name="fade-transform" mode="out-in">
       <div class="home_body">
-        <el-card>
-          <el-divider content-position="left">最新</el-divider>
-          <el-tree
+        <hs-card>
+          <hs-divider content-position="left">最新</hs-divider>
+          <hs-tree
             :data="latestData.data"
             :props="latestData.props"
             accordion
             @node-click="handleNodeClick">
-          </el-tree>
-        </el-card>
-        <el-card>
-          <el-divider content-position="left">常用</el-divider>
-          <el-tree
+          </hs-tree>
+        </hs-card>
+        <hs-card>
+          <hs-divider content-position="left">常用</hs-divider>
+          <hs-tree
             :data="hotData.data"
             :props="hotData.props"
             accordion
             @node-click="handleNodeClick">
-          </el-tree>
-        </el-card>
-        <el-card class="api">
-          <el-divider content-position="left"><a href="">API</a></el-divider>
+          </hs-tree>
+        </hs-card>
+        <hs-card class="api">
+          <hs-divider content-position="left"><a href="">API</a></hs-divider>
           <!-- <el-input v-model="apiSearch" placeholder="请输入搜索内容" size="mini" suffix-icon="el-icon-search"></el-input> -->
-          <el-tree
+          <hs-tree
             :data="apiData.data"
             :props="apiData.props"
             accordion
             @node-click="handleNodeClick">
-          </el-tree>
-        </el-card>
+          </hs-tree>
+        </hs-card>
       </div>
     </transition>
   </div>

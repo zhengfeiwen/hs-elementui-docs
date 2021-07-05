@@ -1,7 +1,6 @@
 import router from './router'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
-import { Message } from 'element-ui'
 import { Route } from 'vue-router'
 import { UserModule } from '@/store/modules/user'
 import { RightModule } from '@/store/modules/right'
@@ -12,6 +11,8 @@ import settings from './settings'
 NProgress.configure({ showSpinner: false })
 
 const whiteList = ['/login', '/auth-redirect']
+
+const that: any = this
 
 const getPageTitle = (key: string) => {
   const hasKey = i18n.te(`route.${key}`)
@@ -38,8 +39,8 @@ router.beforeEach(async (to: Route, _: Route, next: any) => {
         try {
           // 获取菜单权限
           await RightModule.getRightByUserId(UserModule.id).catch(res => {
-            RightModule.ResetToken()
-            Message.error(res.msg || 'getRightByUserId Has Error')
+            RightModule.ResetToken();
+            that.$message.error(res.msg || 'getRightByUserId Has Error')
             next(`/login?redirect=${to.path}`)
             NProgress.done()
           })
@@ -59,8 +60,8 @@ router.beforeEach(async (to: Route, _: Route, next: any) => {
         } catch (err) {
           // 移除token 返回到登录界面
           UserModule.ResetToken()
-          RightModule.ResetToken()
-          Message.error(err)
+          RightModule.ResetToken();
+          that.$message.error(err)
           next(`/login?redirect=${to.path}`)
           NProgress.done()
         }

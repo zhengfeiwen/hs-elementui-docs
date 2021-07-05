@@ -2,10 +2,10 @@
 <template>
   <div>
     <hs-plupload
-      browse_button="browse_button_stop"
+      browseButton="browseButton_stop"
       :url="url + '/BigFile/'"
-      chunk_size="2MB"
-      :max_retries="3"
+      chunkSize="2MB"
+      :maxRetries="3"
       :filters="{prevent_duplicates:true}"
       :FilesAdded="filesAdded"
       :BeforeUpload="beforeUpload"
@@ -16,7 +16,7 @@
     <hs-tag type="warning">自动重传三次</hs-tag>
     <br/>
     <br/>
-    <hs-button type="primary" id="browse_button_stop">选择多个文件</hs-button>
+    <hs-button type="primary" id="browseButton_stop">选择多个文件</hs-button>
     <br/>
     <hs-table
       :data="tableData"

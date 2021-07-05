@@ -38,5 +38,37 @@ export const LocalStorage = {
       throw Error('key is null')
     }
     return localStorage.getItem(key)
+  },
+  setObj: (key: string, value: any, expire = 8 * 60 * 60 * 1000) => {
+    if (!key) {
+      throw Error('key is null')
+    }
+    const obj = {
+      data: value,
+      time: Date.now(),
+      expire: expire
+    }
+    localStorage.setItem(key, JSON.stringify(obj))
+  },
+  getObj: (key: string) => {
+    if (!key) {
+      throw Error('key is null')
+    }
+    let val: any = localStorage.getItem(key)
+    if (!val) {
+      return val
+    }
+    val = JSON.parse(val)
+    if (Date.now() - val.time > val.expire) {
+      localStorage.removeItem(key)
+      return null
+    }
+    return val.data
+  },
+  remove: (key: string) => {
+    if (!key) {
+      throw Error('key is null')
+    }
+    return localStorage.removeItem(key)
   }
 }

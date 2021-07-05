@@ -1,7 +1,7 @@
 ```
 <template>
   <div>
-    <hs-datepicker></hs-datepicker>
+    <hs-date-picker></hs-date-picker>
   </div>
 </template>
 <script>

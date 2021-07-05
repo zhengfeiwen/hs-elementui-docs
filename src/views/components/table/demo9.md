@@ -35,7 +35,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
-import { Table } from 'element-ui'
 @Component({
   name: 'demo9'
 })

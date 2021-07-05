@@ -34,11 +34,12 @@ export default class extends Vue {
   /* 50= navbar  50  */
   min-height: calc(100vh - 84px);
   height: calc(100vh - 84px);
-  width: 100%;
-  padding: 0 5%;
+  width: 90%;
+  margin: 0 5%;
   position: relative;
   overflow: auto;
   scroll-padding: 1px;
+  background-color: #fff;
 }
 .app-main::-webkit-scrollbar {
   /*滚动条整体样式*/

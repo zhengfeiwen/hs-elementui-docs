@@ -1,9 +1,9 @@
 ```
 <template>
   <div>
-    <hs-datepicker
+    <hs-date-picker
       @change="daterangeHandle"
-    ></hs-datepicker>
+    ></hs-date-picker>
   </div>
 </template>
 <script>

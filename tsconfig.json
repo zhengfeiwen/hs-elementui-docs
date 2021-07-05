@@ -14,6 +14,7 @@
     "types": [
       "node",
       "jest",
+      "hs-elementui",
       "webpack-env"
     ],
     "paths": {

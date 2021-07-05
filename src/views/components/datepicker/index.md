@@ -6,8 +6,8 @@
 
 <slot name="defalutDemo"></slot>
 
-###hs-datepicker基础配置
-`hs-datepicker`已经参考已有业务需求，默认配置了一些属性了，具体如下
+###hs-date-picker基础配置
+`hs-date-picker`已经参考已有业务需求，默认配置了一些属性了，具体如下
 ```
 type="datetimerange"
 range-separator="至"
@@ -56,9 +56,9 @@ picker-options={
 ###@change事件
 可以通过`@change`获取当前的选择的日期
 ```
-<hs-datepicker
+<hs-date-picker
   @change="daterangeHandle"
-></hs-datepicker>
+></hs-date-picker>
 methods: {
   daterangeHandle: function (dateVal: string, id: string) {
     // doing someing

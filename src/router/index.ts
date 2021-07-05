@@ -5,7 +5,10 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import Layout from '@/layout/index.vue'
 import BusiDemo from './modules/busiDemo'
 import Components from './modules/components'
+import Form from './modules/form'
 import Rule from './modules/rule'
+import Docs from './modules/docs'
+import Charts from './modules/charts'
 /* Router modules */
 
 Vue.use(VueRouter)
@@ -86,7 +89,8 @@ export const constantRoutes: RouteConfig[] = [
       }
     ]
   },
-  Rule
+  Rule,
+  Docs
 ]
 
 /**
@@ -184,6 +188,8 @@ export const asyncRoutes: RouteConfig[] = [
     ]
   },
   Components,
+  Form,
+  Charts,
   BusiDemo,
   {
     path: '/democode',
@@ -203,16 +209,64 @@ export const asyncRoutes: RouteConfig[] = [
     ]
   },
   {
-    path: '/resourcepool',
+    path: '/template',
     component: Layout,
-    redirect: '/index',
+    redirect: '/demo1',
+    meta: {
+      title: 'template',
+      icon: 'guide',
+      noCache: true
+    },
     children: [
       {
-        path: 'resourcepool',
-        component: () => import('@/views/modules/studentmanage/resourcepool/index.vue'),
-        name: 'resourcepool',
+        path: 'demo1',
+        component: () => import('@/views/template/demo1/index.vue'),
+        name: 'demo1',
         meta: {
-          title: 'resourcepool',
+          title: 'demo1',
+          icon: 'guide',
+          noCache: true
+        }
+      },
+      {
+        path: 'demo2',
+        component: () => import('@/views/template/demo2/index.vue'),
+        name: 'demo2',
+        meta: {
+          title: 'demo2',
+          icon: 'guide',
+          noCache: true
+        }
+      },
+      {
+        path: 'demo3',
+        component: () => import('@/views/template/demo34/index.vue'),
+        name: 'demo3',
+        meta: {
+          busiType: 'busi1',
+          title: 'demo3',
+          icon: 'guide',
+          noCache: true
+        }
+      },
+      {
+        path: 'demo4',
+        component: () => import('@/views/template/demo34/index.vue'),
+        name: 'demo4',
+        meta: {
+          busiType: 'busi2',
+          title: 'demo4',
+          icon: 'guide',
+          noCache: true
+        }
+      },
+      {
+        path: 'demo5',
+        component: () => import('@/views/template/demo5/index.vue'),
+        name: 'demo5',
+        meta: {
+          busiType: 'busi2',
+          title: 'demo5',
           icon: 'guide',
           noCache: true
         }

@@ -39,7 +39,7 @@ export default class extends Vue {
 
   private click () {
     if (!sf.isEnabled) {
-      this.$message({
+      (this as any).$message({
         message: 'you browser can not work',
         type: 'warning'
       })

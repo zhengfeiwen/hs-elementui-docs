@@ -26,3 +26,5 @@ declare module 'vue-image-crop-upload'
 declare module 'apiDatas'
 
 declare module '*.md'
+
+declare module 'ELEMENT'

@@ -6,12 +6,12 @@
           >`false`</code
         >
         <template v-slot:source>
-          <hs-tabs
+          <hs-nav-tabs
             tabType="divi"
             :tabs="tabs"
             :defaultTab="0"
             @change="tabChange"
-          ></hs-tabs>
+          ></hs-nav-tabs>
         </template>
         <template v-slot:highlight>
           <defaultDemo-md></defaultDemo-md>
@@ -22,12 +22,12 @@
       <demo-block>
         <p>支持通过配置<code>tabs</code>属性来调整tab展示标签</p>
         <template v-slot:source>
-          <hs-tabs
+          <hs-nav-tabs
             tabType="divi"
             :tabs="tab1s"
             :defaultTab="defaultTab"
             @change="tabChange"
-          ></hs-tabs>
+          ></hs-nav-tabs>
           <div>
             <div id="fulltime" :class="activeTab.fulltime">全日制页面</div>
             <div id="mateur" :class="activeTab.mateur">业余页面</div>

@@ -92,6 +92,7 @@ export default class extends mixins(ResizeMixin) {
   margin-left: $sideBarWidth;
   position: relative;
   overflow: hidden;
+  background-color: #eaeaea;
 }
 
 .sidebar-container {

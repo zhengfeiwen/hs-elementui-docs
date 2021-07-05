@@ -1,6 +1,21 @@
 ### 安装
-```npm
-npm install hs-elementui -s
+#### 1.公司框架脚手架
+```
+> npm hongshen-cli -g
+```
+#### 2.创建项目 xxxx为项目名
+```
+> hs init template xxxx
+```
+#### 3.依赖安装
+```
+> npm i
+> npm install hs-elementui -s
+```
+#### 4.运行系统
+```
+> npm run serve:mock --mock环境
+> npm run serve --开发环境
 ```
 基于`element-ui v2.14.1`开发，如出现组件显示异常，请确保版本兼容
 ### 配置  

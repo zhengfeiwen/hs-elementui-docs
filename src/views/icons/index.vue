@@ -77,17 +77,15 @@ export default class extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .icons-container {
   margin: 10px 20px 0;
   overflow: hidden;
-
   .grid {
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
-
   .icon-item {
     margin: 20px;
     height: 85px;
@@ -96,6 +94,9 @@ export default class extends Vue {
     float: left;
     font-size: 30px;
     cursor: pointer;
+    svg, i{
+      font-size: inherit;
+    }
   }
 
   span {

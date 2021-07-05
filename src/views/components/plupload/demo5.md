@@ -2,12 +2,12 @@
 <template>
   <div>
     <hs-plupload
-      browse_button="browse_button"
+      browseButton="browseButton"
       :url="server_config.url+'/File/'"
       :FilesAdded="filesAdded"
       @inputUploader="inputUploader"
     />
-    <hs-button id="browse_button" type="primary">选择图片</hs-button>
+    <hs-button id="browseButton" type="primary">选择图片</hs-button>
     <br/>
     <br/>
     <hs-tag type="info">图片预览区域</hs-tag>

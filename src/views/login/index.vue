@@ -108,7 +108,6 @@
 import { Component, Vue, Watch } from 'vue-property-decorator'
 import { Route } from 'vue-router'
 import { Dictionary } from 'vue-router/types/router'
-import { Form as ElForm, Input } from 'element-ui'
 import { UserModule } from '@/store/modules/user'
 import { isValidUsername } from '@/utils/validate'
 import LangSelect from '@/components/LangSelect/index.vue'
@@ -168,9 +167,9 @@ export default class extends Vue {
 
   mounted () {
     if (this.loginForm.username === '') {
-      (this.$refs.username as Input).focus()
+      (this.$refs.username as any).focus()
     } else if (this.loginForm.password === '') {
-      (this.$refs.password as Input).focus()
+      (this.$refs.password as any).focus()
     }
   }
 
@@ -186,12 +185,12 @@ export default class extends Vue {
       this.passwordType = 'password'
     }
     this.$nextTick(() => {
-      (this.$refs.password as Input).focus()
+      (this.$refs.password as any).focus()
     })
   }
 
   private handleLogin () {
-    (this.$refs.loginForm as ElForm).validate(async (valid: boolean) => {
+    (this.$refs.loginForm as any).validate(async (valid: boolean) => {
       if (valid) {
         this.loading = true
         await UserModule.Login(this.loginForm)

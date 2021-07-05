@@ -44,7 +44,6 @@
 </template>
 
 <script lang="ts">
-import { ElTable } from 'element-ui/types/table'
 import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'demo12'
@@ -69,7 +68,7 @@ export default class extends Vue {
   }]
 
   public $refs!: {
-    filterTable: ElTable
+    filterTable: any
   };
 
   private resetDateFilter () {

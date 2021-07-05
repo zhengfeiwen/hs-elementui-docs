@@ -2,7 +2,7 @@
   <div>
     <hs-plupload
       ref="uploader"
-      browse_button="browse_button_multi"
+      browseButton="browseButton_multi"
       :url="serverConfigUrl + '/File/'"
       :filters="{prevent_duplicates:true}"
       @inputUploader="inputUploader"
@@ -10,7 +10,7 @@
     <el-tag type="warning">不允许选取重复文件</el-tag>
     <br/>
     <br/>
-    <hs-button type="primary" id="browse_button_multi">选择多个文件</hs-button>
+    <hs-button type="primary" id="browseButton_multi">选择多个文件</hs-button>
     <br/>
     <hs-table
       :data="tableData"

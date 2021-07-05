@@ -31,8 +31,8 @@ export default class extends Vue {
     // The new service worker is installed, but not yet active.
     // Store the ServiceWorkerRegistration instance for later use.
     const h = this.$createElement
-    this.registration = (e as CustomEvent).detail
-    this.$notify.info({
+    this.registration = (e as CustomEvent).detail;
+    (this as any).$notify.info({
       title: 'Update available',
       message: h('div', { class: 'sw-update-popup' }, [
         this.notificationText,

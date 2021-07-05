@@ -16,7 +16,6 @@
   </hs-upload>
 </template>
 <script lang='ts'>
-import { Upload } from 'element-ui'
 import { Component, Vue } from 'vue-property-decorator'
 @Component({
   name: 'demo6'
@@ -34,7 +33,7 @@ export default class extends Vue {
   ]
 
   private submitUpload () {
-    (this.$refs.upload as Upload).submit()
+    (this.$refs.upload as any).submit()
   }
 
   private handleRemove (file: any, fileList: any) {

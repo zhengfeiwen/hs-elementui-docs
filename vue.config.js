@@ -4,8 +4,8 @@ const path = require('path')
 // If your port is set to 80,
 // use administrator privileges to execute the command line.
 // For example, on Mac: sudo npm run / sudo yarn
-const devServerPort = 9529 // TODO: get this variable from setting.ts
-const mockServerPort = 9530 // TODO: get this variable from setting.ts
+const devServerPort = 9729 // TODO: get this variable from setting.ts
+const mockServerPort = 9730 // TODO: get this variable from setting.ts
 const name = '云端组件库文档' // TODO: get this variable from setting.ts
 
 module.exports = {
@@ -24,6 +24,16 @@ module.exports = {
         }
       ]
     })
+    config.externals = {
+      vue: 'Vue',
+      'vue-router': 'VueRouter',
+      vuex: 'Vuex',
+      axios: 'axios',
+      vant: 'vant',
+      'element-ui': 'ELEMENT',
+      'dingtalk-jsapi': 'dd',
+      echarts: 'echarts'
+    }
   },
   devServer: {
     port: devServerPort,
@@ -69,12 +79,36 @@ module.exports = {
     'style-resources-loader': {
       preProcessor: 'scss',
       patterns: [
+        path.resolve(__dirname, './node_modules/hs-elementui/src/styles/hs/index.scss'),
         path.resolve(__dirname, 'src/styles/_variables.scss'),
         path.resolve(__dirname, 'src/styles/_mixins.scss')
       ]
     }
   },
   chainWebpack (config) {
+    const cdn = {
+      css: [
+        '//wise-job.oss-cn-zhangjiakou.aliyuncs.com/webjs/libs/vant/index.css',
+        '//wise-job.oss-cn-zhangjiakou.aliyuncs.com/webjs/libs/element-ui/element-ui-index.css'
+      ],
+      js: [
+        process.env.NODE_ENV === 'development' ? '//wise-job.oss-cn-zhangjiakou.aliyuncs.com/webjs/libs/vue/v2.6.11.js' : '//wise-job.oss-cn-zhangjiakou.aliyuncs.com/webjs/libs/vue/v2.6.11.min.js',
+        '//wise-job.oss-cn-zhangjiakou.aliyuncs.com/webjs/libs/vue-router/v3.1.6.min.js',
+        '//wise-job.oss-cn-zhangjiakou.aliyuncs.com/webjs/libs/vant/vant.min.js',
+        '//wise-job.oss-cn-zhangjiakou.aliyuncs.com/webjs/libs/vuex/v3.1.2.min.js',
+        '//wise-job.oss-cn-zhangjiakou.aliyuncs.com/webjs/libs/axios/v0.19.2.min.js',
+        '//wise-job.oss-cn-zhangjiakou.aliyuncs.com/webjs/libs/dingtalk-jsapi/dingtalk.open.js',
+        '//wise-job.oss-cn-zhangjiakou.aliyuncs.com/webjs/libs/element-ui/index.js',
+        '//wise-job.oss-cn-zhangjiakou.aliyuncs.com/webjs/libs/echarts/echarts.min.js'
+      ]
+    }
+    // 如果使用多页面打包，使用 vue inspect --plugins 查看 html 是否在结果数组中
+    config.plugin('html').tap(args => {
+      // html中添加cdn
+      args[0].cdn = cdn
+      return args
+    })
+
     // provide the app's title in html-webpack-plugin's options list so that
     // it can be accessed in index.html to inject the correct title.
     // https://cli.vuejs.org/guide/webpack.html#modifying-options-of-a-plugin

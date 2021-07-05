@@ -1,15 +1,15 @@
 <template>
   <div>
     <hs-plupload
-        browse_button="browse_button_big"
+        browseButton="browseButton_big"
         :url="url"
-        chunk_size="2MB"
+        chunkSize="2MB"
         :filters="{prevent_duplicates:true}"
         :FilesAdded="filesAdded"
         :BeforeUpload="beforeUpload"
         @inputUploader="inputUploader"
     />
-    <hs-button type="primary" id="browse_button_big">选择多个文件</hs-button>
+    <hs-button type="primary" id="browseButton_big">选择多个文件</hs-button>
     <br/>
     <hs-table
       :data="tableData"

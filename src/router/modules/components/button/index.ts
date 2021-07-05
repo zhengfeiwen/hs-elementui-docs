@@ -18,32 +18,33 @@ const Button: RouteConfig = {
       }
     },
     {
-    path: 'extendbutton/index',
-    component: () => import('@/views/components/button/extendbutton/index.vue'),
-    name: 'extendbutton',
-    meta: {
-      title: 'extendbutton',
-      noCache: true
+      path: 'extendbutton/index',
+      component: () => import('@/views/components/button/extendbutton/index.vue'),
+      name: 'extendbutton',
+      meta: {
+        title: 'extendbutton',
+        noCache: true
+      }
+    },
+    {
+      path: 'iconbutton/index',
+      component: () => import('@/views/components/button/iconbutton/index.vue'),
+      name: 'iconbutton',
+      meta: {
+        title: 'iconbutton',
+        noCache: true
+      }
+    },
+    {
+      path: 'logobutton/index',
+      component: () => import('@/views/components/button/logobutton/index.vue'),
+      name: 'logobutton',
+      meta: {
+        title: 'logobutton',
+        noCache: true
+      }
     }
-  },
-  {
-    path: 'iconbutton/index',
-    component: () => import('@/views/components/button/iconbutton/index.vue'),
-    name: 'iconbutton',
-    meta: {
-      title: 'iconbutton',
-      noCache: true
-    }
-  },
-  {
-    path: 'logobutton/index',
-    component: () => import('@/views/components/button/logobutton/index.vue'),
-    name: 'logobutton',
-    meta: {
-      title: 'logobutton',
-      noCache: true
-    }
-  }]
+  ]
 }
 
 export default Button
