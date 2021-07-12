@@ -1,7 +1,12 @@
 ### 安装
+#### 0.安装镜像源管理工具
+```
+> npm install -g nrm
+> nrm use taobao 或者 nrm use cnpm
+```
 #### 1.公司框架脚手架
 ```
-> npm hongshen-cli -g
+> npm i hongshen-cli -g
 ```
 #### 2.创建项目 xxxx为项目名
 ```
@@ -9,6 +14,7 @@
 ```
 #### 3.依赖安装
 ```
+> cd ./xxxx
 > npm i
 > npm install hs-elementui -s
 ```
