@@ -16,31 +16,31 @@
       <div class="home_body">
         <hs-card>
           <hs-divider content-position="left">最新</hs-divider>
-          <hs-tree
+          <el-tree
             :data="latestData.data"
             :props="latestData.props"
             accordion
             @node-click="handleNodeClick">
-          </hs-tree>
+          </el-tree>
         </hs-card>
         <hs-card>
           <hs-divider content-position="left">常用</hs-divider>
-          <hs-tree
+          <el-tree
             :data="hotData.data"
             :props="hotData.props"
             accordion
             @node-click="handleNodeClick">
-          </hs-tree>
+          </el-tree>
         </hs-card>
         <hs-card class="api">
           <hs-divider content-position="left"><a href="">API</a></hs-divider>
           <!-- <el-input v-model="apiSearch" placeholder="请输入搜索内容" size="mini" suffix-icon="el-icon-search"></el-input> -->
-          <hs-tree
+          <el-tree
             :data="apiData.data"
             :props="apiData.props"
             accordion
             @node-click="handleNodeClick">
-          </hs-tree>
+          </el-tree>
         </hs-card>
       </div>
     </transition>

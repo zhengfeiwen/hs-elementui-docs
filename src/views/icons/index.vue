@@ -11,6 +11,7 @@
       <el-tab-pane label="Hs-icons">
         <div class="grid">
           <div
+            class="item"
             v-for="item of svgIcons"
             :key="item"
             @click="handleClipboard(generateSvgIconCode(item),$event)"
@@ -33,6 +34,7 @@
       <el-tab-pane label="Element-UI Icons">
         <div class="grid">
           <div
+            class="item"
             v-for="item of elementIcons"
             :key="item"
             @click="handleClipboard(generateElementIconCode(item),$event)"
@@ -86,16 +88,19 @@ export default class extends Vue {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
   }
-  .icon-item {
-    margin: 20px;
-    height: 85px;
-    text-align: center;
-    width: 100px;
-    float: left;
-    font-size: 30px;
-    cursor: pointer;
-    svg, i{
-      font-size: inherit;
+  .item{
+    border: 1px solid #d9d9d9;
+    padding: 10px 0;
+    .icon-item {
+      text-align: center;
+      width: 100%;
+      float: left;
+      font-size: 30px;
+      cursor: pointer;
+      svg, i{
+        color: #212121;
+        font-size: inherit;
+      }
     }
   }
 
@@ -103,6 +108,7 @@ export default class extends Vue {
     display: block;
     font-size: 16px;
     margin-top: 10px;
+    color: red;
   }
 
   .disabled {
