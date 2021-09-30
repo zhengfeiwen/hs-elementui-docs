@@ -1,4 +1,4 @@
-export default [
+export const attributes = [
   {
     prop: 'conditons',
     desc: '查询条件集合',
