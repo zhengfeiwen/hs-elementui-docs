@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2022-01-11 19:58:45
+ * @LastEditTime: 2022-02-11 10:06:36
+ * @LastEditors: your name
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: \hs-elementui-docs\src\main.ts
+ */
 import Vue, { DirectiveOptions } from 'vue'
 import 'normalize.css'
 // import ElementUI from 'element-ui'
@@ -18,10 +26,6 @@ import '@/pwa/register-service-worker'
 import * as directives from '@/directives'
 import * as filters from '@/filters'
 
-import 'xe-utils'
-import VXETable from 'vxe-table'
-import 'vxe-table/lib/style.css'
-
 import 'prismjs/themes/prism.css'
 import '@/styles/markdown-segmentfault.css'
 
@@ -32,8 +36,6 @@ import DocumentTable from '@/components/DocumentTable.vue'
 
 Vue.component(DemoBlock.name, DemoBlock)
 Vue.component(DocumentTable.name, DocumentTable)
-
-Vue.use(VXETable)
 
 Vue.use(HsElementui)
 

@@ -1,61 +1,105 @@
 ```
 <template>
-  <hs-table
-    :data="tableData"
-    style="width: 100%">
-    <hs-table-column
-      fixed
-      prop="date"
-      label="日期"
-      width="180">
-    </hs-table-column>
-    <hs-table-column
-      prop="name"
-      label="姓名"
-      width="180">
-    </hs-table-column>
-    <hs-table-column
-      prop="address"
-      label="地址">
-    </hs-table-column>
-    <hs-table-column
-      fixed="right"
-      label="操作"
-      width="100">
-      <template slot-scope="scope">
-        <hs-button @click="handleClick(scope.row)" type="text" size="small">查看</hs-button>
-        <hs-button type="text" size="small">编辑</hs-button>
-      </template>
-    </hs-table-column>
-  </hs-table>
+  <div class="chart-body">
+    <div class="chart-body-theme">
+      <hs-chart :option="optionLine" group="test"></hs-chart>
+      <hs-chart :option="optionBar" group="test"></hs-chart>
+      <hs-chart :option="optionPie" group="test"></hs-chart>
+    </div>
+  </div>
 </template>
-
-<script lang="ts">
+<script lang='ts'>
 import { Component, Vue } from 'vue-property-decorator'
+
 @Component({
-  name: 'demo4'
+  name: 'default'
 })
 export default class extends Vue {
-  private tableData = [{
-    date: '2016-05-02',
-    name: '王小虎',
-    address: '上海市普陀区金沙江路 1518 弄'
-  }, {
-    date: '2016-05-04',
-    name: '王小虎',
-    address: '上海市普陀区金沙江路 1517 弄'
-  }, {
-    date: '2016-05-01',
-    name: '王小虎',
-    address: '上海市普陀区金沙江路 1519 弄'
-  }, {
-    date: '2016-05-03',
-    name: '王小虎',
-    address: '上海市普陀区金沙江路 1516 弄'
-  }]
+  private value = false
+  private optionLine = {
+    color: '#d48265',
+    title: {
+      text: 'HsCharts 示例'
+    },
+    tooltip: {},
+    legend: {
+      data: ['销量']
+    },
+    xAxis: {
+      data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+    },
+    yAxis: {},
+    series: [{
+      name: '销量',
+      type: 'line',
+      data: [5, 20, 36, 10, 10, 20]
+    }]
+  }
+
+  private optionBar = {
+    color: '#d48265',
+    title: {
+      text: 'HsCharts 示例'
+    },
+    tooltip: {},
+    legend: {
+      data: ['销量']
+    },
+    xAxis: {
+      data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+    },
+    yAxis: {},
+    series: [{
+      name: '销量',
+      type: 'bar',
+      data: [5, 20, 36, 10, 10, 20]
+    }]
+  }
+
+  private optionPie = {
+    title: {
+      text: 'HsCharts 示例',
+      left: 'center'
+    },
+    tooltip: {
+      trigger: 'item'
+    },
+    legend: {
+      orient: 'vertical',
+      left: 'left'
+    },
+    series: [{
+      name: '销量',
+      type: 'pie',
+      radius: '60%',
+      data: [
+        { value: 1048, name: '搜索引擎' },
+        { value: 735, name: '直接访问' },
+        { value: 580, name: '邮件营销' },
+        { value: 484, name: '联盟广告' },
+        { value: 484, name: '其他广告' },
+        { value: 300, name: '视频广告' }
+      ],
+      emphasis: {
+        itemStyle: {
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+      }
+    }]
+  }
 }
 </script>
-
 <style lang="scss">
+.chart-body{
+  width: 100% !important;
+  .chart-body-theme{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:space-between;
+  }
+}
 </style>
 ```

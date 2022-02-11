@@ -4,7 +4,6 @@
   "private": true,
   "author": "Feiwen Zheng <1041618236@qq.com>",
   "scripts": {
-    "start": "vue-cli-service serve",
     "serve": "concurrently \"npm:mock\" \"vue-cli-service serve\"",
     "test:unit": "jest --clearCache && vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
@@ -30,7 +29,7 @@
     "faker": "^5.1.0",
     "file-saver": "^2.0.2",
     "fuse.js": "^6.4.3",
-    "hs-elementui": "^0.2.170",
+    "hs-elementui": "^0.2.143",
     "hyperdown": "^2.4.9",
     "js-cookie": "^2.2.1",
     "jsonlint": "^1.6.3",
@@ -42,10 +41,9 @@
     "nprogress": "^0.2.0",
     "path-to-regexp": "^6.2.0",
     "prismjs": "^1.22.0",
-    "register-service-worker": "^1.7.1",
+    "register-service-worker": "^1.7.2",
     "screenfull": "^5.0.2",
     "script-loader": "^0.7.2",
-    "sortablejs": "^1.12.0",
     "spark-md5": "^3.0.1",
     "tinymce": "^5.5.1",
     "vue": "^2.6.12",
@@ -61,8 +59,6 @@
     "vue2-dropzone": "^3.6.0",
     "vuex": "^3.5.1",
     "vuex-module-decorators": "^1.0.1",
-    "vxe-table": "^3.0.2",
-    "xe-utils": "^3.0.2",
     "xlsx": "^0.16.8",
     "xlsx-style": "^0.8.13",
     "xlsx-style-correct": "^1.0.0",
@@ -136,9 +132,7 @@
   "keywords": [
     "vue",
     "typescript",
-    "admin",
-    "template",
-    "element-ui"
+    "template"
   ],
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [

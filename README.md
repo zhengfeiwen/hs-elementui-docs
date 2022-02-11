@@ -1,6 +1,6 @@
 ## 总览
 
-[hs-elementui-docs](https://github.com/zhengfeiwen/hs-elementui-docs) 是hs-elementui组件库的文档项目，它基于 [vue](https://github.com/vuejs/vue), [typescript](https://www.typescriptlang.org/) 和 [element-ui](https://github.com/ElemeFE/element)实现。
+[hs-elementui-docs](https://github.com/zhengfeiwen/hs-elementui-docs) 是hs-elementui组件库的文档项目，它基于 [vue](https://github.com/vuejs/vue), [typescript](https://www.typescriptlang.org/) 和 [element-ui](https://github.com/ElemeFE/element)实现
 
 ## 线上文档
 
